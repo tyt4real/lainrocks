@@ -1,0 +1,1214 @@
+{
+	"updated": "1727019933",
+
+	"items": [
+		{
+			"url": "https://ophanim.neocities.org",
+			"img": "ophanim.gif",
+			"title": "Ophanim",
+			"online": "true"
+		},
+		{
+			"url": "https://getimiskon.neocities.org",
+			"tor": "http://r53zi7kxyqd72fuvhztzi25fo2bze7fqjefze7k6t6kiq74pzaq5suyd.onion/",
+			"i2p": "http://s5jiovqhpzbjqqibtd5ophlpnmcgenlmbvevzfq2hj5iepwix3aq.b32.i2p/",
+			"img": "getimiskon.png",
+			"title": "getimiskons space",
+			"feed": "https://getimiskon.xyz/rss.xml",
+			"online": "true"
+		},
+		{
+			"url": "https://yukinu.com",
+			"img": "yukinu.gif",
+			"title": "Yukinu",
+			"feed": "https://yukinu.com/feed/rss.xml",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "http://alienozi.c1.biz",
+			"img": "alienozi.png",
+			"title": "Alienozis Website",
+			"online": "false"
+		},
+		{
+			"url": "https://jyushimatsu.web.fc2.com",
+			"img": "jyushimatsu.png",
+			"title": "jyushimatsu",
+			"online": "true"
+		},
+		{
+			"url": "https://3xf.eu",
+			"img": "fenix.png",
+			"title": "FönixFogelFuchs",
+			"online": "false"
+		},
+		{
+			"url": "https://xerophyte.neocities.org",
+			"img": "xerophyte.gif",
+			"title": "Xerophyte",
+			"online": "true"
+		},
+		{
+			"url": "https://tinfoil-hat.net",
+			"tor": "http://x3zf5cyqvutslx6yfdwip3nb2xo4kaevhk6bbeas74ky7cvgr36bf6yd.onion",
+			"img": "tinfoil-hat.png",
+			"title": "tinfoil-hat",
+			"feed": "https://blog.tinfoil-hat.net/index.xml",
+			"online": "true"
+		},
+		{
+			"url": "https://nightt.neocities.org",
+			"img": "nightt.gif",
+			"title": "Nightts retro art",
+			"online": "true"
+		},
+		{
+			"url": "https://jakesthoughts.xyz",
+			"tor": "http://y5wnzw4e6i7srm2gqadlow5anhlaj5avdkzbwzbmrxwkygxdp7ffieqd.onion",
+			"img": "jakesthoughts.gif",
+			"title": "Jakes thoughts",
+			"feed": "https://jakesthoughts.xyz/rss.xml",
+			"online": "true"
+		},
+		{
+			"url": "https://jakes-mail.top",
+			"img": "jakes-mail.gif",
+			"title": "Jakes mail",
+			"online": "true"
+		},
+		{
+			"url": "https://www.davidgebski.nl",
+			"img": "davidgebski.png",
+			"title": "davidgebski.nl",
+			"online": "true"
+		},
+		{
+			"url": "https://mayvaneday.org",
+			"tor": "http://sabladem4rxv5p34qcpz6sxitmftvmzmlzi4cjmmh5a3phcvdi3k2wad.onion/",
+			"i2p": "http://zli2qsg54w7y42vgw4xxlnj4nktcpg7xp33yjxkp33sjafvznbwa.b32.i2p/",
+			"img": "mayvaneday-org.png",
+			"title": "MayVaneDay Studios",
+			"feed": "https://mayvaneday.org/feed.xml",
+			"online": "true"
+		},
+		{
+			"url": "https://se7en-site.neocities.org",
+			"img": "se7en-site.png",
+			"title": "Se7ens site",
+			"locale": "en-US",
+			"online": "true"
+		},
+		{
+			"url": "https://dataswamp.org/~lich",
+			"img": "lich.png",
+			"title": "lichs website",
+			"feed": "https://dataswamp.org/~lich/rss.xml",
+			"online": "true"
+		},
+		{
+			"url": "http://radioccc.xyz",
+			"img": "radio-chupacabra.png",
+			"title": "Radio Chupacabra",
+			"online": "false"
+		},
+		{
+			"url": "https://uwcur.neocities.org",
+			"img": "uwcur.png",
+			"title": "Underground Web Cyberpunk Community Project",
+			"online": "true"
+		},
+		{
+			"url": "https://saltorn.neocities.org",
+			"img": "saltorn.png",
+			"title": "Saltorn",
+			"online": "true"
+		},
+		{
+			"url": "https://nyom.ru",
+			"img": "nyom.gif",
+			"title": "nyom.ru",
+			"online": "false"
+		},
+		{
+			"url": "https://tilde.club/~parnell",
+			"img": "parnell.png",
+			"title": "J. Frank Parnell",
+			"online": "true"
+		},
+		{
+			"url": "https://deurist.neocities.org",
+			"img": "deurist.png",
+			"title": "Urist",
+			"online": "true"
+		},
+		{
+			"url": "https://tohya.net",
+			"img": "tohya.png",
+			"title": "saturnexplorers",
+			"feed": "https://tohya.net/feed.rss",
+			"online": "true"
+		},
+		{
+			"url": "https://kyubit.neocities.org",
+			"img": "kyubit.png",
+			"title": "Kyubit",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://grafovolaverunt.xyz",
+			"img": "grafo-zone.gif",
+			"title": "Grafo Volaverunt",
+			"online": "false"
+		},
+		{
+			"url": "https://kill-9.xyz",
+			"img": "kill-9-new.png",
+			"title": "kill-9.xyz",
+			"online": "false"
+		},
+		{
+			"url": "https://lainch.leibur.eu",
+			"img": "lainch.png",
+			"title": "Lainch",
+			"online": "true"
+		},
+		{
+			"url": "https://cumbia.neocities.org",
+			"img": "cumbia.png",
+			"title": "Cumbia in the wired",
+			"online": "false"
+		},
+		{
+			"url": "https://sftn.github.io",
+			"img": "sftn.png",
+			"title": "Strings From The Network",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://lilibyte.net",
+			"tor": "http://23xyglk2g4y2fdtrpm4wo3rvrq2gt2ar7f3pyyt7ikeywdq5kpbheuyd.onion",
+			"img": "lilibyte.gif",
+			"title": "Lilibyte",
+			"online": "false"
+		},
+		{
+			"url": "https://strlst.myogaya.jp",
+			"img": "strlst.png",
+			"title": "satorialistic",
+			"feed": "https://strlst.myogaya.jp/rss.xml",
+			"online": "false"
+		},
+		{
+			"url": "https://user-index.xyz",
+			"img": "user-index.gif",
+			"title": "User-Index",
+			"online": "false"
+		},
+		{
+			"url": "https://skumsoft.ltd/slimenet",
+			"img": "slime-net.gif",
+			"title": "Slime-Net",
+			"feed": "https://skumsoft.ltd/slimenet/chamber.rss",
+			"online": "true"
+		},
+		{
+			"url": "https://bendersteed.tech",
+			"img": "bendersteed.jpg",
+			"title": "Bendersteed",
+			"feed": "https://bendersteed.tech/feed.xml",
+			"online": "false"
+		},
+		{
+			"url": "https://hellishchemicals.neocities.org",
+			"img": "hellish-chemicals.png",
+			"title": "Hellish Chemicals",
+			"online": "true"
+		},
+		{
+			"url": "https://theswissbay.ch/pdf",
+			"tor": "http://swissbaync5d7ykaz7dh7v4qjrb4gmen5aj3bogxrcgbb43ij34bjuyd.onion/pdf",
+			"img": "the-swiss-bay.jpg",
+			"title": "The Swiss Bay",
+			"online": "true"
+		},
+		{
+			"url": "http://freetext.wz.cz",
+			"img": "freetext.png",
+			"title": "Freetext",
+			"online": "true"
+		},
+		{
+			"url": "https://six10.pw",
+			"img": "six10.png",
+			"title": "SIX10",
+			"online": "false"
+		},
+		{
+			"url": "https://jack---91.neocities.org",
+			"img": "jack91.gif",
+			"title": "J@ck#91",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://xenobyte.xyz",
+			"img": "xenobyte.jpg",
+			"title": "Xenobyte",
+			"online": "false"
+		},
+		{
+			"url": "https://flammableduck.xyz",
+			"img": "flammable-duck.png",
+			"title": "Flammable Duck",
+			"feed": "https://flammableduck.xyz/feed.xml",
+			"locale": "en-US",
+			"online": "true"
+		},
+		{
+			"url": "https://tildezero.xyz/~goat/#rigmarole",
+			"img": "blaise-haskell.jpg",
+			"title": "Blaise Haskell",
+			"online": "false"
+		},
+		{
+			"url": "https://gapandfriends.neocities.org",
+			"img": "gap-and-friends.png",
+			"title": "Gap and friends",
+			"feed": "https://gapandfriends.neocities.org/blog/feed.rss",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://purplevoid.neocities.org",
+			"img": "purplevoid.png",
+			"title": "purplevoid",
+			"online": "true"
+		},
+		{
+			"url": "https://sizeof.cat",
+			"tor": "http://sizeofaex6zgovemvemn2g3jfmgujievmxxxbcgnbrnmgcjcjpiiprqd.onion",
+			"img": "sizeofcat.gif",
+			"title": "sizeof(cat)",
+			"feed": "https://sizeof.cat/index.xml",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://unix.tirol",
+			"img": "unix-tirol.png",
+			"title": "unix.tirol",
+			"online": "false"
+		},
+		{
+			"url": "http://hakase-shrine.cf",
+			"img": "shrine-of-hakase.gif",
+			"title": "Shrine of Hakase",
+			"online": "false"
+		},
+		{
+			"url": "https://extramundane.xyz",
+			"img": "extramundane.jpg",
+			"title": "The Extramundane",
+			"feed": "http://extramundane.xyz/rss.xml",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://321cosmica.neocities.org",
+			"img": "cosmica.png",
+			"title": "Cosmica",
+			"feed": "https://321cosmica.neocities.org/en/cosmica-en.xml",
+			"online": "true"
+		},
+		{
+			"url": "https://omicronsetup.eu",
+			"img": "omicron-setup.gif",
+			"title": "Omicron Setup",
+			"online": "true"
+		},
+		{
+			"url": "https://workingsea.neocities.org",
+			"img": "workingsea.png",
+			"title": "WorkingSea",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://lukescabin.neocities.org",
+			"img": "lukes-cabin.png",
+			"title": "Lukes Cabin",
+			"online": "true"
+		},
+		{
+			"url": "https://protocol7.xyz",
+			"img": "protocol7.png",
+			"title": "Protocol 7",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://tard.zone",
+			"img": "tard-zone.gif",
+			"title": "Tard Zone",
+			"online": "true"
+		},
+		{
+			"url": "https://beedge.neocities.org",
+			"img": "beedge.png",
+			"title": "Beedge",
+			"locale": "en-US",
+			"online": "true"
+		},
+		{
+			"url": "https://0x1bi.net",
+			"img": "0x1bi.png",
+			"title": "0x1bi",
+			"online": "true"
+		},
+		{
+			"url": "https://deadendshrine.online",
+			"tor": "http://blapi36sowfyuwzp4ag24xb3d4zdrzgtafez3g3lkp2rj4ho7lxhceid.onion",
+			"i2p": "http://2a55el42cobuxtls7iv6eoimejocybdekwnnaefcn4u2f5eydela.b32.i2p",
+			"img": "dead-end-shrine.png",
+			"title": "Dead End Shrine Online",
+			"online": "true"
+		},
+		{
+			"url": "https://digilord.neocities.org",
+			"img": "digilord.gif",
+			"title": "Digilord",
+			"online": "true"
+		},
+		{
+			"url": "https://godcock.neocities.org",
+			"img": "godcock.jpg",
+			"title": "Godcock",
+			"locale": "en-US",
+			"online": "false"
+		},
+		{
+			"url": "https://michii.tk",
+			"img": "michi.png",
+			"title": "Michi",
+			"online": "false"
+		},
+		{
+			"url": "https://karar.neocities.org",
+			"img": "karar.png",
+			"title": "Karar",
+			"locale": "ar-aa",
+			"online": "true"
+		},
+		{
+			"url": "https://nosleepforme.neocities.org",
+			"img": "no-sleep.png",
+			"title": "No Sleep",
+			"feed": "https://nosleepforme.neocities.org/rss.xml",
+			"online": "true"
+		},
+		{
+			"url": "https://room4.neocities.org",
+			"img": "room-4.jpg",
+			"title": "Room 4",
+			"online": "true"
+		},
+		{
+			"url": "https://hen6003.xyz",
+			"img": "hen6003.png",
+			"title": "hen6003",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://diskmagvp.neocities.org",
+			"img": "diskmagvp.png",
+			"title": "diskmagvp",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://thephilosopherslibrary.neocities.org",
+			"img": "thephilosopherslibrary.png",
+			"title": "thephilosopherslibrary",
+			"online": "true"
+		},
+		{
+			"url": "https://mm4rk3t.xyz",
+			"img": "mm4rk3t.gif",
+			"title": "mm4rk3t",
+			"online": "true"
+		},
+		{
+			"url": "https://kassy.neocities.org",
+			"img": "kassy.jpg",
+			"title": "kassy",
+			"feed": "https://kassy.neocities.org/miscfeed.xml",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://cabbagesorter.neocities.org",
+			"img": "cabbage-sorter.png",
+			"title": "Cabbage Sorter",
+			"feed": "https://cabbagesorter.neocities.org/rss.xml",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://xiixiixii.xyz",
+			"img": "xiixiixii.gif",
+			"title": "xiixiixii",
+			"online": "true"
+		},
+		{
+			"url": "https://oedo808.neocities.org",
+			"img": "oedo808.gif",
+			"title": "oedo808",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://xn--z7x.xn--6frz82g",
+			"img": "xn-neko.gif",
+			"title": "xn-neko",
+			"online": "true"
+		},
+		{
+			"url": "https://jole.xyz",
+			"img": "jole.png",
+			"title": "jole",
+			"online": "false"
+		},
+		{
+			"url": "https://confusion.codeberg.page",
+			"img": "confusion.png",
+			"title": "Confusions Blog",
+			"feed": "https://confusion.codeberg.page/rss.xml",
+			"online": "true"
+		},
+		{
+			"url": "https://morituritesalutant.neocities.org",
+			"img": "morituri-te-salutant.jpg",
+			"title": "Morituri Te Salutant",
+			"online": "true"
+		},
+		{
+			"url": "https://forum.agoraroad.com",
+			"img": "agoraroad.gif",
+			"feed": "https://forum.agoraroad.com/index.php?forums/-/index.rss",
+			"title": "Agora Road",
+			"online": "true"
+		},
+		{
+			"url": "https://lain.la",
+			"img": "lain-la.png",
+			"title": "lain.la",
+			"rss": "https://infrablog.lain.la/rss.xml",
+			"online": "true"
+		},
+		{
+			"url": "https://arisu.world",
+			"img": "arisu-world.png",
+			"title": "arisu.world",
+			"online": "false"
+		},
+		{
+			"url": "https://unpop.neocities.org",
+			"img": "unpop.gif",
+			"title": "Unpop",
+			"online": "true"
+		},
+		{
+			"url": "https://driftt.neocities.org",
+			"img": "driftt.png",
+			"title": "Driftt",
+			"online": "true"
+		},
+		{
+			"url": "https://chaox.ro",
+			"tor": "http://chaoxuo7g4tqdyeikjo6jaa6dmk34vmdp3s577hgeusuntmcfd4xaxqd.onion",
+			"i2p": "http://6bcqgkedaq2krrhvidjlmdsoltmzuwaqtrafycfzbc56h5swumoq.b32.i2p",
+			"img": "chaox.gif",
+			"title": "Chaox",
+			"online": "true"
+		},
+		{
+			"url": "https://itsevergreen.rip",
+			"img": "evergreen.png",
+			"title": "Evergreen",
+			"online": "true"
+		},
+		{
+			"url": "https://mazak.neocities.org",
+			"img": "mazak.png",
+			"title": "Mazak",
+			"online": "true"
+		},
+		{
+			"url": "https://smolthots.neocities.org",
+			"img": "small-thoughts.jpg",
+			"title": "Small Thoughts",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://spectrum-of-consciousness.neocities.org",
+			"img": "spectrum-of-consciousness.gif",
+			"title": "Spectrum of Consciousness",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://libertywitch.com",
+			"tor": "http://mlucvtipzluwceniyzwxt52a3wdvu3t3ahdshht3sctc6hs4o2umqjad.onion",
+			"img": "liberty-witch.png",
+			"title": "Liberty Witch",
+			"feed": "https://blog.libertywitch.com/rss.xml",
+			"locale": "en",
+			"online": "false"
+		},
+		{
+			"url": "https://seapunk.xyz",
+			"tor": "http://seapunkltrahptcvv45lyws754uk64l3ywssuzil2ghk77k276dvtvqd.onion",
+			"img": "seapunk.gif",
+			"title": "Seapunk",
+			"feed": "https://seapunk.xyz/atom.xml",
+			"online": "true"
+		},
+		{
+			"url": "https://ty3r0x.chaox.ro",
+			"img": "ty3r0x.png",
+			"title": "Ty3r0x",
+			"locale": "en-US",
+			"online": "true"
+		},
+		{
+			"url": "https://lckdscl.xyz",
+			"img": "lckdscl.png",
+			"title": "lckdscl",
+			"feed": "https://lckdscl.xyz/feed.xml",
+			"online": "false"
+		},
+		{
+			"url": "https://qmaury.com",
+			"img": "qmaury.jpg",
+			"title": "qmaury",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://galladite.net/~galladite/",
+			"i2p": "http://gallap5oyvl3kum6pck2sxnmofojogkg2c4xpilpshpejfchtrvq.b32.i2p",
+			"img": "galladite.png",
+			"title": "galladite",
+			"locale": "en-gb",
+			"online": "true"
+		},
+		{
+			"url": "https://halogenstars.neocities.org",
+			"img": "halogen-stars.png",
+			"title": "halogen stars",
+			"online": "true"
+		},
+		{
+			"url": "https://kirillov.neocities.org",
+			"img": "kirillov.png",
+			"title": "Kirillov",
+			"feed": "https://kirillov.neocities.org/feed.xml",
+			"online": "true"
+		},
+		{
+			"url": "https://nerdbox.neocities.org",
+			"img": "nerdbox.png",
+			"title": "nerdbox",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://thecrypt.neocities.org",
+			"img": "thecrypt.gif",
+			"title": "TheCrypt",
+			"online": "true"
+		},
+		{
+			"url": "https://orizuru.neocities.org",
+			"img": "orizuru.png",
+			"title": "orizuru",
+			"feed": "https://orizuru.neocities.org/atom.xml",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://rainisnot.neocities.org",
+			"img": "rain.png",
+			"title": "rain",
+			"online": "true"
+		},
+		{
+			"url": "https://tilde.team/~lemon",
+			"img": "tocxjo.gif",
+			"title": "tocxjo",
+			"online": "true"
+		},
+		{
+			"url": "https://newdigitalera.org",
+			"img": "newdigitalera.png",
+			"title": "New Digital Era",
+			"feed": "https://newdigitalera.org/feed.xml",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://e3-l18-3.xyz",
+			"img": "e3-l18-3.gif",
+			"title": "e3-l18-3",
+			"online": "false"
+		},
+		{
+			"url": "https://vincememe.icu",
+			"img": "vincememe.png",
+			"title": "Vincememe",
+			"online": "false"
+		},
+		{
+			"url": "https://nomadalgia.xyz",
+			"img": "nomadalgia.gif",
+			"title": "Nomadalgia",
+			"online": "true"
+		},
+		{
+			"url": "https://minugahana.neocities.org",
+			"img": "minugahana.png",
+			"title": "minugahana",
+			"feed": "https://minugahana.neocities.org/feeds/blog.xml",
+			"locale": "en",
+			"online": "false"
+		},
+		{
+			"url": "https://www.tyxton.net",
+			"img": "tyxton.png",
+			"title": "tyxton.net",
+			"online": "false"
+		},
+		{
+			"url": "https://urof.net",
+			"tor": "http://urofnon3layyes5wworh3x3i4wmgdm4livdn2qiedpsetujfxegmg4qd.onion",
+			"i2p": "http://oztmbptelqcuj5ic5ogh7yccdokaordeocthrn56r6v3cqtksaba.b32.i2p",
+			"img": "urof.gif",
+			"title": "urof.net",
+			"feed": "https://urof.net/blog/feed.xml",
+			"online": "false"
+		},
+		{
+			"url": "https://trrb.xyz/",
+			"img": "trrb.png",
+			"title": "trrb",
+			"feed": "https://trrb.xyz/blog/feed.rss",
+			"online": "false"
+		},
+		{
+			"url": "https://www.s-config.com",
+			"tor": "http://xjfbpuj56rdazx4iolylxplbvyft2onuerjeimlcqwaihp3s6r4xebqd.onion",
+			"i2p": "http://atlkfvuwwpgvnw24dkwyyxf5psrueozxb3i6zgebymjuquuquvqq.b32.i2p",
+			"img": "s-config.png",
+			"title": "S-Config",
+			"locale": "en-US",
+			"online": "false"
+		},
+		{
+			"url": "https://grafo.zone",
+			"img": "grafo-zone.gif",
+			"title": "Grafo Zone",
+			"feed": "https://grafo.zone/index.xml",
+			"locale": "en",
+			"online": "false"
+		},
+		{
+			"url": "https://intr.cx",
+			"tor": "http://intrcxv4fa72e5ovler5dpfwsiyuo34tkcwfy5snzstxkhec75okowqd.onion",
+			"i2p": "http://6jaqgde66kdsqct4ptzdj2vd32kblnk5scgwoprtmcreqbhobuhq.b32.i2p",
+			"img": "interloper.png",
+			"title": "interloper minimalist services",
+			"online": "true"
+		},
+		{
+			"url": "https://cool-website.xyz",
+			"img": "cool-website.png",
+			"title": "cool-website.xyz",
+			"feed": "https://cool-website.xyz/rss.xml",
+			"online": "false"
+		},
+		{
+			"url": "https://czar.kalli.st",
+			"img": "czar.png",
+			"title": "czars blog",
+			"online": "true"
+		},
+		{
+			"url": "https://foreverliketh.is",
+			"img": "foreverliketh.gif",
+			"title": "foreverliketh.is",
+			"feed": "https://foreverliketh.is/blog/index.xml",
+			"locale": "en-US",
+			"online": "true"
+		},
+		{
+			"url": "https://vd1r.neocities.org",
+			"img": "vd1r.png",
+			"title": "vd1r",
+			"online": "true"
+		},
+		{
+			"url": "https://www.neetventures.com",
+			"img": "neet-ventures.gif",
+			"title": "Neet Ventures",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://articexploit.xyz",
+			"tor": "http://artic725lafwfqnygqxraupupg7dtbf4own767duq2bxj3t7dszvzmid.onion/",
+			"img": "artic.gif",
+			"title": "The Arcade",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://www.seththyer.com",
+			"img": "seththyer.gif",
+			"title": "Seth T.s Page",
+			"online": "true"
+		},
+		{
+			"url": "https://www.cozynet.org",
+			"img": "cozynet.gif",
+			"title": "CozyNet",
+			"feed": "https://www.cozynet.org/feed/feed.xml",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://scio.icu",
+			"img": "scio.png",
+			"title": "SCIO",
+			"online": "true"
+		},
+		{
+			"url": "https://navyjoecomics.neocities.org",
+			"img": "navy-joe-comics.gif",
+			"title": "Navy Joes Homepage",
+			"online": "true"
+		},
+		{
+			"url": "https://www.sillylaird.info",
+			"tor": "http://silly7vgbgbejjrsl2mqgcljvz5ui2ryvuqe3rjbrg5ylysv7zyhdwad.onion",
+			"img": "sillylaird.png",
+			"title": "SillyLaird",
+			"online": "false"
+		},
+		{
+			"url": "https://swindlesmccoop.xyz",
+			"img": "swindlesmccoop.png",
+			"title": "Home of Swindles",
+			"feed": "https://swindlesmccoop.xyz/rss.xml",
+			"online": "false"
+		},
+		{
+			"url": "https://present-time.neocities.org",
+			"img": "present-time.jpg",
+			"title": "Present Day, Present Time",
+			"online": "true"
+		},
+		{
+			"url": "https://torchan.neocities.org",
+			"img": "torchan.gif",
+			"title": "torchan",
+			"online": "true"
+		},
+		{
+			"url": "https://andrei.xyz",
+			"tor": "http://andrei3ufgijpzogyai6ejcrdwevzediyzubgqiltc2k42c2zyeakhid.onion",
+			"img": "andrei-xyz.gif",
+			"title": "andrei.xyz",
+			"feed": "https://andrei.xyz/index.xml",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://varchar.neocities.org",
+			"img": "varchar.png",
+			"title": "varchar",
+			"online": "false"
+		},
+		{
+			"url": "https://bass2nick.com",
+			"img": "bass2nick.gif",
+			"title": "Nicks Place",
+			"online": "true"
+		},
+		{
+			"url": "https://0x19.org",
+			"img": "0x19.png",
+			"title": "0x19.org",
+			"feed": "https://0x19.org/posts/feed.php",
+			"tor": "http://ilsstfnqt4vpykd2bqc7ntxf2tqupqzi6d5zmk767qtingw2vp2hawyd.onion:8080",
+			"i2p": "http://xzh77mcyknkkghfqpwgzosukbshxq3nwwe2cg3dtla7oqoaqknia.b32.i2p:9090",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://jahanrashidi.com",
+			"title": "Jahans site",
+			"feed": "https://jahanrashidi.com/rss/",
+			"img": "jahanrashidi.png",
+			"locale": "en",
+			"online": "true"
+		},
+		{	"url": "https://theminuteman.neocities.org",
+			"title": "The minuteman",
+			"img": "theminuteman.png",
+			"online": "true"
+		},
+		{	"url": "https://www.yo252yo.com",
+			"title": "yo252yo",
+			"img": "yo252yo.gif",
+			"online": "true"
+		},
+		{	"url": "https://mouse.services",
+			"title": "a7th Layer",
+			"img": "mouse.services.png",
+			"feed": "https://mouse.services/rss.xml",
+			"online": "false"
+		}, 
+		{
+			"url": "https://n1l7.neocities.org",
+			"title": "n1l webspace",
+			"img": "n1l.gif",
+			"online": "true"
+		},
+		{
+			"url": "https://angelsaremathematical.neocities.org", 
+			"title": "angels are mathematical",
+			"img": "angels-are-mathematical.png",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://andresz.xyz",
+			"title": "Ándros",
+			"img": "andresz.xyz.png",
+			"feed": "https://andresz.xyz/index.xml",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://ctrl-c.club/~giggles/",
+			"title": "Giggles Cave",
+			"img": "giggles-cave.png",
+			"online": "true"
+		},
+		{
+			"url": "https://blog.shr4pnel.com",
+			"title": "shrapnelnet",
+			"feed": "https://blog.shr4pnel.com/rss.xml",
+			"img": "blog.shr4pnel.gif",
+			"locale": "en-gb",
+			"online": "true"
+		},
+		{
+			"url": "https://havinganame.neocities.org",
+			"title": "havinganame",
+			"img": "havinganame.png",
+			"online": "true"
+		},
+		{
+			"url": "https://microbyte.neocities.org/",
+			"title": "microbyte",
+			"img": "microbyte.png",
+			"online": "true"
+		},
+		{
+			"url": "https://ciosyam.xyz",
+			"title": "ciosyam",
+			"img": "ciosyam.gif",
+			"locale": "en-US",
+			"online": "false"
+		},
+		{
+			"url": "https://gamajun.neocities.org",
+			"title": "gamajun",
+			"img": "gamajun.png",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://lyricaltokarev.neocities.org",
+			"title": "Lyrical Tokarev",
+			"feed": "https://lyricaltokarev.com/blog/rss",
+			"img": "lyricaltokarev.png",
+			"online": "false"
+		},
+		{
+			"url": "https://redchanit.xyz",
+			"title": "REDchanit",
+			"img": "redchanit.png",
+			"online": "true"
+		},
+		{
+			"url": "https://crystal.tilde.institute",
+			"title": "Crystal website",
+			"img": "crystal.gif",
+			"online": "true"
+		},
+		{
+			"url": "https://risingthumb.xyz/",
+			"title": "Rising Thumb",
+			"img": "risingthumb.png",
+			"feed": "https://risingthumb.xyz/Writing/Blog/index.rss",
+			"online": "true"
+		},
+		{
+			"url": "https://maerk.xyz",
+			"title": "maerk.xyz",
+			"feed": "https://maerk.xyz/index.html",
+			"img": "maerk.png",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://mauwq.neocities.org", 
+			"title": "mauwq",
+			"img": "mauwq.gif",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://lainnet.superglobalmegacorp.com",
+			"title": "LainNet",
+			"feed": "https://lainnet.superglobalmegacorp.com/rss.xml", 
+			"img": "lainnet.png",
+			"online": "true"
+		},
+		{
+			"url": "https://idelides.xyz", 
+			"title": "Idelides",
+			"feed": "https://www.idelides.xyz/rss/",
+			"img": "idelides.png",
+			"online": "true"
+		},
+		{
+			"url": "https://3to.moe/",
+			"title": "3to.moe",
+			"img": "3to.gif",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://b4rkod.net.tr/",
+			"title": "Barkods Basement",
+			"feed": "https://b4rkod.net.tr/rss.xml",
+			"img": "b4rkod.png",
+			"locale": "en",
+			"online": "true"
+		}, 
+		{
+			"url": "https://requiem.moe", 
+			"title": "Requim.moe",
+			"img": "requim.moe.gif",
+			"online": "true"
+		},
+		{
+			"url": "https://psychool.org",
+			"feed": "https://psychool.org/index.xml",
+			"title": "psychool",
+			"img": "psychool.gif",
+			"online": "false"
+		},
+		{
+			"url": "https://vendell.online",
+			"title": "Vendell",
+			"feed": "https://vendell.online/blog/feed.xml",
+			"img": "vendell.gif",
+			"online": "true"
+		},
+		{
+			"url": "https://slushbin.net",
+			"title": "slushbin",
+			"feed": "https://slushbin.net/feed.rss",
+			"img": "slushbin.gif",
+			"online": "true"
+		},
+		{
+			"url": "https://blackorwhite.neocities.org",
+			"title": "Black OR White",
+			"img": "blackorwhite.png",
+			"locale": "fr",
+			"online": "true"
+		},
+		{
+			"url": "https://nauxnam.net",
+			"title": "nauxams web",
+			"img": "nauxnam.gif",
+			"online": "true"
+		},
+		{
+			"url": "https://torpus.info",
+			"title": "torpus",
+			"feed": "https://torpus.info/index.xml",
+			"img": "torpus.png",
+			"tor": "http://4cg3jkowgmnfgtdxi7xkk5rduuuzirxwz2xl3kjxwfpwprdlqv6rbzyd.onion/",
+			"online": "true"
+		},
+		{
+			"url": "https://gau7ilu.xyz/",
+			"title": "gau7ilu.xyz",
+			"img": "gau7ilu.png",
+			"feed": "https://gau7ilu.xyz/atom.xml",
+			"online": "true"
+		},
+		{
+			"url": "http://nowhere.moe/",
+			"title": "Nowhere network",
+			"img": "nowhere.moe.png",
+			"online": "true"
+		},
+		{
+			"url": "https://splashy.neocities.org",
+			"title": "splashy",
+			"img": "splashy.png",
+			"online": "true"
+		},
+		{
+			"url": "https://turpelurpeluren.online/",
+			"title": "turpelurpeluren",
+			"feed": "https://blogelogeluren.netlify.app/rss.xml",
+			"img": "turpelurpeluren.gif",
+			"online": "true"
+		},
+		{
+			"url": "https://kinisis.xyz",
+			"title": "Kinisis web",
+			"feed": "https://kinisis.xyz/rss.xml",
+			"img": "kinisis.png",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://eyetower.xyz",
+			"title": "eyetower",
+			"feed": "https://eyetower.xyz/blog/feed.xml",
+			"img": "eyetower.png",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://voicedrew.xyz",
+			"title": "voicedrew",
+			"feed": "https://voicedrew.xyz/rss.xml",
+			"img": "voicedrew.png",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://sor.neocities.org/",
+			"title": "Sorzitos Layer",
+			"feed": "https://sor.neocities.org/rss.xml",
+			"img": "sor.png",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://ful4n.bearblog.dev/",
+			"title": "ful4n",
+			"feed": "https://ful4n.bearblog.dev/feed",
+			"img": "ful4n.png",
+			"locale": "ar",
+			"online": "true"
+		},
+		{
+			"url": "https://digitalvoid.xyz",
+			"title": "digital void",
+			"tor": "http://c2ske4mrgriaedpj7iirzst33yt6gwomcisvwypsbx4tfk6ykrhhvkid.onion/",
+			"img": "digitalvoid.png",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://tvrrisebvrnea.neocities.org",
+			"title": "technocatholocism",
+			"img": "tvrrisebvrnea.png",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://alephzero.neocities.org",
+			"title": "alephzero",
+			"img": "alephzero.gif",
+			"online": "true"
+		},
+		{
+			"url": "https://antisocial.moe",
+			"title": "Antisocial Lounge",
+			"img": "antisocial.moe.png",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://crystepepsi.com",
+			"title": "Crystepepsi: total internet domination",
+			"img": "crystepepsi.gif",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://world-playground-deceit.net/",
+			"title": "World Playground Deceit",
+			"img": "world-playground-deceit.png",
+			"feed": "https://world-playground-deceit.net/global.xml",
+			"locale": "en",
+			"online": "true"
+		},
+		{
+			"url": "https://monkemanx.github.io",
+			"feed": "https://monkemanx.github.io/index.xml",
+			"img": "monkemanx.png",
+			"title": "monkemanx",
+			"online": "true"
+		},
+		{
+			"url": "https://miredo.neocities.org/",
+			"feed": "https://miredo.neocities.org/atom.xml",
+			"img": "miredo.png",
+			"title": "miredo",
+			"online": "true"
+		},
+		{
+			"url": "https://chknz.org",
+			"feed": "https://chknz.org/feed.xml",
+			"img": "chknz.gif",
+			"title": "chknz",
+			"online": "true"
+		},
+		{
+			"url": "https://glowbox.cc",
+			"title": "dshells notes",
+			"img": "glowbox.gif",
+			"feed": "https://glowbox.cc/rss.php",
+			"online": "true"
+		},
+		{
+			"url": "https://midnightmountain.xyz",
+			"title": "midnight mountain",
+			"img": "midnightmountain.png",
+			"locale": "en",
+			"feed": "https://midnightmountain.xyz/index.xml",
+			"online": "true"
+		}
+
+
+	]
+}
+
