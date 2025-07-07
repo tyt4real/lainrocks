@@ -51,19 +51,20 @@
             The XMPP service we offer, has one very simple rules. No illegal content under the US law; We store uploaded files for 30 days, and MUC messages for 7 days. The server runs on an updated, latest, Ubuntu virtual machine, in the glorious Czech Republic. We keep backups, and have contingency plans to bring back service in case of problems. We <i>STRONGLY</i> advise you to use <i>YOUR OWN</i> end-to-end encryption. <i>NEVER</i> trust your provider, doesn't matter whether it's me or someone else, use OMEMO or PGP to keep your communications safe and private from the alphabet boys.
           </li>
           <li>
-            The working commit is: <?php
-                                    //64e8297
-                                    $fetchheadfile = './.git/FETCH_HEAD';
-                                    if (file_exists($fetchheadfile)) {
-                                      $headfile = file_get_contents($fetchheadfile);
-                                      $shortCommitTag = substr($headfile, 0, 6);
-                                      $fullCommitTag = substr($headfile, 0, 40);
-                                      $format = "<a href='https://github.com/tyt4real/lainrocks/commit/%s'>%s</a>";
-                                      echo sprintf($format, $fullCommitTag, $shortCommitTag);
-                                    } else {
-                                      echo ("Can't read latest commit.");
-                                    }
-                                    ?>
+            <p>
+              The working commit is: <?php
+                                      //64e8297
+                                      $fetchheadfile = './.git/FETCH_HEAD';
+                                      if (file_exists($fetchheadfile)) {
+                                        $headfile = file_get_contents($fetchheadfile);
+                                        $shortCommitTag = substr($headfile, 0, 6);
+                                        $fullCommitTag = substr($headfile, 0, 40);
+                                        $format = "<a href='https://github.com/tyt4real/lainrocks/commit/%s'>%s</a>";
+                                        echo sprintf($format, $fullCommitTag, $shortCommitTag);
+                                      } else {
+                                        echo ("Can't read latest commit.");
+                                      }
+                                      ?></p>
           </li>
         </ul>
 
