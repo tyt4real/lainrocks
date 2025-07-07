@@ -52,19 +52,19 @@
           </li>
           <li>
             <p>
-              The working commit is: <?php
-                                      //64e8297
-                                      $fetchheadfile = './.git/FETCH_HEAD';
-                                      if (file_exists($fetchheadfile)) {
-                                        $headfile = file_get_contents($fetchheadfile);
-                                        $shortCommitTag = substr($headfile, 0, 6);
-                                        $fullCommitTag = substr($headfile, 0, 40);
-                                        $format = "<a href='https://github.com/tyt4real/lainrocks/commit/%s'>%s</a>";
-                                        echo sprintf($format, $fullCommitTag, $shortCommitTag);
-                                      } else {
-                                        echo ("Can't read latest commit.");
-                                      }
-                                      ?></p>
+              The working commit for this page is: <?php
+                                                    //64e8297
+                                                    $fetchheadfile = './.git/FETCH_HEAD';
+                                                    if (file_exists($fetchheadfile)) {
+                                                      $headfile = file_get_contents($fetchheadfile);
+                                                      $shortCommitTag = substr($headfile, 0, 6);
+                                                      $fullCommitTag = substr($headfile, 0, 40);
+                                                      $format = "<a href='https://github.com/tyt4real/lainrocks/commit/%s'>%s</a>";
+                                                      echo sprintf($format, $fullCommitTag, $shortCommitTag);
+                                                    } else {
+                                                      echo ("Can't read latest commit.");
+                                                    }
+                                                    ?></p>
           </li>
         </ul>
 
