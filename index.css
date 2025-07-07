@@ -1,0 +1,76 @@
+html,
+body {
+  color-scheme: var(--font_color);
+  background-color: var(--background);
+  color: var(--font_color);
+  border-color: var(--border_color);
+}
+
+header {
+  width: 50%;
+  color: white;
+  padding: 20px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+ul {
+  list-style-type: square;
+}
+
+.container {
+  border-color: var(--border_color) !important;
+}
+
+.content {
+  margin-top: 20px;
+  text-align: center;
+  border: #444;
+}
+
+.card {
+  color: var(--font_color);
+  background-color: var(--background-light);
+  border-color: var(--border_color);
+}
+
+.card-header {
+  color: var(--font_color);
+  background-color: var(--background-dark);
+}
+
+.whitelink:link {
+  color: white;
+}
+
+.whitelink:visited {
+  color: white;
+}
+
+code {
+    background: var(--border_color);
+    border: 1px solid #ddd;
+    border-left: 3px solid var(--background-dark);
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
+
+footer {
+  background-color: var(--background-dark);
+  color: var(--font_color);
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}

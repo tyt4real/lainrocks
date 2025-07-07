@@ -1,0 +1,20 @@
+:root {
+  --font_color: #DBC2BEff;
+  --link_color: #7dc0d4;
+  --link_color_hover: #6094a3;
+  --font_color_shaded: #765A57ff;
+  --background: #111;
+  --background-light: #0e0e0e;
+  --background-dark:  #022b2a;
+  --border_color: #6E6667ff;
+  --form_control_bg: #222222;
+}
+
+.banner {
+  width: 240px;
+  height: 60px;
+}
+
+.glow {
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00e600;
+}
