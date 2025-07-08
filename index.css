@@ -49,21 +49,27 @@ ul {
   color: white;
 }
 
+#shit {
+  font-family: "Lucida Console", "Courier New", monospace;
+  text-shadow: 0 0 10px #00746e, 0 0 20px #00746e, 0 0 30px #00746e,
+    0 0 40px #00746e;
+}
+
 code {
-    background: var(--border_color);
-    border: 1px solid #ddd;
-    border-left: 3px solid var(--background-dark);
-    color: #666;
-    page-break-inside: avoid;
-    font-family: monospace;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 1.6em;
-    max-width: 100%;
-    overflow: auto;
-    padding: 1em 1.5em;
-    display: block;
-    word-wrap: break-word;
+  background: var(--border_color);
+  border: 1px solid #ddd;
+  border-left: 3px solid var(--background-dark);
+  color: #666;
+  page-break-inside: avoid;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1em 1.5em;
+  display: block;
+  word-wrap: break-word;
 }
 
 footer {

@@ -17,8 +17,8 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
     crossorigin="anonymous" />
   <link rel="icon" type="image/x-icon" href="./favicon.ico" />
-  <!-- <link href="./dist/config.css" rel="stylesheet" /> 
-     <link href="./dist/index.css" rel="stylesheet" /> -->
+  <!-- <link href="./dist/config.css" rel="stylesheet" /> -->
+  <!--   <link href="./index.css" rel="stylesheet" /> -->
 
   <link href="https://lain.rocks/config.css" rel="stylesheet" />
   <link href="https://lain.rocks/index.css" rel="stylesheet" />
@@ -26,7 +26,7 @@
 
 <body>
   <header class="mt-2 card">
-    <h1>lain.rocks</h1>
+    <h1 id="shit">lain.rocks</h1>
     <p>The (hopefully) cool place on the internet</p>
   </header>
 
