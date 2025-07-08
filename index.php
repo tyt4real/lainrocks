@@ -105,7 +105,7 @@
         </ul>
       </div>
     </section>
-    <section class="mt-2 card">
+    <!-- <section class="mt-2 card">
       <div class="card-header">
         <h2>Forum</h2>
       </div>
@@ -119,7 +119,7 @@
         </a>
         <p>It's not there quite yet</p>
       </div>
-    </section>
+    </section> -->
     <section class="mt-2 card">
       <div class="card-header">
         <h2>Webring</h2>
