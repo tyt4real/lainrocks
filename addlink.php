@@ -1,4 +1,5 @@
 <?php
+$configs = include('config.php');
 function generateLinkShorthand($length = 5)
 {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
