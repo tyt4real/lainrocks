@@ -474,3 +474,5 @@ composer.lock
 
 phpinfo.php
 .vscode/*
+
+config.php

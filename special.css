@@ -1,0 +1,7 @@
+input[type=text] {
+  padding: 10px 10px;
+  margin: auto;
+  box-sizing: border-box;
+  border-color: var(--border_color);
+  background-color: var(--form_control_bg);
+}
