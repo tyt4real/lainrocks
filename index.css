@@ -72,7 +72,7 @@ code {
   word-wrap: break-word;
 }
 
-footer {
+.footer {
   background-color: var(--background-dark);
   color: var(--font_color);
   text-align: center;

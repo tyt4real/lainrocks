@@ -18,7 +18,7 @@
     crossorigin="anonymous" />
   <link rel="icon" type="image/x-icon" href="./favicon.ico" />
   <!-- <link href="./dist/config.css" rel="stylesheet" /> -->
-  <!--   <link href="./index.css" rel="stylesheet" /> -->
+  <!-- <link href="./index.css" rel="stylesheet" /> -->
 
   <link href="https://lain.rocks/config.css" rel="stylesheet" />
   <link href="https://lain.rocks/index.css" rel="stylesheet" />
@@ -28,6 +28,7 @@
   <header class="mt-2 card">
     <h1 id="shit">lain.rocks</h1>
     <p>The (hopefully) cool place on the internet</p>
+    <p>「どこに行ったって、人はつながっているのよ。」</p>
   </header>
 
   <div id="app" class="container">
@@ -48,7 +49,7 @@
             </p>
           </li>
           <li>
-            The XMPP service we offer, has one very simple rules. No illegal content under the US law; We store uploaded files for 30 days, and MUC messages for 7 days. The server runs on an updated, latest, Ubuntu VPS in the glorious Czech Republic. We keep backups, and have contingency plans to bring back service in case of problems. We <i>STRONGLY</i> advise you to use <i>YOUR OWN</i> end-to-end encryption. <i>NEVER</i> trust your provider, doesn't matter whether it's me or someone else, use OMEMO or PGP to keep your communications safe and private from the alphabet boys.
+            The XMPP service we offer, has one very simple rules. No illegal content under the US and Czech law; We store uploaded files for 30 days, and MUC messages for 7 days. The server runs on an updated, latest, Ubuntu VPS in the glorious Czech Republic. We keep backups, and have contingency plans to bring back service in case of problems. We <i>STRONGLY</i> advise you to use <i>YOUR OWN</i> end-to-end encryption. <i>NEVER</i> trust your provider, doesn't matter whether it's me or someone else, use OMEMO or PGP to keep your communications safe and private from the alphabet boys.
           </li>
           <li>
             <p>
@@ -147,6 +148,11 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
+
+<div class="footer">
+  <h4>Let's all love Lain (c) 2025</h4>
+  <p>For all service abuse compaints, contact me here: <a href="mailto:tyt4real@protonmail.com">tyt4real@protonmail.com</a> ; if you see something, say something.</p>
+</div>
 </body>
 
 </html>
