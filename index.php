@@ -149,10 +149,10 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
 
-<div class="footer">
+<!-- <div class="footer">
   <h4>Let's all love Lain (c) 2025</h4>
   <p>For all service abuse compaints, contact me here: <a href="mailto:tyt4real@protonmail.com">tyt4real@protonmail.com</a> ; if you see something, say something.</p>
-</div>
+</div> -->
 </body>
 
 </html>
