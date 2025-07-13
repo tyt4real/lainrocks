@@ -103,6 +103,7 @@
         </ul>
       </div>
     </section>
+    <!--
     <section class="mt-2 card">
       <div class="card-header">
         <h2>Textboards</h2>
@@ -115,7 +116,7 @@
           <li>tyui</li>
         </ul>
       </div>
-    </section>
+    </section> -->
     <!-- <section class="mt-2 card">
       <div class="card-header">
         <h2>Forum</h2>
