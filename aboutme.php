@@ -107,6 +107,9 @@
                             <li>
                                 XMPP: <a href="xmpp:tyt4real@lain.rocks">tyt4real@lain.rocks</a> or <a href="xmpp:tyt4real@xmpp.jp">tyt4real@xmpp.jp</a>
                             </li>
+                            <li>
+                                <a href="https://spyware.neocities.org/articles/discord.html"><img src="/images/discord-no-way-2.gif" alt="Discord? No way!"></a>
+                            </li>
                         </ul>
                     </div>
                 </section>
