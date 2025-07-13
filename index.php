@@ -10,18 +10,15 @@
   <meta name="keywords" content="lain" />
   <meta name="author" content="tyt4real" />
 
-  <title>lain.rocks</title>
+  <title>lain.rocks | Home</title>
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
     crossorigin="anonymous" />
   <link rel="icon" type="image/x-icon" href="./favicon.ico" />
-  <!-- <link href="./dist/config.css" rel="stylesheet" /> -->
-  <!-- <link href="./index.css" rel="stylesheet" /> -->
-
-  <link href="https://lain.rocks/config.css" rel="stylesheet" />
-  <link href="https://lain.rocks/index.css" rel="stylesheet" />
+  <link href="./css/config.css" rel="stylesheet" />
+  <link href="./css/index.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -106,6 +103,19 @@
         </ul>
       </div>
     </section>
+    <section class="mt-2 card">
+      <div class="card-header">
+        <h2>Textboards</h2>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>asfd</li>
+          <li>fdsa</li>
+          <li>qwer</li>
+          <li>tyui</li>
+        </ul>
+      </div>
+    </section>
     <!-- <section class="mt-2 card">
       <div class="card-header">
         <h2>Forum</h2>
@@ -149,7 +159,7 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
 
-<!-- <div class="footer">
+  <!-- <div class="footer">
   <h4>Let's all love Lain (c) 2025</h4>
   <p>For all service abuse compaints, contact me here: <a href="mailto:tyt4real@protonmail.com">tyt4real@protonmail.com</a> ; if you see something, say something.</p>
 </div> -->
