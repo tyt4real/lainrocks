@@ -142,7 +142,7 @@
     </section>
     <section class="mt-2 card">
       <div class="card-header">
-        <h2>Stuff I personally like :3</h2>
+        <h2>Stuff I like :3</h2>
       </div>
       <div class="card-body" style="text-align: center;">
         <div class="row">
