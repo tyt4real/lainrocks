@@ -94,6 +94,9 @@
                 Converse.js XMPP web client: click
                 <a href="https://lain.rocks/xmpp/conversejs/" target="_blank">here</a>.
               </li>
+              <li>
+                We now offer a public Biboumi IRC Gateway @ ircgate.lain.rocks
+              </li>
             </ul>
           </li>
           <li>
