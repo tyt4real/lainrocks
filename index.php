@@ -95,7 +95,7 @@
                 <a href="https://lain.rocks/xmpp/conversejs/" target="_blank">here</a>.
               </li>
               <li>
-                We now offer a public Biboumi IRC Gateway @ ircgate.lain.rocks
+                The XMPP servers has a Biboumi IRC gateway available, and a Telegram gateway will be available soon.
               </li>
             </ul>
           </li>
