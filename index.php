@@ -106,35 +106,6 @@
         </ul>
       </div>
     </section>
-    <!--
-    <section class="mt-2 card">
-      <div class="card-header">
-        <h2>Textboards</h2>
-      </div>
-      <div class="card-body">
-        <ul>
-          <li>asfd</li>
-          <li>fdsa</li>
-          <li>qwer</li>
-          <li>tyui</li>
-        </ul>
-      </div>
-    </section> -->
-    <!-- <section class="mt-2 card">
-      <div class="card-header">
-        <h2>Forum</h2>
-      </div>
-      <div class="card-body" style="text-align: center">
-        <a
-          href="https://forum.lain.rocks/"
-          target="_blank"
-          id="forumlink"
-          class="glow whitelink">
-          <h1>Go to the forum!</h1>
-        </a>
-        <p>It's not there quite yet</p>
-      </div>
-    </section> -->
     <section class="mt-2 card">
       <div class="card-header">
         <h2>Webring</h2>
