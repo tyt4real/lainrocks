@@ -125,6 +125,7 @@
           <div class="col-sm"><a href="https://sizeof.cat"><img class="banner" src="https://0x19.org/lainring/images/sizeofcat.gif" alt="sizeof(cat)"></a></div>
           <div class="col-sm"><a href="https://agoraroad.neocities.org/"><img alt="Agora Road" src="https://forum.agoraroad.com/index.php?media/240x60-banner.3433/full"></a></div>
           <div class="col-sm"><a href="https://lainchan.org/"><img style="max-height: 60px; max-width: 240px;" src="./lainchan_tech.png" alt="Tech Focused Alt-Chan"></a></div>
+          <div class="col-sm"><a href="https://churchofturing.github.io/" class="whitelink"><h3 class="glow">Church of Turing</h3></div>
         </div>
       </div>
     </section>
