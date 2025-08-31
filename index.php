@@ -75,9 +75,6 @@
           <div>
             <h2>Services</h2>
           </div>
-          <div>
-            <h2>v0.1</h2>
-          </div>
         </div>
       </div>
       <div class="card-body">
