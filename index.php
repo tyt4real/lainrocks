@@ -85,7 +85,7 @@
             <ul>
               <li>
                 Terms of service: click
-                <a href="https://lain.rocks/tos.html" target="_blank">here</a>.
+                <a href="https://lain.rocks/tos.html" target="_blank">here</a>; Или по-русски: <a href="https://lain.rocks/tos.ru.html" target="_blank">здесь</a>.
               </li>
               <li>
                 Converse.js XMPP web client: click
