@@ -50,7 +50,9 @@
                         $total = disk_total_space("/");
 
                         echo "Free disk space: " . $free . " ";
-                        echo "Total disk space: " . $total;
+                        echo "Total disk space: " . $total . " ";
+                        $percentage = ($free / $total) * 100;
+                        echo "Percent free: " . $percentage . "%";
                         ?>
                     </li>
                 </ul>
