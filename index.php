@@ -97,6 +97,9 @@
             </ul>
           </li>
           <li>
+            Server statistics: <a href="https://lain.rocks/serverstats.php">here</a>.
+          </li>
+          <li>
             Uptime page:
             <a href="https://stats.uptimerobot.com/6eWo4s81Co" target="_blank">here</a>.
           </li>
