@@ -66,7 +66,7 @@
     </section>
 
     <section id="announcements" class="mt-2 card">
-      <div class="announcement-card-header card-header">
+      <div class="card-header announcement-card-header">
             <h2>Announcements</h2>
       </div>
       <div class="card-body">
