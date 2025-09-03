@@ -41,6 +41,11 @@ ul {
   background-color: var(--background-dark);
 }
 
+.announcement-card-header {
+  color: #000;
+  background-color: var(--announcement-color);
+}
+
 .whitelink:link {
   color: white;
 }

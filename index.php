@@ -65,6 +65,18 @@
       </div>
     </section>
 
+    <section id="announcements" class="mt-2 card">
+      <div class="announcement-card-header card-header">
+            <h2>Announcements</h2>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>2.9.2025: Translated the XMPP/Jabber ToS to russian.
+          <li>3.9.2025: <i>lain.rocks</i> will be available through Tor in a few days: <a href="https://qayqietpoeqa3ghfvzzvgivp75qrijchcr2lf3k6ggotajmactvdl3ad.onion/">qayqietpoeqa3ghfvzzvgivp75qrijchcr2lf3k6ggotajmactvdl3ad.onion</a>. 
+        </ul>
+      </div>
+    </section>
+
     <section id="services" class="mt-2 card">
       <div class="card-header">
         <div class="d-flex justify-content-between">
