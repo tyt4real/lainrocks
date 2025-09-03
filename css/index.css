@@ -60,6 +60,16 @@ ul {
     0 0 40px #00746e;
 }
 
+.bottom-left-image {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+#lain {
+  width: auto;
+  height: 25%;
+}
 code {
   background: var(--border_color);
   border: 1px solid #ddd;

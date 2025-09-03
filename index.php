@@ -139,6 +139,7 @@
         </div>
       </div>
     </section>
+    <img src="./laintransparent.png" class="bottom-left-image" id="lain">
   </div>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
