@@ -67,12 +67,12 @@
 
     <section id="announcements" class="mt-2 card">
       <div class="card-header announcement-card-header">
-            <h2>Announcements</h2>
+        <h2>Announcements</h2>
       </div>
       <div class="card-body">
         <ul>
           <li>2.9.2025: Translated the XMPP/Jabber ToS to russian.
-          <li>3.9.2025: <i>lain.rocks</i> will be available through Tor in a few days: <a href="https://qayqietpoeqa3ghfvzzvgivp75qrijchcr2lf3k6ggotajmactvdl3ad.onion/">qayqietpoeqa3ghfvzzvgivp75qrijchcr2lf3k6ggotajmactvdl3ad.onion</a>. 
+          <li>3.9.2025: <i>lain.rocks</i> will be available through Tor in a few days: <a href="https://qayqietpoeqa3ghfvzzvgivp75qrijchcr2lf3k6ggotajmactvdl3ad.onion/">qayqietpoeqa3ghfvzzvgivp75qrijchcr2lf3k6ggotajmactvdl3ad.onion</a>.
         </ul>
       </div>
     </section>
@@ -131,9 +131,11 @@
           <div class="col-sm"><a href="https://haruhi.tv" target="_blank"><img src="https://haruhi.tv/img/fanclub.jpg" border="0" alt="ハルヒ特設ファンサイト"></a></div>
           <div class="col-sm"><a href="https://lain.la"><img class="banner" src="https://0x19.org/lainring/images/lain-la.png" alt="lain.la"></a></div>
           <div class="col-sm"><a href="https://sizeof.cat"><img class="banner" src="https://0x19.org/lainring/images/sizeofcat.gif" alt="sizeof(cat)"></a></div>
-          <div class="col-sm"><a href="https://agoraroad.neocities.org/"><img alt="Agora Road" src="https://forum.agoraroad.com/index.php?media/240x60-banner.3433/full"></a></div>
+          <div class="col-sm"><a href="https://agoraroad.neocities.org/"><img alt="Agora Road" src="./images/agorasecret.gif"></a></div>
           <div class="col-sm"><a href="https://lainchan.org/"><img style="max-height: 60px; max-width: 240px;" src="./lainchan_tech.png" alt="Tech Focused Alt-Chan"></a></div>
-          <div class="col-sm"><a href="https://churchofturing.github.io/" class="whitelink"><h3 class="glow">Church of Turing</h3></div>
+          <div class="col-sm"><a href="https://churchofturing.github.io/" class="whitelink">
+              <h3 class="glow">Church of Turing</h3>
+          </div>
         </div>
       </div>
     </section>
