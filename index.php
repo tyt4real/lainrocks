@@ -89,6 +89,9 @@
       <div class="card-body">
         <ul>
           <li>
+            Lainchan webring: <a href="./webring.php" target="_blank">here</a>.
+          </li>
+          <li>
             Public XMPP server: click
             <a href="https://lain.rocks/xmpp/register" target="_blank">here</a>. <a href='https://compliance.conversations.im/server/lain.rocks'><img src='https://compliance.conversations.im/badge/lain.rocks'></a>
             <ul>
@@ -113,14 +116,6 @@
             <a href="https://stats.uptimerobot.com/6eWo4s81Co" target="_blank">here</a>.
           </li>
         </ul>
-      </div>
-    </section>
-    <section class="mt-2 card">
-      <div class="card-header">
-        <h2>Webring</h2>
-      </div>
-      <div class="card-body" style="text-align: center">
-        <h1><a href="./webring.php" class="glow whitelink">You can view my copy of the lainchan webring here</a></h1>
       </div>
     </section>
     <section class="mt-2 card">
