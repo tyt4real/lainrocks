@@ -132,6 +132,7 @@
           <div class="col-sm"><a href="https://lainchan.org/"><img style="max-height: 60px; max-width: 240px;" src="./lainchan_tech.png" alt="Tech Focused Alt-Chan"></a></div>
           <div class="col-sm"><a href="https://churchofturing.github.io/" class="whitelink">
               <h3 class="glow">Church of Turing</h3>
+            </a>
           </div>
         </div>
       </div>
