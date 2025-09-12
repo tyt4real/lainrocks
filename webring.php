@@ -20,8 +20,8 @@
     <!-- <link href="./dist/config.css" rel="stylesheet" /> 
      <link href="./dist/index.css" rel="stylesheet" /> -->
 
-    <link href="https://lain.rocks/config.css" rel="stylesheet" />
-    <link href="https://lain.rocks/index.css" rel="stylesheet" />
+    <link href="./css/config.css" rel="stylesheet" />
+    <link href="./css/index.css" rel="stylesheet" />
 </head>
 
 <body>

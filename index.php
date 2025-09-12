@@ -93,15 +93,15 @@
           </li>
           <li>
             Public XMPP server: click
-            <a href="https://lain.rocks/xmpp/register" target="_blank">here</a>. <a href='https://compliance.conversations.im/server/lain.rocks'><img src='https://compliance.conversations.im/badge/lain.rocks'></a>
+            <a href="./xmpp/register" target="_blank">here</a>. <a href='https://compliance.conversations.im/server/lain.rocks'><img src='https://compliance.conversations.im/badge/lain.rocks'></a>
             <ul>
               <li>
                 Terms of service: click
-                <a href="https://lain.rocks/tos.html" target="_blank">here</a>; Или по-русски: <a href="https://lain.rocks/tos.ru.html" target="_blank">здесь</a>.
+                <a href="./tos.html" target="_blank">here</a>; Или по-русски: <a href="./tos.ru.html" target="_blank">здесь</a>.
               </li>
               <li>
                 Converse.js XMPP web client: click
-                <a href="https://lain.rocks/xmpp/conversejs/" target="_blank">here</a>.
+                <a href="./xmpp/conversejs/" target="_blank">here</a>.
               </li>
               <li>
                 The XMPP servers has a Biboumi IRC gateway available, a Telegram gateway will be available soon.
@@ -109,7 +109,7 @@
             </ul>
           </li>
           <li>
-            Server statistics: <a href="https://lain.rocks/serverstats.php">here</a>.
+            Server statistics: <a href="./serverstats.php">here</a>.
           </li>
           <li>
             Uptime page:
