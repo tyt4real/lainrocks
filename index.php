@@ -74,6 +74,7 @@
           <li>2.9.2025: Translated the XMPP/Jabber ToS to russian.
           <li>3.9.2025: <i>lain.rocks</i> will be available through Tor in a few days: <a href="https://qayqietpoeqa3ghfvzzvgivp75qrijchcr2lf3k6ggotajmactvdl3ad.onion/">qayqietpoeqa3ghfvzzvgivp75qrijchcr2lf3k6ggotajmactvdl3ad.onion</a>.
           <li>9.9.2025: Sorry for the downtime, money troubles.
+          <li>12.0.2025: Now available through Tor!
         </ul>
       </div>
     </section>
