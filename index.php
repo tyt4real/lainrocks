@@ -42,6 +42,11 @@
             </p>
           </li>
           <li>
+            <p>
+              Updates regarding onion URLs and critical information will be signed with my PGP key available <a href="./special/public.asc" target="_blank">here</a>
+            </p>
+          </li>
+          <li>
             The XMPP service we offer, has very simple rules. No illegal content under the US and Czech law; We store uploaded files for 30 days, and MUC messages for 7 days. The server runs on an updated, latest, Ubuntu VPS in the glorious Czech Republic. We keep backups, and have contingency plans to bring back service in case of problems. We <i>STRONGLY</i> advise you to use <i>YOUR OWN</i> end-to-end encryption. <i>NEVER</i> trust your provider, doesn't matter whether it's me or someone else, use OMEMO or PGP to keep your communications safe and private from the alphabet boys.
           </li>
           <li>
