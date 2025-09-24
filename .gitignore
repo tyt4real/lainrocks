@@ -476,3 +476,4 @@ phpinfo.php
 .vscode/*
 
 config.php
+lib/*
