@@ -145,7 +145,7 @@
     <section class="mt-2 card">
       <!-- im so sorry for adding this shit guys, im fucking poor -->
       <div class="card-header">
-        Donate
+        <h2>Donate</h2>
       </div>
       <div class="card-body">
         <ul>
