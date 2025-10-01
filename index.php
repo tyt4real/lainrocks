@@ -142,6 +142,18 @@
         </div>
       </div>
     </section>
+    <section class="mt-2 card">
+      <!-- im so sorry for adding this shit guys, im fucking poor -->
+      <div class="card-header">
+        Donate
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>Monero: 49tVNbmpCJCiGc9U1ihXGd6FKe91kvPqw35cM1SiqXMuWGB47HXHPiTLXmjenue14ZCMrg57Hi6Y1dovha91hGzoMYWjxQT</li>
+          <li>Bitcoin: bc1qh36va2zz2mmnktz8wtqt2szsqfkc38gmxg97ms</li>
+        </ul>
+      </div>
+    </section>
     <img src="./laintransparent.png" class="bottom-left-image" id="lain">
   </div>
   <script
