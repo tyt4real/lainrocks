@@ -46,7 +46,13 @@
                     <!-- Disk Space Usage -->
                     <li>
                         <?php
+                        $free = disk_free_space("/");
+                        $total = disk_total_space("/");
 
+                        echo "Free disk space: " . $free . " ";
+                        echo "Total disk space: " . $total . " ";
+                        $percentage = ($free / $total) * 100;
+                        echo "Percent free: " . $percentage . "%";
                         ?>
                         <img src="./scripts/diskspacechart.php"/>
                     </li>
