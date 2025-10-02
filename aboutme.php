@@ -19,8 +19,8 @@
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <!-- <link href="./dist/config.css" rel="stylesheet" /> 
      <link href="./dist/index.css" rel="stylesheet" /> -->
-  <link href="./css/config.css" rel="stylesheet" />
-  <link href="./css/index.css" rel="stylesheet" />
+    <link href="./css/config.css" rel="stylesheet" />
+    <link href="./css/index.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -118,6 +118,11 @@
                 </section>
             </div>
         </div>
+        <section class="mt-2 card">
+            <div class="card-body" style="text-align: center;">
+                <img src="./images/connectlain.jpg">
+            </div>
+        </section>
     </div>
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
