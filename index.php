@@ -57,7 +57,6 @@
           <li>
             <p>
               The working commit for this page is: <?php
-                                                    //64e8297
                                                     $fetchheadfile = './.git/FETCH_HEAD';
                                                     if (file_exists($fetchheadfile)) {
                                                       $headfile = file_get_contents($fetchheadfile);
