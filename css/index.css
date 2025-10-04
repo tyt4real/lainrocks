@@ -92,6 +92,12 @@ code {
   display: block;
   word-wrap: break-word;
 }
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .hide-on-mobile{
+     display: none;
+  }
+}
+
 input {
   display: block;
   margin-left: auto;

@@ -158,8 +158,8 @@
         </ul>
       </div>
     </section>
-    <img src="./laintransparent.png" class="bottom-left-image" id="lain">
-    <img src="./images/rei4th.png" class="bottom-right-image" style="width: auto; height: 70%;">
+    <img src="./laintransparent.png" class="bottom-left-image hide-on-mobile" id="lain">
+    <img src="./images/rei4th.png" class="bottom-right-image hide-on-mobile" style="width: auto; height: 70%;">
   </div>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
