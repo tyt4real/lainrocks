@@ -26,11 +26,6 @@
 
   <div id="app" class="container">
     <section class="mt-2 card">
-      <div class="card-body" style="text-align: center;">
-        <h2 style="top: 50; bottom: 50;">Happy 30th anniversary of the release of <h2 style="color: #ffcc00;">Neon Genesis Evangelion</h2></h2>
-      </div>
-    </section>
-    <section class="mt-2 card">
       <div class="card-header">
         <h2>Welcome to <i>lainrocks</i></h2>
       </div>
@@ -159,7 +154,6 @@
       </div>
     </section>
     <img src="./laintransparent.png" class="bottom-left-image hide-on-mobile" id="lain">
-    <img src="./images/rei4th.png" class="bottom-right-image hide-on-mobile" style="width: auto; height: 70%;">
   </div>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
