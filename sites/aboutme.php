@@ -16,11 +16,11 @@
         rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
         crossorigin="anonymous" />
-    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
     <!-- <link href="./dist/config.css" rel="stylesheet" /> 
      <link href="./dist/index.css" rel="stylesheet" /> -->
-    <link href="./css/config.css" rel="stylesheet" />
-    <link href="./css/index.css" rel="stylesheet" />
+    <link href="../css/config.css" rel="stylesheet" />
+    <link href="../css/index.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -111,7 +111,7 @@
                                 XMPP: <a href="xmpp:tyt4real@lain.rocks">tyt4real@lain.rocks</a> or <a href="xmpp:tyt4real@xmpp.jp">tyt4real@xmpp.jp</a>
                             </li>
                             <li>
-                                <a href="https://spyware.neocities.org/articles/discord.html"><img src="/images/discord-no-way-2.gif" alt="Discord? No way!"></a>
+                                <a href="https://spyware.neocities.org/articles/discord.html"><img src="../images/discord-no-way-2.gif" alt="Discord? No way!"></a>
                             </li>
                         </ul>
                     </div>
@@ -120,7 +120,7 @@
         </div>
         <section class="mt-2 card">
             <div class="card-body" style="text-align: center;">
-                <img src="./images/connectlain.jpg">
+                <img src="../images/connectlain.jpg">
             </div>
         </section>
     </div>

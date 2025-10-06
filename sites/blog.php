@@ -16,15 +16,15 @@
         rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
         crossorigin="anonymous" />
-    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
-    <link href="./css/config.css" rel="stylesheet" />
-    <link href="./css/index.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link href="../css/config.css" rel="stylesheet" />
+    <link href="../css/index.css" rel="stylesheet" />
 </head>
 
 <body>
     <?php
     // config
-    $directory = './blog';
+    $directory = '../blog';
     $extension = 'md';
 
 

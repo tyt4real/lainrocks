@@ -38,7 +38,7 @@
           </li>
           <li>
             <p>
-              If you would like to know who the person behind this site is, you can read <a href="./aboutme.php" target="_blank">here</a>.
+              If you would like to know who the person behind this site is, you can read <a href="./sites/aboutme.php" target="_blank">here</a>.
             </p>
           </li>
           <li>
@@ -94,7 +94,7 @@
       <div class="card-body">
         <ul>
           <li>
-            Lainchan webring: <a href="./webring.php" target="_blank">here</a>.
+            Lainchan webring: <a href="./sites/webring.php" target="_blank">here</a>.
           </li>
           <li>
             Public XMPP server: click
@@ -102,7 +102,7 @@
             <ul>
               <li>
                 Terms of service: click
-                <a href="./tos.html" target="_blank">here</a>; Или по-русски: <a href="./tos.ru.html" target="_blank">здесь</a>.
+                <a href="./sites/tos.html" target="_blank">here</a>; Или по-русски: <a href="./sites/tos.ru.html" target="_blank">здесь</a>.
               </li>
               <li>
                 Converse.js XMPP web client: click
@@ -114,7 +114,7 @@
             </ul>
           </li>
           <li>
-            Server statistics: <a href="./serverstats.php">here</a>.
+            Server statistics: <a href="./sites/serverstats.php">here</a>.
           </li>
           <li>
             Uptime page:
@@ -133,7 +133,7 @@
           <div class="col-sm"><a href="https://lain.la"><img class="banner" src="https://0x19.org/lainring/images/lain-la.png" alt="lain.la"></a></div>
           <div class="col-sm"><a href="https://sizeof.cat"><img class="banner" src="https://0x19.org/lainring/images/sizeofcat.gif" alt="sizeof(cat)"></a></div>
           <div class="col-sm"><a href="https://agoraroad.neocities.org/"><img alt="Agora Road" src="./images/agorasecret.gif"></a></div>
-          <div class="col-sm"><a href="https://lainchan.org/"><img style="max-height: 60px; max-width: 240px;" src="./lainchan_tech.png" alt="Tech Focused Alt-Chan"></a></div>
+          <div class="col-sm"><a href="https://lainchan.org/"><img style="max-height: 60px; max-width: 240px;" src="./images/lainchan_tech.png" alt="Tech Focused Alt-Chan"></a></div>
           <div class="col-sm"><a href="https://churchofturing.github.io/" class="whitelink">
               <h3 class="glow">Church of Turing</h3>
             </a>
@@ -153,7 +153,7 @@
         </ul>
       </div>
     </section>
-    <img src="./laintransparent.png" class="bottom-left-image hide-on-mobile" id="lain">
+    <img src="./images/laintransparent.png" class="bottom-left-image hide-on-mobile" id="lain">
   </div>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

@@ -16,12 +16,12 @@
         rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
         crossorigin="anonymous" />
-    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
     <!-- <link href="./dist/config.css" rel="stylesheet" /> 
      <link href="./dist/index.css" rel="stylesheet" /> -->
 
-    <link href="./css/config.css" rel="stylesheet" />
-    <link href="./css/index.css" rel="stylesheet" />
+    <link href="../css/config.css" rel="stylesheet" />
+    <link href="../css/index.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -38,7 +38,7 @@
                 // turn off warnings for undefined array keys so I can see actualy real issues
                 error_reporting(E_ALL);
                 //error_reporting(E_ERROR | E_PARSE | E_NOTICE);
-                $json = file_get_contents("lainring.json");
+                $json = file_get_contents("../special/lainring.json");
 
                 if ($json === false) {
                     echo "cannot open lainring.json";
@@ -72,7 +72,7 @@
                                 $lc = $value['url'];
                             }
                         }
-                        printf("<a href='%s' title='%s'><img class='banner' src='images/%s' alt='%s'></a>\n", $value['url'], htmlentities($lc), $value['img'], htmlentities($lc));
+                        printf("<a href='%s' title='%s'><img class='banner' src='../images/%s' alt='%s'></a>\n", $value['url'], htmlentities($lc), $value['img'], htmlentities($lc));
                     }
                 }
 
