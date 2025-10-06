@@ -59,6 +59,7 @@
         }
     }
     ?>
+    <div id="app" class="container">
     <header class="mt-2 card">
         <h2>Welcome to <i>lain.rocks</i>: The Blog</h2>
         <p>This is the place where we'll be posting out schizo ramblings and info about the site.</p>
@@ -73,6 +74,7 @@
             </div>
             </div>
         <?php endforeach; ?>
+    </div>
 </body>
 
 </html>
