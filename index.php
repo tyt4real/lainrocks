@@ -94,9 +94,9 @@
       </div>
       <div class="card-body">
         <ul>
-          <li>
+          <!-- <li>
             Lainchan webring: <a href="./sites/webring.php" target="_blank">here</a>.
-          </li>
+          </li> -->
           <li>
             Public XMPP server: click
             <a href="./xmpp/register" target="_blank">here</a>. <a href='https://compliance.conversations.im/server/lain.rocks'><img src='https://compliance.conversations.im/badge/lain.rocks'></a> <a href="https://providers.xmpp.net/provider/lain.rocks/"><img alt="lain.rocks badge" src="https://data.xmpp.net/providers/v2/badges/lain.rocks.svg"></a>
