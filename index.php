@@ -127,7 +127,7 @@
         </ul>
       </div>
     </section>
-    <section class="mt-2 card">
+    <!-- <section class="mt-2 card">
       <div class="card-header">
         <h2>Stuff I like :3</h2>
       </div>
@@ -144,7 +144,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <section class="mt-2 card">
       <!-- im so sorry for adding this shit guys, im fucking poor -->
       <div class="card-header">
