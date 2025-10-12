@@ -158,16 +158,18 @@
       </div>
     </section>
     <img src="./images/laintransparent.png" class="bottom-left-image hide-on-mobile" id="lain">
+    <footer>
+      <div style="text-align: center; bottom: 0;">
+        <p>Let's all love Lain. Copyleft 2025</p>
+        <p>For all abuse complaints, contact us here: <a href="mailto:tyt4real@protonmail.com">tyt4real@protonmail.com</a></p>
+      </div>
+
+    </footer>
   </div>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
-
-  <!-- <div class="footer">
-  <h4>Let's all love Lain (c) 2025</h4>
-  <p>For all service abuse compaints, contact me here: <a href="mailto:tyt4real@protonmail.com">tyt4real@protonmail.com</a> ; if you see something, say something.</p>
-</div> -->
 </body>
 
 </html>

@@ -93,8 +93,8 @@ code {
   word-wrap: break-word;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-  .hide-on-mobile{
-     display: none;
+  .hide-on-mobile {
+    display: none;
   }
 }
 
@@ -102,13 +102,4 @@ input {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-.footer {
-  background-color: var(--background-dark);
-  color: var(--font_color);
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
 }
