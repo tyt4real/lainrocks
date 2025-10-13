@@ -76,7 +76,7 @@
       <div class="card-body">
         <ul>
           <li>2.9.2025: Translated the XMPP/Jabber ToS to russian.
-          <li>3.9.2025: <i>lain.rocks</i> will be available through Tor in a few days: <a href="https://qayqietpoeqa3ghfvzzvgivp75qrijchcr2lf3k6ggotajmactvdl3ad.onion/">qayqietpoeqa3ghfvzzvgivp75qrijchcr2lf3k6ggotajmactvdl3ad.onion</a>.
+          <li>3.9.2025: <i>lain.rocks</i> will be available through Tor in a few days: <a href="https://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/">lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion</a>.
           <li>9.9.2025: Sorry for the downtime, money troubles.
           <li>12.9.2025: Now available through Tor!
           <li>6.10.2025: We now have a blog available here: <a href="./sites/blog.php">click :3</a>.
