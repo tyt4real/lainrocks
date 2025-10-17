@@ -1,0 +1,22 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+The only Tor adress for this website is:
+
+lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion
+
+~ The lain.rocks administration; 13.10.2025 22:49
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEiGmuthqyXUwjR9SqHLJ0jY1t7Z8FAmjtZfQACgkQHLJ0jY1t
+7Z8Y9gv/Q0cxx16ZSu300Axs2TsXMGFliDhbpbciLfGExe7Fl126pTTkVmXu1rE7
+k5ikV00+oJ7P63Ebo5f3rP2eUCR9XDGN/RNQ6dNG8rm9PxvgYZcs/2UsnbFRGHPL
+dCRIfX/PCAgYuKgX9a4ubHneMxqaKUipoejUvQysqsIDzv9eS1NqX1Jjg7WqMskm
+OHf4woWbtyr5Gj2Ep/hO0RfWoNuFyQ8pyE8FAVJo66juZIwzxj8pWqHMM4l10yJ7
+ILaBA3mgsCsUKewKWkAULdKeqqqLh5Tx7KrZoD1t8mKBJIJfvmOXJRhqIuy2lHth
+b/ojOy+M7E/nPK5DsLAWDDkFx7tr2Qlc73Oh/m+5SdRt1rGQlxP4JU5iHxQGnHmt
+ryHTQyJIpo6xmqRiQ2/va8RlXgmVz4syYMfGXULeMV4zUooBdRFy50zy3+uBbuuX
+346Nq+cMBJVka6AsnFZYLCY6glnJiO1m92wkVt2b/zHps0YFBShmi9/LHb/N6o+F
+J8Kxrgyi
+=5Md7
+-----END PGP SIGNATURE-----
