@@ -12,7 +12,7 @@
 
   <title>lain.rocks | Home</title>
   <link href="./css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
   <link href="./css/config.css" rel="stylesheet" />
   <link href="./css/index.css" rel="stylesheet" />
 </head>
