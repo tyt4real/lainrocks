@@ -20,6 +20,11 @@ ul {
   list-style-type: square;
 }
 
+#navbar {
+  border-color: var(--border_color);
+  text-align: center;
+}
+
 .container {
   border-color: var(--border_color) !important;
 }

@@ -23,8 +23,16 @@
     <p>The (hopefully) cool place on the internet</p>
     <p>「どこに行ったって、人はつながっているのよ。」</p>
   </header>
-
   <div id="app" class="container">
+    <div style="text-align: center">
+      <div id="navbar" class="content">
+        <div class="mt-2 card">
+          <div class="card-body">
+            <a href="./xmpp/register" target="_blank">XMPP Server</a> | <a href="./xmpp/conversejs/" target="_blank">Converse.js</a> | <a href="./sites/blog.php" target="_blank">Blog</a> | <a href="./sites/tos.html" target="_blank">Terms Of Service [EN]</a> | <a href="./sites/tos.ru.html" target="_blank">Terms Of Service [RU]</a> | <a href="./sites/serverstats.php" target="_blank">Server Statistics</a> | <a href="https://stats.uptimerobot.com/6eWo4s81Co" target="_blank">Uptime Monitoring</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <section class="mt-2 card">
       <div class="card-header">
         <h2>Welcome to <i>lainrocks</i></h2>
@@ -48,6 +56,13 @@
           </li>
           <li>
             The XMPP service we offer, has very simple rules. No illegal content under the US and Czech law; We store uploaded files for 30 days, and MUC messages for 7 days. The server runs on an updated, latest, Ubuntu VPS in the glorious Czech Republic. We keep backups, and have contingency plans to bring back service in case of problems. We <i>STRONGLY</i> advise you to use <i>YOUR OWN</i> end-to-end encryption. <i>NEVER</i> trust your provider, doesn't matter whether it's me or someone else, use OMEMO or PGP to keep your communications safe and private from the alphabet boys.
+            Our XMPP server has a Biboumi IRC gateway and a Telegram gateway will be available soon.
+            Here are some badges to learn more about the service:
+            <ul>
+              <li><a href='https://compliance.conversations.im/server/lain.rocks'><img src='https://compliance.conversations.im/badge/lain.rocks'></a></li>
+              <li><a href="https://providers.xmpp.net/provider/lain.rocks/"><img alt="lain.rocks badge" src="https://data.xmpp.net/providers/v2/badges/lain.rocks.svg"></a></li>
+              <li><a href="https://xmppnetwork.goodbytes.im"><img alt="lain.rocks badge" src="https://xmppnetwork.goodbytes.im/badge/lain.rocks.svg"></a></li>
+            </ul>
           </li>
           <li>
             <p>
@@ -84,7 +99,7 @@
       </div>
     </section>
 
-    <section id="services" class="mt-2 card">
+    <!-- <section id="services" class="mt-2 card">
       <div class="card-header">
         <div class="d-flex justify-content-between">
           <div>
@@ -94,12 +109,12 @@
       </div>
       <div class="card-body">
         <ul>
-          <!-- <li>
+           <li>
             Lainchan webring: <a href="./sites/webring.php" target="_blank">here</a>.
-          </li> -->
+          </li>
           <li>
             Public XMPP server: click
-            <a href="./xmpp/register" target="_blank">here</a>. <a href='https://compliance.conversations.im/server/lain.rocks'><img src='https://compliance.conversations.im/badge/lain.rocks'></a> <a href="https://providers.xmpp.net/provider/lain.rocks/"><img alt="lain.rocks badge" src="https://data.xmpp.net/providers/v2/badges/lain.rocks.svg"></a><a href="https://xmppnetwork.goodbytes.im"><img alt="lain.rocks badge" src="https://xmppnetwork.goodbytes.im/badge/lain.rocks.svg"></a>
+            <a href="./xmpp/register" target="_blank">here</a>.
             <ul>
               <li>
                 Terms of service: click
@@ -126,7 +141,7 @@
           </li>
         </ul>
       </div>
-    </section>
+    </section> -->
     <!-- <section class="mt-2 card">
       <div class="card-header">
         <h2>Stuff I like :3</h2>
