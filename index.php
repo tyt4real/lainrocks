@@ -28,7 +28,7 @@
       <div id="navbar" class="content">
         <div class="mt-2 card">
           <div class="card-body">
-            <a href="./xmpp/register" target="_blank">XMPP Server</a> | <a href="./xmpp/conversejs/" target="_blank">Converse.js</a> | <a href="./sites/blog.php" target="_blank">Blog</a> | <a href="./sites/tos.html" target="_blank">Terms Of Service [EN]</a> | <a href="./sites/tos.ru.html" target="_blank">Terms Of Service [RU]</a> | <a href="./sites/serverstats.php" target="_blank">Server Statistics</a> | <a href="https://stats.uptimerobot.com/6eWo4s81Co" target="_blank">Uptime Monitoring</a>
+            <a href="./xmpp/register" target="_blank">XMPP Server</a> | <a href="./xmpp/conversejs/" target="_blank">Converse.js</a> | <a href="./sites/blog.php" target="_blank">Blog</a> | <a href="./searxng" target="_blank">SearXNG</a> | <a href="./sites/tos.html" target="_blank">Terms Of Service [EN]</a> | <a href="./sites/tos.ru.html" target="_blank">Terms Of Service [RU]</a> | <a href="./sites/serverstats.php" target="_blank">Server Statistics</a> | <a href="https://stats.uptimerobot.com/6eWo4s81Co" target="_blank">Uptime Monitoring</a>
           </div>
         </div>
       </div>
@@ -95,6 +95,7 @@
           <li>9.9.2025: Sorry for the downtime, money troubles.
           <li>12.9.2025: Now available through Tor!
           <li>6.10.2025: We now have a blog available here: <a href="./sites/blog.php">click :3</a>.
+          <li>21.10.2025: We now offer a free and public SearXNG instance!
         </ul>
       </div>
     </section>
