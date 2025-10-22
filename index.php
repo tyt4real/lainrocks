@@ -7,7 +7,7 @@
   <meta
     name="description"
     content="lain.rocks, the c00l place on the internet" />
-  <meta name="keywords" content="lain" />
+  <meta name="keywords" content="lain, xmpp, xmpp server, im" />
   <meta name="author" content="tyt4real" />
 
   <title>lain.rocks | Home</title>
