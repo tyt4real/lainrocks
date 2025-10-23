@@ -96,6 +96,7 @@
           <li>12.9.2025: Now available through Tor!
           <li>6.10.2025: We now have a blog available here: <a href="./sites/blog.php">click :3</a>.
           <li>21.10.2025: We now offer a free and public SearXNG instance!
+          <li>23.10.2025: Now connections to XMPP over Tor are possible on this onion address: 26cp7rchjrhtet4jbcijs5oxtfu52w435f4swmya7p6xr4xxxdqx23yd.onion
         </ul>
       </div>
     </section>
