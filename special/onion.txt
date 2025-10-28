@@ -20,3 +20,27 @@ ryHTQyJIpo6xmqRiQ2/va8RlXgmVz4syYMfGXULeMV4zUooBdRFy50zy3+uBbuuX
 J8Kxrgyi
 =5Md7
 -----END PGP SIGNATURE-----
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Since 28.10.2025 we offer services on two onion addresses:
+
+lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion for connecting to the website
+26cp7rchjrhtet4jbcijs5oxtfu52w435f4swmya7p6xr4xxxdqx23yd.onion for connecting to the XMPP server
+
+those are the only official lain.rocks tor addresses.
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEiGmuthqyXUwjR9SqHLJ0jY1t7Z8FAmkAv3QACgkQHLJ0jY1t
+7Z8woAv/ZgoXDnLOZR5UbZxGihBOdHdOum6xNkmbc6J2ATdAe7bAVn56V9VsVc+Q
+F03txK8m7ODeta2EbLOElAD69Hw9+MnT7cOK9W6B9CinyPXckjE3V1yQEYWKirn/
+78rAHwggfUIVBOSL3Iqp3EGusUcQmmZNVet6X7Tx/5gYugoqYoF37jGldDJQpf0o
+1OAsoJ5pvkZLm2mEYosMccPgHVZSVp3UUIb6JtgRE4O7b9fVLJvGyqYmhPC8NFLZ
+7z/CjBoIk7JXm6L8AQEUNUzCADfGhDKuNCcA2VQ639QbirRrHDAu01JvKPlv5Tjb
+nnxuIFyDHB03qrhReEFW0kegwchQEr5uqQzWmOUqGaPJm3sYqn7OS4AIigIo3tWq
+/k7Puro6pHmj4CeKQ2lhmsEu19UNvEYI9ZjIXXk4JNsWukTqTyA99TpDGM/B+aNV
+XV2bJDOwW3vApIlIaX2/7VgxR46OBl87J8g4woKGYIU1RNA0f5Kb82UONdwrK5C+
+5mHcYG0K
+=/8Yc
+-----END PGP SIGNATURE-----
