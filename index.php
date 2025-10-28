@@ -46,6 +46,11 @@
           </li>
           <li>
             <p>
+              To consult the list of official onion links, please visit the canary: <a href="./special/onion.txt">here</a>
+            </p>
+          </li>
+          <li>
+            <p>
               If you would like to know who the person behind this site is, you can read <a href="./sites/aboutme.php" target="_blank">here</a>.
             </p>
           </li>
