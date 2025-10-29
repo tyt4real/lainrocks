@@ -18,11 +18,13 @@
 </head>
 
 <body>
-  <header class="mt-2 card">
+  <script src="./js/styleinit.js"></script>
+  <script src="./js/themeManager.js"></script>
+  <div id="header">
     <h1 id="shit">lain.rocks</h1>
     <p>The (hopefully) cool place on the internet</p>
     <p>「どこに行ったって、人はつながっているのよ。」</p>
-  </header>
+  </div>
   <div id="app" class="container">
     <div style="text-align: center">
       <div id="navbar" class="content">
@@ -185,7 +187,12 @@
         <p>Let's all love Lain. Copyleft 2025</p>
         <p>For all abuse complaints, contact us here: <a href="mailto:tyt4real@protonmail.com">tyt4real@protonmail.com</a></p>
       </div>
-
+      <div class="theme-selector">
+        <select id="theme-select">
+          <option value="lainrocks">Default lainrocks</option>
+          <option value="yotsuba">Yotsuba</option>
+        </select>
+      </div>                         
     </footer>
   </div>
 </body>

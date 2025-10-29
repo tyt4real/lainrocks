@@ -1,4 +1,8 @@
 :root {
+/*   color-scheme: #DBC2BEff;
+  background-color: #111;
+  color: #DBC2BEff;
+  border-color: #6E6667ff; */
   --font_color: #DBC2BEff;
   --link_color: #7dc0d4;
   --link_color_hover: #6094a3;
@@ -9,6 +13,33 @@
   --border_color: #6E6667ff;
   --form_control_bg: #222222;
   --announcement-color: #b5a748;
+}
+/* default theme */
+:root[data-theme="lainrocks"] {
+  --font_color: #DBC2BEff;
+  --link_color: #7dc0d4;
+  --link_color_hover: #6094a3;
+  --font_color_shaded: #765A57ff;
+  --background: #111;
+  --background-light: #0e0e0e;
+  --background-dark:  #022b2a;
+  --border_color: #6E6667ff;
+  --form_control_bg: #222222;
+  --announcement-color: #b5a748;
+}
+/* yotsuba */
+:root[data-theme="yotsuba"] {
+  --background-dark: #f0e0d6;
+  --background-light: #ffffee;
+  --border_color: #d9bfb7;
+  --font_color: #800000;
+  --quote_text: #789922;
+  --link_color: #0000ee;
+
+  body {
+	  background: #ffe url('img/fade-yotsuba.png') repeat-x 50% 0%;
+	  color: #800000;
+  }
 }
 
 .banner {
