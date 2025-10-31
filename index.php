@@ -30,7 +30,7 @@
       <div id="navbar" class="content">
         <div class="mt-2 card">
           <div class="card-body">
-            <a href="./xmpp/register" target="_blank">XMPP Server</a> | <a href="./xmpp/conversejs/" target="_blank">Converse.js</a> | <a href="./sites/blog.php" target="_blank">Blog</a> | <a href="./searxng" target="_blank">SearXNG</a> | <a href="./sites/tos.html" target="_blank">Terms Of Service [EN]</a> | <a href="./sites/tos.ru.html" target="_blank">Terms Of Service [RU]</a> | <a href="./sites/serverstats.php" target="_blank">Server Statistics</a> | <a href="https://stats.uptimerobot.com/6eWo4s81Co" target="_blank">Uptime Monitoring</a>
+            <a href="./xmpp/register" target="_blank">XMPP Server</a> | <a href="./xmpp/conversejs/" target="_blank">Converse.js</a> | <a href="./sites/blog.php" target="_blank">Blog</a> | <a href="./searxng" target="_blank">SearXNG</a> | <a href="./sites/tos.html" target="_blank">Terms Of Service [EN]</a> | <a href="./sites/tos.ru.html" target="_blank">Terms Of Service [RU]</a> | <a href="./sites/serverstats.php" target="_blank">Server Statistics</a> | <a href="https://stats.uptimerobot.com/6eWo4s81Co" target="_blank">Uptime Monitoring | <a href="./sites/repositories.php">LainOS Repositories</a>
           </div>
         </div>
       </div>
