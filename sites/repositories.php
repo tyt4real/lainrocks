@@ -56,7 +56,7 @@
                         <td>Wired Repo</td>
                         <td><a href="https://lain.rocks/repos/wired/">https://lain.rocks/repos/wired/</a></td>
                         <td><a href="https://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/wired/">https://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/wired/</a></td>
-                        <td>Repository for the hacking tools provided with LainOS</td>
+                        <td>Repository for the pentesting tools provided with LainOS</td>
                         <td><?php echo checkSiteStatus("https://lain.rocks/repos/wired/"); ?></td>
                     </tr>
                     <tr>
