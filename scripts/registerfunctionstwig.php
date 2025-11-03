@@ -3,13 +3,11 @@ function registerWithTwig()
 {
     $twig = require __DIR__ . '/twigInstance.php';
 
-    // Register Twig function "test"
     $twig->addFunction(new \Twig\TwigFunction('renderBlog', function () {
         // config
         $directory = '../blog';
         $extension = 'md';
 
-        // local helper
         if (!function_exists('parseMarkdown')) {
             function parseMarkdown(string $text): string
             {
