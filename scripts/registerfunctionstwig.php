@@ -57,5 +57,19 @@ function registerWithTwig() {
         return $output; // ✅ Return instead of echo
     }, ['is_safe' => ['html']]));
 
+    $twig->addFunction(new \Twig\TwigFunction('isSiteOnline', function($url) {
+                $host = parse_url($url, PHP_URL_HOST);
+                if (!$host || !checkdnsrr($host, 'A')) {
+                    echo '❌';
+                }
+
+                $fp = @fsockopen($host, 80, $errno, $errstr, 5);
+                if (!$fp) {
+                    echo '❌';
+                }
+                fclose($fp);
+                echo '✅';
+    }));
+
     return $twig;
 }
