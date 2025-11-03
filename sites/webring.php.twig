@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Lainring{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <!-- empty -->
+{% endblock %}
+{% block content %}
+    <div id="app" class="container">
+        <section class="mt-2 card">
+            <div class="card-header">
+                <h2>Lainring</h2>
+            </div>
+            <div class="card-body">
+                {{ renderLainring() }}
+                <p>I stole this version of the webring from <a href="https://0x19.org/">0x19.org</a>, in the future I plan to maintain my own version of the webring :3</p>
+            </div>
+        </section>
+{% endblock %}

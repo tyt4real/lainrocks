@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Repositories{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <!-- empty -->
+{% endblock %}
+{% block content %}
+<div id="app" class="container">
+            <section class="mt-2 card">
+            <div class="card-header">
+                <h2>LainOS software mirror list</h2>
+            </div>
+            <div class="card-body">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Mirror URL</th>
+                        <th>Tor Mirror URL</th>
+                        <th>Description</th>
+                        <th>Is online?</th>
+                    </tr>
+                    <tr>
+                        <td>Wired Repo</td>
+                        <td><a href="https://lain.rocks/repos/wired/">https://lain.rocks/repos/wired/</a></td>
+                        <td><a href="https://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/wired/">https://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/wired/</a></td>
+                        <td>Repository for the pentesting tools provided with LainOS</td>
+                        <td>{{ isSiteOnline('https://lain.rocks/repos/wired') }}</td>
+                    </tr>
+                    <tr>
+                        <td>Lain Repo</td>
+                        <td><a href="https://lain.rocks/repos/lain/">https://lain.rocks/repos/lain/</a></td>
+                        <td><a href="https://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/lain/">https://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/lain/</a></td>
+                        <td>Repository for the general software running on LainOS</td>
+                        <td>{{ isSiteOnline('https://lain.rocks/repos/lain') }}</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        </div>
+{% endblock %}

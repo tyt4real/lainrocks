@@ -1,11 +1,79 @@
-html,
-body {
-  color-scheme: var(--font_color);
-  background-color: var(--background);
-  color: var(--font_color);
-  border-color: var(--border_color);
+/* =======================
+   Root: Default Variables
+======================= */
+:root {
+  --font_color: #DBC2BEff;
+  --link_color: #7dc0d4;
+  --link_color_hover: #6094a3;
+  --font_color_shaded: #765A57ff;
+  --background: #111;
+  --background-light: #0e0e0e;
+  --background-dark: #022b2a;
+  --border_color: #6E6667ff;
+  --form_control_bg: #222222;
+  --announcement-color: #b5a748;
+  --show-lain: block;
+  --show-yotsuba: none;
 }
 
+/* =======================
+   Lainrocks Theme
+======================= */
+:root[data-theme="lainrocks"] {
+  --font_color: #DBC2BEff;
+  --link_color: #7dc0d4;
+  --link_color_hover: #6094a3;
+  --font_color_shaded: #765A57ff;
+  --background: #111;
+  --background-light: #0e0e0e;
+  --background-dark: #022b2a;
+  --border_color: #6E6667ff;
+  --form_control_bg: #222222;
+  --announcement-color: #b5a748;
+  --show-lain: block;
+  --show-yotsuba: none;
+}
+
+/* =======================
+   Yotsuba Theme
+======================= */
+:root[data-theme="yotsuba"] {
+  --background: #ffffee;
+  --background-light: #ffffee;
+  --background-dark: #f0e0d6;
+  --font_color: #800000;
+  --border_color: #d9bfb7;
+  --link_color: #0000ee;
+  --link_color_hover: #5555ff;
+  --quote_text: #789922;
+  --announcement-color: #b5a748;
+  --show-lain: none;
+  --show-yotsuba: block;
+}
+
+/* =======================
+   Base Body and Typography
+======================= */
+body {
+  background-color: var(--background);
+  color: var(--font_color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--link_color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link_color_hover);
+}
+
+/* =======================
+   Header & Navbar
+======================= */
 #header {
   width: 50%;
   padding: 20px;
@@ -14,15 +82,14 @@ body {
   text-align: center;
 }
 
-ul {
-  list-style-type: square;
-}
-
 #navbar {
   border-color: var(--border_color);
   text-align: center;
 }
 
+/* =======================
+   Containers & Content
+======================= */
 .container {
   border-color: var(--border_color) !important;
 }
@@ -30,8 +97,12 @@ ul {
 .content {
   margin-top: 20px;
   text-align: center;
+  flex: 1; /* push footer down if using flex layout */
 }
 
+/* =======================
+   Cards
+======================= */
 .card {
   color: var(--font_color);
   background-color: var(--background-light);
@@ -48,20 +119,35 @@ ul {
   background-color: var(--announcement-color);
 }
 
-.whitelink:link {
-  color: white;
-}
-
+/* =======================
+   Links
+======================= */
+.whitelink:link,
 .whitelink:visited {
   color: white;
 }
 
+/* =======================
+   Special Effects
+======================= */
 #shit {
   font-family: "Lucida Console", "Courier New", monospace;
   text-shadow: 0 0 10px #00746e, 0 0 20px #00746e, 0 0 30px #00746e,
     0 0 40px #00746e;
 }
 
+.banner {
+  width: 240px;
+  height: 60px;
+}
+
+.glow {
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00e600;
+}
+
+/* =======================
+   Positioning
+======================= */
 .bottom-left-image {
   position: fixed;
   bottom: 0;
@@ -74,19 +160,59 @@ ul {
   right: 0;
 }
 
+.theme-selector {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
 #lain {
+  display: var(--show-lain);
   width: auto;
   height: 25%;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-  .hide-on-mobile {
-    display: none;
-  }
+#yotsuba {
+  display: var(--show-yotsuba);
+  width: auto;
+  height: 25%;
 }
 
 input {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* =======================
+   Footer
+======================= */
+footer {
+  position: fixed;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  background-color: var(--background-dark);
+  color: var(--font_color);
+  text-align: center;
+  padding: 10px 0;
+  transition: bottom 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+footer.show {
+  bottom: 0;
+}
+
+/* =======================
+   Misc
+======================= */
+ul {
+  list-style-type: square;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .hide-on-mobile {
+    display: none;
+  }
 }

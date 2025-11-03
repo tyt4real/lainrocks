@@ -1,0 +1,14 @@
+{
+    "name": "tyt4real/lainrocks",
+    "type": "project",
+    "require": {
+        "twig/twig": "^3.22"
+    },
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "tyt4real",
+            "email": "tyt4real@protonmail.com"
+        }
+    ]
+}

@@ -1,0 +1,151 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <!--empty for now lol-->
+{% endblock %}
+{% block content %}
+  <div id="header">
+    <h1 id="shit">lain.rocks</h1>
+    <p>The (hopefully) cool place on the internet</p>
+    <p>「どこに行ったって、人はつながっているのよ。」</p>
+  </div>
+  <div id="app" class="container">
+   {{ renderNavbar() }}
+    <section class="mt-2 card">
+      <div class="card-header">
+        <h2>Welcome to <i>lainrocks</i></h2>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>
+            <p>
+              The current state of this website is purely temporary, it will be changing often.
+            </p>
+          </li>
+          <li>
+            <p>
+              To consult the list of official onion links, please visit the canary: <a href="./special/onion.txt">here</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              If you would like to know who the person behind this site is, you can read <a href="https://lain.rocks/?page=about" target="_blank">here</a>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Updates regarding onion URLs and critical information will be signed with my PGP key available <a href="./special/public.asc" target="_blank">here</a>
+            </p>
+          </li>
+          <li>
+            The XMPP service we offer, has very simple rules. No illegal content under the US and Czech law; We store uploaded files for 30 days, and MUC messages for 7 days. The server runs on an updated, latest, Ubuntu VPS in the glorious Czech Republic. We keep backups, and have contingency plans to bring back service in case of problems. We <i>STRONGLY</i> advise you to use <i>YOUR OWN</i> end-to-end encryption. <i>NEVER</i> trust your provider, doesn't matter whether it's me or someone else, use OMEMO or PGP to keep your communications safe and private from the alphabet boys.
+            Our XMPP server has a Biboumi IRC gateway and a Telegram gateway will be available soon.
+            Here are some badges to learn more about the service:
+            <ul>
+              <li><a href='https://compliance.conversations.im/server/lain.rocks'><img src='https://compliance.conversations.im/badge/lain.rocks'></a></li>
+              <li><a href="https://providers.xmpp.net/provider/lain.rocks/"><img alt="lain.rocks badge" src="https://data.xmpp.net/providers/v2/badges/lain.rocks.svg"></a></li>
+              <li><a href="https://xmppnetwork.goodbytes.im"><img alt="lain.rocks badge" src="https://xmppnetwork.goodbytes.im/badge/lain.rocks.svg"></a></li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              The working commit for this page is: {{ checkCommit() }}</p>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section id="announcements" class="mt-2 card">
+      <div class="card-header announcement-card-header">
+        <h2>Announcements</h2>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>2.9.2025: Translated the XMPP/Jabber ToS to russian.
+          <li>3.9.2025: <i>lain.rocks</i> will be available through Tor in a few days: <a href="https://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/">lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion</a>.
+          <li>9.9.2025: Sorry for the downtime, money troubles.
+          <li>12.9.2025: Now available through Tor!
+          <li>6.10.2025: We now have a blog available here: <a href="https://lain.rocks/?page=blog">click :3</a>.
+          <li>21.10.2025: We now offer a free and public SearXNG instance!
+          <li>23.10.2025: Now connections to XMPP over Tor are possible on this onion address: 26cp7rchjrhtet4jbcijs5oxtfu52w435f4swmya7p6xr4xxxdqx23yd.onion
+        </ul>
+      </div>
+    </section>
+
+    <!-- <section id="services" class="mt-2 card">
+      <div class="card-header">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h2>Services</h2>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <ul>
+           <li>
+            Lainchan webring: <a href="./sites/webring.php" target="_blank">here</a>.
+          </li>
+          <li>
+            Public XMPP server: click
+            <a href="./xmpp/register" target="_blank">here</a>.
+            <ul>
+              <li>
+                Terms of service: click
+                <a href="./sites/tos.html" target="_blank">here</a>; Или по-русски: <a href="./sites/tos.ru.html" target="_blank">здесь</a>.
+              </li>
+              <li>
+                Converse.js XMPP web client: click
+                <a href="./xmpp/conversejs/" target="_blank">here</a>.
+              </li>
+              <li>
+                The XMPP servers has a Biboumi IRC gateway available, a Telegram gateway will be available soon.
+              </li>
+            </ul>
+          </li>
+          <li>
+            The lain.rocks blog: <a href="./sites/blog.php" target="_blank">here</a>
+          </li>
+          <li>
+            Server statistics: <a href="./sites/serverstats.php">here</a>.
+          </li>
+          <li>
+            Uptime page:
+            <a href="https://stats.uptimerobot.com/6eWo4s81Co" target="_blank">here</a>.
+          </li>
+        </ul>
+      </div>
+    </section> -->
+    <!-- <section class="mt-2 card">
+      <div class="card-header">
+        <h2>Stuff I like :3</h2>
+      </div>
+      <div class="card-body" style="text-align: center;">
+        <div class="row">
+          <div class="col-sm"><a href="https://haruhi.tv" target="_blank"><img src="https://haruhi.tv/img/fanclub.jpg" border="0" alt="ハルヒ特設ファンサイト"></a></div>
+          <div class="col-sm"><a href="https://lain.la"><img class="banner" src="https://0x19.org/lainring/images/lain-la.png" alt="lain.la"></a></div>
+          <div class="col-sm"><a href="https://sizeof.cat"><img class="banner" src="https://0x19.org/lainring/images/sizeofcat.gif" alt="sizeof(cat)"></a></div>
+          <div class="col-sm"><a href="https://agoraroad.neocities.org/"><img alt="Agora Road" src="./images/agorasecret.gif"></a></div>
+          <div class="col-sm"><a href="https://lainchan.org/"><img style="max-height: 60px; max-width: 240px;" src="./images/lainchan_tech.png" alt="Tech Focused Alt-Chan"></a></div>
+          <div class="col-sm"><a href="https://churchofturing.github.io/" class="whitelink">
+              <h3 class="glow">Church of Turing</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <section class="mt-2 card">
+      <!-- im so sorry for adding this shit guys, im fucking poor -->
+      <div class="card-header">
+        <h2>Donate</h2>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>Monero: 49tVNbmpCJCiGc9U1ihXGd6FKe91kvPqw35cM1SiqXMuWGB47HXHPiTLXmjenue14ZCMrg57Hi6Y1dovha91hGzoMYWjxQT</li>
+          <li>Bitcoin: bc1qh36va2zz2mmnktz8wtqt2szsqfkc38gmxg97ms</li>
+        </ul>
+      </div>
+    </section>
+{% endblock %}
