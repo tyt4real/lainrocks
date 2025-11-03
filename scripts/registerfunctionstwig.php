@@ -93,5 +93,101 @@ function registerWithTwig() {
 
     echo $output;
     }));
+
+    $twig->addFunction(new \Twig\TwigFunction('renderLainring', function() {
+                // turn off warnings for undefined array keys so I can see actualy real issues
+                error_reporting(E_ALL);
+                //error_reporting(E_ERROR | E_PARSE | E_NOTICE);
+                $json = file_get_contents("special/lainring.json");
+
+                if ($json === false) {
+                    echo "cannot open lainring.json";
+                    exit;
+                }
+
+                $data = json_decode($json, true);
+
+                if ($data === null) {
+                    echo "cannot decode lainring.json";
+                    exit;
+                }
+
+
+                printf("<p> Last updated: %s</p>", gmdate("Y-m-d\TH:i:s+00:00", $data["updated"]));
+
+                printf("<h2>www</h2>\n");
+
+                foreach ($data['items'] as $key => $value) {
+                    if ($value['online'] == "true") {
+                        if (array_key_exists('locale', $value)) {
+                            if ($value['title'] !== null) {
+                                $lc = $value['title'] . " [" . $value['locale'] . "]";
+                            } else {
+                                $lc = $value['url'] . " [" . $value['locale'] . "]";
+                            }
+                        } else {
+                            if ($value['title'] !== null) {
+                                $lc = $value['title'];
+                            } else {
+                                $lc = $value['url'];
+                            }
+                        }
+                        printf("<a href='%s' title='%s'><img class='banner' src='../images/%s' alt='%s'></a>\n", $value['url'], htmlentities($lc), $value['img'], htmlentities($lc));
+                    }
+                }
+
+
+                printf("<h2>RSS feeds</h2>\n");
+                printf("<p><a href='opml.php'>OPML format</a></p>\n");
+                printf("<p>URL list for newsboat: </p>\n");
+                printf("<pre><code>");
+                foreach ($data['items'] as $key => $value) {
+                    if ($value['online'] == "true") {
+                        if (array_key_exists('feed', $value)) {
+                            printf("%s\n", $value['feed']);
+                        }
+                    }
+                }
+                printf("</code></pre>\n");
+
+
+                printf("<h2>Tor</h2>\n");
+                foreach ($data['items'] as $key => $value) {
+                    if ($value['online'] == "true") {
+                        if (array_key_exists("tor", $value)) {
+                            printf("<a href='%s'><img class='banner' src='images/%s' alt='%s'></a>", $value['tor'], $value['img'], $value['title']);
+                        }
+                    }
+                }
+
+                printf("<h2>i2p</h2>\n");
+                foreach ($data['items'] as $key => $value) {
+                    if ($value['online'] == "true") {
+                        if (array_key_exists("i2p", $value)) {
+                            printf("<a href='%s'><img class='banner' src='images/%s' alt='%s'></a>", $value['i2p'], $value['img'], $value['title']);
+                        }
+                    }
+                }
+
+                printf("<h2>Offline, abandoned, domain sniped, etc</h1>");
+                foreach ($data['items'] as $key => $value) {
+                    if ($value['online'] == "false") {
+                        if (array_key_exists('locale', $value)) {
+                            if ($value['title'] !== null) {
+                                $lc = $value['title'] . " [" . $value['locale'] . "]";
+                            } else {
+                                $lc = $value['url'] . " [" . $value['locale'] . "]";
+                            }
+                        } else {
+                            if ($value['title'] !== null) {
+                                $lc = $value['title'];
+                            } else {
+                                $lc = $value['url'];
+                            }
+                        }
+                        printf("<a href='%s' title='%s'><img class='banner' src='images/%s' alt='%s'></a>\n", $value['url'], htmlentities($lc), $value['img'], htmlentities($lc));
+                    }
+                }
+    }));
     return $twig;
 }
