@@ -12,15 +12,7 @@
     <p>「どこに行ったって、人はつながっているのよ。」</p>
   </div>
   <div id="app" class="container">
-    <div style="text-align: center">
-      <div id="navbar" class="content">
-        <div class="mt-2 card">
-          <div class="card-body">
-            <a href="./xmpp/register" target="_blank">XMPP Server</a> | <a href="./xmpp/conversejs/" target="_blank">Converse.js</a> | <a href="./sites/blog.php" target="_blank">Blog</a> | <a href="./searxng" target="_blank">SearXNG</a> | <a href="./sites/tos.html" target="_blank">Terms Of Service [EN]</a> | <a href="./sites/tos.ru.html" target="_blank">Terms Of Service [RU]</a> | <a href="./sites/serverstats.php" target="_blank">Server Statistics</a> | <a href="https://stats.uptimerobot.com/6eWo4s81Co" target="_blank">Uptime Monitoring</a> | <a href="./sites/repositories.php">LainOS Repositories</a>
-          </div>
-        </div>
-      </div>
-    </div>
+   {{ renderNavbar() }}
     <section class="mt-2 card">
       <div class="card-header">
         <h2>Welcome to <i>lainrocks</i></h2>
@@ -39,7 +31,7 @@
           </li>
           <li>
             <p>
-              If you would like to know who the person behind this site is, you can read <a href="./sites/aboutme.php" target="_blank">here</a>.
+              If you would like to know who the person behind this site is, you can read <a href="https://lain.rocks/?page=about" target="_blank">here</a>.
             </p>
           </li>
           <li>
@@ -59,18 +51,7 @@
           </li>
           <li>
             <p>
-              The working commit for this page is: <?php
-                                                    $fetchheadfile = './.git/FETCH_HEAD';
-                                                    if (file_exists($fetchheadfile)) {
-                                                      $headfile = file_get_contents($fetchheadfile);
-                                                      $shortCommitTag = substr($headfile, 0, 6);
-                                                      $fullCommitTag = substr($headfile, 0, 40);
-                                                      $format = "<a href='https://github.com/tyt4real/lainrocks/commit/%s'>%s</a>";
-                                                      echo sprintf($format, $fullCommitTag, $shortCommitTag);
-                                                    } else {
-                                                      echo ("Can't read latest commit.");
-                                                    }
-                                                    ?></p>
+              The working commit for this page is: {{ checkCommit() }}</p>
           </li>
         </ul>
 
@@ -87,7 +68,7 @@
           <li>3.9.2025: <i>lain.rocks</i> will be available through Tor in a few days: <a href="https://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/">lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion</a>.
           <li>9.9.2025: Sorry for the downtime, money troubles.
           <li>12.9.2025: Now available through Tor!
-          <li>6.10.2025: We now have a blog available here: <a href="./sites/blog.php">click :3</a>.
+          <li>6.10.2025: We now have a blog available here: <a href="https://lain.rocks/?page=blog">click :3</a>.
           <li>21.10.2025: We now offer a free and public SearXNG instance!
           <li>23.10.2025: Now connections to XMPP over Tor are possible on this onion address: 26cp7rchjrhtet4jbcijs5oxtfu52w435f4swmya7p6xr4xxxdqx23yd.onion
         </ul>
