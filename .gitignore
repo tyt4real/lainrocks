@@ -475,7 +475,6 @@ composer.lock
 phpinfo.php
 .vscode/*
 
-config.php
 lib/*
 
 #twig compilation cache
