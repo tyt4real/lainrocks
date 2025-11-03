@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Blog{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <!-- empty -->
+{% endblock %}
+{% block content %}
+    <div>
+    <div id="app" class="container">
+    <header class="mt-2 card">
+        <h2>Welcome to <i>lain.rocks</i>: The Blog</h2>
+        <p>This is the place where we'll be posting out schizo ramblings and info about the site.</p>
+    </header>
+    <div>
+    {{ renderBlog() }}
+    </div>
+    </div>
+    </div>
+{% endblock %}
