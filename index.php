@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+  
+<?php 
+//initialize twig
+require_once './vendor/autoload.php';
+$templatedir = './sites';
+$compilationcache = './cache';
+
+$twigloader = new \Twig\Loader\FilesystemLoader($templatedir);
+$twig = new \Twig\Environment($twigloader, [
+    'cache' => $compilationcache,
+]);
+?>
 
 <head>
   <meta charset="UTF-8" />
