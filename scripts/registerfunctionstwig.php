@@ -71,5 +71,27 @@ function registerWithTwig() {
                 echo '✅';
     }));
 
+    $twig->addFunction(new \Twig\TwigFunction('renderServerStats', function() {
+            // CPU load
+    $load = sys_getloadavg();
+    $cpuLoad = $load[0];
+
+    // RAM usage
+    $memoryUsed = memory_get_usage();
+
+    // Disk space
+    $free = disk_free_space("/");
+    $total = disk_total_space("/");
+    $percentageFree = ($free / $total) * 100;
+
+    // Build HTML output
+    $output = '<ul>';
+    $output .= '<li>System load: ' . htmlspecialchars($cpuLoad) . '</li>';
+    $output .= '<li>Used memory: ' . number_format($memoryUsed) . ' bytes</li>';
+    $output .= '<li>Free disk space: ' . number_format($free) . ' bytes | Total disk space: ' . number_format($total) . ' bytes | Percent free: ' . number_format($percentageFree, 2) . '%</li>';
+    $output .= '</ul>';
+
+    echo $output;
+    }));
     return $twig;
 }
