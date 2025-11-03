@@ -477,3 +477,6 @@ phpinfo.php
 
 config.php
 lib/*
+
+#twig compilation cache
+cache
