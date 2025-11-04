@@ -37,5 +37,13 @@
                 </table>
             </div>
         </section>
+        <section class="mt-2 card">
+            <div class="card-header">
+                Mirror statistics
+            </div>
+            <div class="card-body">
+                Mirror size: {{ calculateMirrorDiskSpace() }}
+            </div>
+        </section>
         </div>
 {% endblock %}

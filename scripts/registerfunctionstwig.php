@@ -253,5 +253,25 @@ function registerWithTwig()
             echo ("Can't read latest commit.");
         }
     }));
+    $twig->addFunction(new \Twig\TwigFunction('calculateMirrorDiskSpace', function () {
+        $config = include 'config.php';
+        $path = $config['mirrorpath'];
+        $mirrorSizeInBytes = 0;
+        if(is_dir($path)) {
+        $iterator = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS)
+        );
+        
+        foreach ($iterator as $file) {
+            if ($file->isFile()) {
+                $mirrorSizeInBytes = $mirrorSizeInBytes + $file->getSize();
+            }
+        }
+        echo ($mirrorSizeInBytes / (1024 * 1024) . "MB");
+        } else {
+            echo "Mirror directory does not exist";
+        }
+
+    }));
     return $twig;
 }

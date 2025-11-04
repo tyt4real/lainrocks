@@ -3,6 +3,7 @@ return [
     'debug' => true,
     'templatedir' => './sites',
     'cachedir' => './cache',
+    'mirrorpath' => '/var/www/lainos',
     //pages nav configuration
     'pages' => [
         'home' => [
