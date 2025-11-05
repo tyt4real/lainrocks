@@ -42,7 +42,11 @@
                 Mirror statistics
             </div>
             <div class="card-body">
-                Mirror size: {{ calculateMirrorDiskSpace() }}
+                <ul>
+                    <li>Mirror size: {{ calculateMirrorDiskSpace() }}</li>
+                    <li>Last update: {{ getLastMirrorUpdate() }}</li>
+                </ul>
+
             </div>
         </section>
         </div>

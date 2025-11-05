@@ -257,21 +257,44 @@ function registerWithTwig()
         $config = include 'config.php';
         $path = $config['mirrorpath'];
         $mirrorSizeInBytes = 0;
-        if(is_dir($path)) {
-        $iterator = new RecursiveIteratorIterator(
-            new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS)
-        );
-        
-        foreach ($iterator as $file) {
-            if ($file->isFile()) {
-                $mirrorSizeInBytes = $mirrorSizeInBytes + $file->getSize();
+        if (is_dir($path)) {
+            $iterator = new RecursiveIteratorIterator(
+                new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::SKIP_DOTS)
+            );
+
+            foreach ($iterator as $file) {
+                if ($file->isFile()) {
+                    $mirrorSizeInBytes = $mirrorSizeInBytes + $file->getSize();
+                }
             }
-        }
-        echo ($mirrorSizeInBytes / (1024 * 1024) . "MB");
+            echo ($mirrorSizeInBytes / (1024 * 1024) . "MB");
         } else {
             echo "Mirror directory does not exist";
         }
+    }));
+    $twig->addFunction(new \Twig\TwigFunction('getLastMirrorUpdate', function () {
+        $config = include 'config.php';
+        $logFile = $config['updatelog'];
+        if (!file_exists($logFile)) {
+            echo "Error: Log file not found at {$logFile}" . PHP_EOL;
+        } else {
+            $lines = file($logFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
+            $lastDate = null;
+
+            for ($i = count($lines) - 1; $i >= 0; $i--) {
+                if (preg_match('/\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\]/', $lines[$i], $matches)) {
+                    $lastDate = $matches[1];
+                    break;
+                }
+            }
+
+            if ($lastDate) {
+                echo $lastDate . PHP_EOL;
+            } else {
+                echo "No date found in log file." . PHP_EOL;
+            }
+        }
     }));
     return $twig;
 }

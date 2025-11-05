@@ -4,6 +4,7 @@ return [
     'templatedir' => './sites',
     'cachedir' => './cache',
     'mirrorpath' => '/var/www/lainos',
+    'updatelog' => '/var/www/lainos/update-repo.log',
     //pages nav configuration
     'pages' => [
         'home' => [
