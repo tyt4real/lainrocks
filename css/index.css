@@ -14,6 +14,7 @@
   --announcement-color: #b5a748;
   --show-lain: block;
   --show-yotsuba: none;
+  --quote_text: #789922;
 }
 
 /* =======================
@@ -32,6 +33,7 @@
   --announcement-color: #b5a748;
   --show-lain: block;
   --show-yotsuba: none;
+  --quote_text: #789922;
 }
 
 /* =======================
@@ -71,6 +73,9 @@ a:hover {
   color: var(--link_color_hover);
 }
 
+.quote {
+  color: var(--quote_text);
+}
 /* =======================
    Header & Navbar
 ======================= */
