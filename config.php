@@ -16,7 +16,7 @@ return [
         'blog' => [
             'template' => 'blog.php.twig',
         ],
-        'repositories' => [
+        'LainOS' => [
             'template' => 'repositories.php.twig',
         ],
         'webring' => [
@@ -24,6 +24,9 @@ return [
         ],
         'serverstats' => [
             'template' => 'serverstats.php.twig',
+        ],
+        'Jabber Server' => [
+            'template' => 'xmpp.twig',
         ],
         
     ],

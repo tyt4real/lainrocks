@@ -199,7 +199,7 @@ function registerWithTwig()
         $pages = $config['pages'];
 
         $manualLinks = [
-            ['href' => './xmpp/register', 'label' => 'XMPP Registration', 'target' => '_blank'],
+            ['href' => './xmpp/register', 'label' => 'Jabber Registration', 'target' => '_blank'],
             ['href' => './xmpp/conversejs/', 'label' => 'Converse.JS', 'target' => '_blank'],
             ['href' => './sites/tos.html', 'label' => 'Terms Of Service [EN]', 'target' => '_blank'],
             ['href' => './sites/tos.ru.html', 'label' => 'Terms Of Service [RU]', 'target' => '_blank'],

@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <!--empty for now lol-->
+{% endblock %}
+{% block content %}
+  <div id="app" class="container">
+   {{ renderNavbar() }}
+    <section class="mt-2 card">
+      <div class="card-header">
+        <h2>lainrocks XMPP/Jabber server</h2>
+      </div>
+      <div class="card-body">
+        <div>
+          <p>
+            The lain.rocks XMPP/Jabber server is a free as in freedom, private place for communication open to everyone. <strong>lain.rocks</strong>.
+            You can create an account using any XMPP client that supports account registration, for example <a href="https://conversations.im/" target="_blank">Conversations</a> for Android or <a href="https://www.coyim.org/" target="_blank">CoyIM</a> for desktop.
+            The registration link can be found above.
+          </p>
+          <p>
+            For better privacy, we recommend connecting to the server over Tor. The onion address is: <strong>glcuf4hcwbm3lt6grg7jfwwus7sqpuojozfsnbzzcsf7vbm2jcfqckid.onion</strong>.
+            Make sure your XMPP client is configured to use Tor as a proxy.
+          </p>
+          <p>
+            Our server also offers a Biboumi IRC gateway, allowing you to connect to IRC channels via XMPP. Additionally, a Telegram gateway will be available soon, enabling communication with Telegram users through XMPP.
+          </p>
+          <p>
+            If you need help setting up your XMPP client or have any questions, feel free to reach out in the MUC room mentioned above or contact us via email at <a href="mailto:tyt4real@protonmail.com">tyt4real@protonmail.com</a>.
+            For crucial information regarding the XMPP service, please refer to the announcements on the homepage, and read the Terms of Service available <a href="./sites/tos.html" target="_blank">here</a> also in russian <a href="./sites/tos.ru.html" target="_blank">here</a>.p setting up your XMPP client or have any questions, feel free to reach out in the MUC room mentioned above or contact us via email at <a href="mailto:tyt4real@protonmail.com">tyt4real@protonmail.com</a>.
+          </p>
+          <p>
+            Remember to <strong>never</strong> trust your provider with your privacy. <strong>always</strong> use end-to-end encryption like OMEMO or PGP to keep your communications safe and private.
+          </p>
+          <p>
+              <a href='https://compliance.conversations.im/server/lain.rocks'><img src='https://compliance.conversations.im/badge/lain.rocks'></a>
+              <a href="https://providers.xmpp.net/provider/lain.rocks/"><img alt="lain.rocks badge" src="https://data.xmpp.net/providers/v2/badges/lain.rocks.svg"></a>
+              <a href="https://xmppnetwork.goodbytes.im"><img alt="lain.rocks badge" src="https://xmppnetwork.goodbytes.im/badge/lain.rocks.svg"></a>
+          </p>
+          <p>
+                Enjoy your stay on the lain.rocks XMPP server!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-2 card">
+      <!-- im so sorry for adding this shit guys, im fucking poor -->
+      <div class="card-header">
+        <h2>Donate</h2>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>Monero: 49tVNbmpCJCiGc9U1ihXGd6FKe91kvPqw35cM1SiqXMuWGB47HXHPiTLXmjenue14ZCMrg57Hi6Y1dovha91hGzoMYWjxQT</li>
+          <li>Bitcoin: bc1qh36va2zz2mmnktz8wtqt2szsqfkc38gmxg97ms</li>
+        </ul>
+      </div>
+    </section>
+{% endblock %}
