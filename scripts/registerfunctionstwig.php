@@ -190,6 +190,14 @@ function registerWithTwig()
         }
     }));
 
+    $twig->addFunction(new \Twig\TwigFunction('renderRandomMeIRLImage', function () {
+        $imagesDir = 'images/meirl/';
+        $images = glob($imagesDir . '/*.{jpg,jpeg,png,gif,webp}', GLOB_BRACE);
+        $randomImage = $images[array_rand($images)];
+        $imageUrl = str_replace($_SERVER['DOCUMENT_ROOT'], '', realpath($randomImage));
+        echo '<img src="' . htmlspecialchars($imageUrl, ENT_QUOTES) . '" alt="Me IRL" style="width: 150px; height: 150px; display: inline-block flex-shrink: 0; margin-left: 10px;  border: 2px solid #00ff00;  box-shadow: 0 0 15px 5px #00ff00; transition: box-shadow 0.3s ease, transform 0.3s ease;">';
+    }));
+
     $twig->addFunction(new \Twig\TwigFunction('renderNavbar', function () {
         // Example dynamic links (could come from database, config, etc.)
         // Dynamic links (can be generated automatically)
