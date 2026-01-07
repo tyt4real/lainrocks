@@ -209,10 +209,10 @@ function registerWithTwig()
         $manualLinks = [
             ['href' => './xmpp/register', 'label' => 'Jabber Registration', 'target' => '_blank'],
             ['href' => './xmpp/conversejs/', 'label' => 'Converse.JS', 'target' => '_blank'],
-            ['href' => './sites/tos.html', 'label' => 'Terms Of Service [EN]', 'target' => '_blank'],
-            ['href' => './sites/tos.ru.html', 'label' => 'Terms Of Service [RU]', 'target' => '_blank'],
+            ['href' => './sites/tos.html', 'label' => 'ToS [EN]', 'target' => '_blank'],
+            ['href' => './sites/tos.ru.html', 'label' => 'ToS [RU]', 'target' => '_blank'],
             ['href' => './searxng', 'label' => 'SearXNG', 'target' => '_blank'],
-            ['href' => 'https://stats.uptimerobot.com/6eWo4s81Co', 'label' => 'Uptime Monitoring', 'target' => '_blank'],
+            ['href' => 'https://stats.uptimerobot.com/6eWo4s81Co', 'label' => 'Uptime', 'target' => '_blank'],
         ];
 
         // Build dynamic links from pages config
