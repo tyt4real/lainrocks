@@ -13,9 +13,6 @@ return [
         'about' => [
             'template' => 'aboutme.html.twig',
         ],
-        'blog' => [
-            'template' => 'blog.php.twig',
-        ],
         'LainOS' => [
             'template' => 'repositories.php.twig',
         ],
