@@ -13,15 +13,18 @@ return [
         'about' => [
             'template' => 'aboutme.html.twig',
         ],
+        /*'blog' => [
+            'template' => 'blog.php.twig',
+        ],*/
         'LainOS' => [
             'template' => 'repositories.php.twig',
         ],
-        'webring' => [
+        /*'webring' => [
             'template' => 'webring.php.twig',
         ],
         'serverstats' => [
             'template' => 'serverstats.php.twig',
-        ],
+        ],*/
         'Jabber Server' => [
             'template' => 'xmpp.twig',
         ],
