@@ -1,0 +1,3 @@
+https://lain.rocks/?page=about
+https://lain.rocks/?page=Jabber+Server
+https://lain.rocks/searxng/
