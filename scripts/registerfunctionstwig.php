@@ -199,9 +199,6 @@ function registerWithTwig()
     }));
 
     $twig->addFunction(new \Twig\TwigFunction('renderNavbar', function () {
-        // Example dynamic links (could come from database, config, etc.)
-        // Dynamic links (can be generated automatically)
-        // Manual links (optional)
         $config = include 'config.php';
 
         $pages = $config['pages'];
@@ -211,7 +208,7 @@ function registerWithTwig()
             ['href' => './xmpp/conversejs/', 'label' => 'Converse.JS', 'target' => '_blank'],
             ['href' => './sites/tos.html', 'label' => 'ToS [EN]', 'target' => '_blank'],
             ['href' => './sites/tos.ru.html', 'label' => 'ToS [RU]', 'target' => '_blank'],
-            ['href' => './searxng', 'label' => 'SearXNG', 'target' => '_blank'],
+            ['href' => 'https://forgejo.lain.rocks/', 'label' => 'Forgejo', 'target' => '_blank'],
             ['href' => 'https://stats.uptimerobot.com/6eWo4s81Co', 'label' => 'Uptime', 'target' => '_blank'],
         ];
 

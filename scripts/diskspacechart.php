@@ -19,7 +19,6 @@ $graph->SetBox(true);
 
 $p1 = new PiePlot($data);
 $graph->Add($p1);
-
 $p1->ShowBorder();
 $p1->SetColor('black');
 $p1->SetSliceColors(array('#1E90FF', '#DC143C'));
