@@ -479,3 +479,5 @@ lib/*
 
 #twig compilation cache
 cache
+
+config.php
