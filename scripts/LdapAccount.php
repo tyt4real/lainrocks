@@ -2,15 +2,7 @@
 
 /**
  * LdapAccount — thin wrapper around the lldap REST API.
- * Handles registration, login (bind), password reset, and profile reads.
- *
- * Config is pulled from your existing config.php:
- *   $config['lldap']['url']      e.g. http://lldap:17170
- *   $config['lldap']['admin_dn'] e.g. uid=admin,ou=people,dc=lain,dc=rocks
- *   $config['lldap']['admin_pw'] (admin password)
- *   $config['lldap']['base_dn']  e.g. dc=lain,dc=rocks
- *   $config['lldap']['ldap_url'] e.g. ldap://lldap:3890
- *   $config['lldap']['default_groups'] e.g. ['mail_users','nextcloud_users','forgejo_users']
+ * Adds extensive logging/debugging.
  */
 class LdapAccount
 {
@@ -19,249 +11,543 @@ class LdapAccount
     private string $baseDn;
     private string $adminDn;
     private string $adminPw;
-    private array  $defaultGroups;
+    private array $defaultGroups;
     private ?string $jwtToken = null;
 
     public function __construct(array $config)
     {
-        $lldap               = $config['lldap'];
-        $this->apiUrl        = rtrim($lldap['url'], '/');
-        $this->ldapUrl       = $lldap['ldap_url'];
-        $this->baseDn        = $lldap['base_dn'];
-        $this->adminDn       = $lldap['admin_dn'];
-        $this->adminPw       = $lldap['admin_pw'];
+        $lldap = $config['lldap'];
+
+        $this->apiUrl = rtrim($lldap['url'], '/');
+        $this->ldapUrl = $lldap['ldap_url'];
+        $this->baseDn = $lldap['base_dn'];
+        $this->adminDn = $lldap['admin_dn'];
+        $this->adminPw = $lldap['admin_pw'];
         $this->defaultGroups = $lldap['default_groups'] ?? [];
+
+        $this->log('INIT', [
+            'apiUrl' => $this->apiUrl,
+            'ldapUrl' => $this->ldapUrl,
+            'baseDn' => $this->baseDn,
+            'defaultGroups' => $this->defaultGroups
+        ]);
     }
 
-    /* ── Public API ──────────────────────────────────────────────── */
+    /* ───────────────────────────────────────────────────────────── */
 
-    /**
-     * Register a new user and add them to default groups.
-     * Returns ['ok' => true] or ['ok' => false, 'error' => '...']
-     */
-    public function register(string $uid, string $email, string $password, string $firstName, string $lastName): array
-    {
+    public function register(
+        string $uid,
+        string $email,
+        string $password,
+        string $firstName,
+        string $lastName
+    ): array {
         $uid = strtolower(trim($uid));
 
-        if (!$this->isValidUid($uid))         return ['ok' => false, 'error' => 'Username may only contain lowercase letters, digits, hyphens and underscores (3–32 chars).'];
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) return ['ok' => false, 'error' => 'Invalid email address.'];
-        if (strlen($password) < 8)            return ['ok' => false, 'error' => 'Password must be at least 8 characters.'];
+        $this->log('REGISTER_START', [
+            'uid' => $uid,
+            'email' => $email
+        ]);
+
+        if (!$this->isValidUid($uid)) {
+            $this->log('REGISTER_FAIL_INVALID_UID', ['uid' => $uid]);
+
+            return [
+                'ok' => false,
+                'error' => 'Invalid username format.'
+            ];
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $this->log('REGISTER_FAIL_INVALID_EMAIL', ['email' => $email]);
+
+            return [
+                'ok' => false,
+                'error' => 'Invalid email.'
+            ];
+        }
+
+        if (strlen($password) < 8) {
+            $this->log('REGISTER_FAIL_PASSWORD_TOO_SHORT', [
+                'uid' => $uid
+            ]);
+
+            return [
+                'ok' => false,
+                'error' => 'Password too short.'
+            ];
+        }
 
         $token = $this->getAdminToken();
-        if (!$token) return ['ok' => false, 'error' => 'Could not connect to authentication server.'];
 
-        // Create user via lldap GraphQL API
-        $mutation = <<<GQL
-        mutation {
+        if (!$token) {
+            $this->log('REGISTER_FAIL_NO_ADMIN_TOKEN');
+
+            return [
+                'ok' => false,
+                'error' => 'Cannot authenticate to LLDAP.'
+            ];
+        }
+
+        $query = '
+        mutation CreateUser(
+            $id: String!,
+            $email: String!,
+            $displayName: String!,
+            $firstName: String!,
+            $lastName: String!
+        ) {
             createUser(user: {
-                id: "{$uid}",
-                email: "{$email}",
-                displayName: "{$firstName} {$lastName}",
-                firstName: "{$firstName}",
-                lastName: "{$lastName}"
-            }) { id }
-        }
-        GQL;
-
-        $res = $this->gql($mutation, $token);
-        if (isset($res['errors'])) {
-            $msg = $res['errors'][0]['message'] ?? 'Registration failed.';
-            if (str_contains($msg, 'already exists') || str_contains($msg, 'duplicate')) {
-                return ['ok' => false, 'error' => 'Username or email already taken.'];
+                id: $id,
+                email: $email,
+                displayName: $displayName,
+                firstName: $firstName,
+                lastName: $lastName
+            }) {
+                id
             }
-            return ['ok' => false, 'error' => $msg];
+        }';
+
+        $payload = [
+            'query' => $query,
+            'variables' => [
+                'id' => $uid,
+                'email' => $email,
+                'displayName' => trim($firstName . ' ' . $lastName),
+                'firstName' => $firstName,
+                'lastName' => $lastName
+            ]
+        ];
+
+        $res = $this->apiPost('/api/graphql', $payload, $token);
+
+        $this->log('CREATE_USER_RESPONSE', $res);
+
+        if (isset($res['errors'])) {
+            $msg = $res['errors'][0]['message'] ?? 'Unknown GraphQL error';
+
+            $this->log('CREATE_USER_FAILED', [
+                'uid' => $uid,
+                'error' => $msg
+            ]);
+
+            return [
+                'ok' => false,
+                'error' => $msg
+            ];
         }
 
-        // Set password
         $pwResult = $this->setPassword($uid, $password, $token);
-        if (!$pwResult) return ['ok' => false, 'error' => 'User created but password could not be set. Contact admin.'];
 
-        // Add to default groups
+        if (!$pwResult) {
+            $this->log('SET_PASSWORD_FAILED', [
+                'uid' => $uid
+            ]);
+
+            return [
+                'ok' => false,
+                'error' => 'User created but password could not be set.'
+            ];
+        }
+
         foreach ($this->defaultGroups as $group) {
             $this->addToGroup($uid, $group, $token);
         }
 
+        $this->log('REGISTER_SUCCESS', ['uid' => $uid]);
+
         return ['ok' => true];
     }
 
-    /**
-     * Authenticate a user via LDAP bind.
-     * Returns ['ok' => true, 'uid' => '...'] or ['ok' => false, 'error' => '...']
-     */
+    /* ───────────────────────────────────────────────────────────── */
+
     public function login(string $uid, string $password): array
     {
         $uid = strtolower(trim($uid));
-        $dn  = "uid={$uid},ou=people,{$this->baseDn}";
+        $dn = "uid={$uid},ou=people,{$this->baseDn}";
+
+        $this->log('LOGIN_ATTEMPT', [
+            'uid' => $uid,
+            'dn' => $dn
+        ]);
 
         $ds = @ldap_connect($this->ldapUrl);
-        if (!$ds) return ['ok' => false, 'error' => 'Cannot reach authentication server.'];
+
+        if (!$ds) {
+            $this->log('LDAP_CONNECT_FAILED');
+
+            return [
+                'ok' => false,
+                'error' => 'Cannot connect to LDAP.'
+            ];
+        }
 
         ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
         ldap_set_option($ds, LDAP_OPT_REFERRALS, 0);
 
         $bound = @ldap_bind($ds, $dn, $password);
+
+        if (!$bound) {
+            ldap_get_option($ds, LDAP_OPT_DIAGNOSTIC_MESSAGE, $diag);
+
+            $this->log('LDAP_BIND_FAILED', [
+                'uid' => $uid,
+                'diag' => $diag ?? null
+            ]);
+        } else {
+            $this->log('LDAP_BIND_SUCCESS', ['uid' => $uid]);
+        }
+
         ldap_unbind($ds);
 
-        if (!$bound) return ['ok' => false, 'error' => 'Invalid username or password.'];
-
-        return ['ok' => true, 'uid' => $uid];
-    }
-
-    /**
-     * Get profile data for a user (readonly bind).
-     */
-    public function getProfile(string $uid): ?array
-    {
-        $token = $this->getAdminToken();
-        if (!$token) return null;
-
-        $query = <<<GQL
-        query {
-            user(userId: "{$uid}") {
-                id email displayName firstName lastName
-                groups { id displayName }
-                creationDate
-            }
+        if (!$bound) {
+            return [
+                'ok' => false,
+                'error' => 'Invalid username or password.'
+            ];
         }
-        GQL;
 
-        $res = $this->gql($query, $token);
-        return $res['data']['user'] ?? null;
+        return [
+            'ok' => true,
+            'uid' => $uid
+        ];
     }
 
-    /**
-     * Change password — requires knowing the current password first (bind check).
-     */
-    public function changePassword(string $uid, string $currentPassword, string $newPassword): array
-    {
-        if (strlen($newPassword) < 8) return ['ok' => false, 'error' => 'New password must be at least 8 characters.'];
+    /* ───────────────────────────────────────────────────────────── */
 
-        $check = $this->login($uid, $currentPassword);
-        if (!$check['ok']) return ['ok' => false, 'error' => 'Current password is incorrect.'];
-
-        $token = $this->getAdminToken();
-        if (!$token) return ['ok' => false, 'error' => 'Cannot reach authentication server.'];
-
-        $ok = $this->setPassword($uid, $newPassword, $token);
-        return $ok ? ['ok' => true] : ['ok' => false, 'error' => 'Password change failed.'];
-    }
-
-    /**
-     * Initiate a password reset — sends reset email via lldap if SMTP is configured.
-     * Returns ['ok' => true] or ['ok' => false, 'error' => '...']
-     */
     public function requestPasswordReset(string $uid): array
     {
-        $uid   = strtolower(trim($uid));
-        $token = $this->getAdminToken();
-        if (!$token) return ['ok' => false, 'error' => 'Cannot reach authentication server.'];
+        $uid = strtolower(trim($uid));
 
-        $res = $this->apiPost('/auth/reset/step1/' . urlencode($uid), [], null);
-
-        // lldap returns 200 even if user not found (to prevent enumeration)
-        return ['ok' => true];
-    }
-
-    /**
-     * Complete password reset using the token sent by lldap.
-     */
-    public function completePasswordReset(string $uid, string $resetToken, string $newPassword): array
-    {
-        if (strlen($newPassword) < 8) return ['ok' => false, 'error' => 'Password must be at least 8 characters.'];
+        $this->log('PASSWORD_RESET_REQUEST', [
+            'uid' => $uid
+        ]);
 
         $payload = [
-            'user_id'  => $uid,
-            'token'    => $resetToken,
-            'password' => $newPassword,
+            'user_id' => $uid
         ];
 
-        $res = $this->apiPost('/auth/reset/step2', $payload, null);
-        if (isset($res['error'])) return ['ok' => false, 'error' => $res['error']];
+        $res = $this->apiPost(
+            '/auth/reset/step1',
+            $payload,
+            null
+        );
+
+        $this->log('PASSWORD_RESET_RESPONSE', $res);
 
         return ['ok' => true];
     }
 
-    /* ── Internal helpers ────────────────────────────────────────── */
+    /* ───────────────────────────────────────────────────────────── */
+
+    private function setPassword(
+        string $uid,
+        string $password,
+        string $token
+    ): bool {
+        $dn = "uid={$uid},ou=people,{$this->baseDn}";
+
+        $this->log('LDAP_PASSWORD_SET_START', [
+            'dn' => $dn
+        ]);
+
+        $ds = ldap_connect($this->ldapUrl);
+
+        if (!$ds) {
+            $this->log('LDAP_CONNECT_FAILED');
+            return false;
+        }
+
+        ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
+        ldap_set_option($ds, LDAP_OPT_REFERRALS, 0);
+
+        $bind = @ldap_bind(
+            $ds,
+            $this->adminDn,
+            $this->adminPw
+        );
+
+        if (!$bind) {
+            ldap_get_option(
+                $ds,
+                LDAP_OPT_DIAGNOSTIC_MESSAGE,
+                $diag
+            );
+
+            $this->log('LDAP_ADMIN_BIND_FAILED', [
+                'diag' => $diag ?? null
+            ]);
+
+            ldap_unbind($ds);
+
+            return false;
+        }
+
+        $entry = [
+            'userPassword' => $password
+        ];
+
+        $result = @ldap_modify(
+            $ds,
+            $dn,
+            $entry
+        );
+
+        if (!$result) {
+            ldap_get_option(
+                $ds,
+                LDAP_OPT_DIAGNOSTIC_MESSAGE,
+                $diag
+            );
+
+            $this->log('LDAP_PASSWORD_MODIFY_FAILED', [
+                'dn' => $dn,
+                'diag' => $diag ?? null
+            ]);
+        } else {
+            $this->log('LDAP_PASSWORD_MODIFY_SUCCESS', [
+                'dn' => $dn
+            ]);
+        }
+
+        ldap_unbind($ds);
+
+        return $result;
+    }
+
+    /* ───────────────────────────────────────────────────────────── */
+
+    private function addToGroup(
+        string $uid,
+        string $groupName,
+        string $token
+    ): void {
+        $this->log('ADD_TO_GROUP_START', [
+            'uid' => $uid,
+            'group' => $groupName
+        ]);
+
+        $listQuery = 'query { groups { id displayName } }';
+
+        $res = $this->gql($listQuery, $token);
+
+        $groups = $res['data']['groups'] ?? [];
+
+        $groupId = null;
+
+        foreach ($groups as $g) {
+            if ($g['displayName'] === $groupName) {
+                $groupId = $g['id'];
+                break;
+            }
+        }
+
+        if ($groupId === null) {
+            $this->log('GROUP_NOT_FOUND', [
+                'group' => $groupName
+            ]);
+
+            return;
+        }
+
+        $query = '
+        mutation AddUserToGroup(
+            $userId: String!,
+            $groupId: Int!
+        ) {
+            addUserToGroup(
+                userId: $userId,
+                groupId: $groupId
+            )
+        }';
+
+        $payload = [
+            'query' => $query,
+            'variables' => [
+                'userId' => $uid,
+                'groupId' => (int) $groupId
+            ]
+        ];
+
+        $res = $this->apiPost('/api/graphql', $payload, $token);
+
+        $this->log('ADD_TO_GROUP_RESPONSE', $res);
+    }
+
+    /* ───────────────────────────────────────────────────────────── */
+
+    private function getAdminToken(): ?string
+    {
+        if ($this->jwtToken) {
+            return $this->jwtToken;
+        }
+
+        preg_match('/uid=([^,]+)/', $this->adminDn, $m);
+
+        $adminUid = $m[1] ?? 'admin';
+
+        $this->log('ADMIN_LOGIN_START', [
+            'adminUid' => $adminUid
+        ]);
+
+        $payload = [
+            'username' => $adminUid,
+            'password' => $this->adminPw
+        ];
+
+        $res = $this->apiPost(
+            '/auth/simple/login',
+            $payload,
+            null
+        );
+
+        $this->log('ADMIN_LOGIN_RESPONSE', $res);
+
+        $this->jwtToken = $res['token'] ?? null;
+
+        return $this->jwtToken;
+    }
+
+    /* ───────────────────────────────────────────────────────────── */
+
+    private function gql(string $query, string $token): array
+    {
+        return $this->apiPost(
+            '/api/graphql',
+            ['query' => $query],
+            $token
+        );
+    }
+
+    /* ───────────────────────────────────────────────────────────── */
+
+    private function apiPost(
+        string $path,
+        array $payload,
+        ?string $token
+    ): array {
+        $url = $this->apiUrl . $path;
+
+        $this->log('HTTP_POST_START', [
+            'url' => $url,
+            'payload' => $payload
+        ]);
+
+        $ch = curl_init($url);
+
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => json_encode($payload),
+            CURLOPT_HTTPHEADER => array_filter([
+                'Content-Type: application/json',
+                $token ? "Authorization: Bearer {$token}" : null,
+            ]),
+            CURLOPT_TIMEOUT => 15,
+            CURLOPT_CONNECTTIMEOUT => 5,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false,
+        ]);
+
+        $body = curl_exec($ch);
+
+        $errno = curl_errno($ch);
+        $errstr = curl_error($ch);
+        $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        curl_close($ch);
+
+        if ($errno) {
+            $this->log('CURL_ERROR', [
+                'errno' => $errno,
+                'error' => $errstr
+            ]);
+        }
+
+        $this->log('HTTP_POST_RESPONSE', [
+            'url' => $url,
+            'status' => $status,
+            'body_raw' => $body
+        ]);
+
+        $decoded = json_decode($body ?: '{}', true);
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            $this->log('JSON_DECODE_ERROR', [
+                'error' => json_last_error_msg(),
+                'raw_body' => $body
+            ]);
+
+            return [];
+        }
+
+        return $decoded ?? [];
+    }
+
+    /* ───────────────────────────────────────────────────────────── */
 
     private function isValidUid(string $uid): bool
     {
         return (bool) preg_match('/^[a-z0-9_-]{3,32}$/', $uid);
     }
 
-    private function getAdminToken(): ?string
+    /* ───────────────────────────────────────────────────────────── */
+
+    private function log(string $event, array $context = []): void
     {
-        if ($this->jwtToken) return $this->jwtToken;
+        $line = sprintf(
+            '[LLDAP][%s] %s %s',
+            date('Y-m-d H:i:s'),
+            $event,
+            json_encode(
+                $context,
+                JSON_UNESCAPED_SLASHES
+                    | JSON_UNESCAPED_UNICODE
+            )
+        );
 
-        // Extract plain uid from full DN like "uid=admin,ou=people,dc=..."
-        preg_match('/uid=([^,]+)/', $this->adminDn, $m);
-        $adminUid = $m[1] ?? 'admin';
-
-        $payload = ['username' => $adminUid, 'password' => $this->adminPw];
-        $res     = $this->apiPost('/auth/simple/login', $payload, null);
-
-        $this->jwtToken = $res['token'] ?? null;
-        return $this->jwtToken;
+        error_log($line);
     }
 
-    private function setPassword(string $uid, string $password, string $token): bool
+    /* ───────────────────────────────────────────────────────────── */
+    public function getProfile(string $uid): ?array
     {
-        $mutation = <<<GQL
-        mutation {
-            changeUserPassword(userId: "{$uid}", password: "{$password}") { ok }
+        $this->log('GET_PROFILE_START', ['uid' => $uid]);
+
+        $token = $this->getAdminToken();
+
+        if (!$token) {
+            $this->log('GET_PROFILE_FAIL_NO_TOKEN');
+            return null;
         }
-        GQL;
 
-        $res = $this->gql($mutation, $token);
-        return ($res['data']['changeUserPassword']['ok'] ?? false) === true;
-    }
-
-    private function addToGroup(string $uid, string $groupName, string $token): void
-    {
-        // First resolve group id
-        $query = <<<GQL
-        query { group(groupId: 0) { id } }
-        GQL;
-
-        $listQuery = 'query { groups { id displayName } }';
-        $res = $this->gql($listQuery, $token);
-        $groups = $res['data']['groups'] ?? [];
-
-        $groupId = null;
-        foreach ($groups as $g) {
-            if ($g['displayName'] === $groupName) { $groupId = $g['id']; break; }
+        $query = '
+    query GetUser($uid: String!) {
+        user(userId: $uid) {
+            id
+            email
+            displayName
+            firstName
+            lastName
+            creationDate
+            groups {
+                id
+                displayName
+            }
         }
-        if ($groupId === null) return;
+    }';
 
-        $mutation = <<<GQL
-        mutation {
-            addUserToGroup(userId: "{$uid}", groupId: {$groupId}) { ok }
-        }
-        GQL;
+        $payload = [
+            'query' => $query,
+            'variables' => [
+                'uid' => $uid
+            ]
+        ];
 
-        $this->gql($mutation, $token);
-    }
+        $res = $this->apiPost('/api/graphql', $payload, $token);
 
-    private function gql(string $query, string $token): array
-    {
-        return $this->apiPost('/api/graphql', ['query' => $query], $token);
-    }
+        $this->log('GET_PROFILE_RESPONSE', $res);
 
-    private function apiPost(string $path, array $payload, ?string $token): array
-    {
-        $ch = curl_init($this->apiUrl . $path);
-        curl_setopt_array($ch, [
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POST           => true,
-            CURLOPT_POSTFIELDS     => json_encode($payload),
-            CURLOPT_HTTPHEADER     => array_filter([
-                'Content-Type: application/json',
-                $token ? "Authorization: Bearer {$token}" : null,
-            ]),
-            CURLOPT_TIMEOUT        => 5,
-        ]);
-        $body = curl_exec($ch);
-        curl_close($ch);
-
-        return json_decode($body ?: '{}', true) ?? [];
+        return $res['data']['user'] ?? null;
     }
 }
