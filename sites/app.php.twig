@@ -1,73 +1,109 @@
 {% extends "base.html.twig" %}
 
-{% block title %}
-    Home
-{% endblock %}
-{% block head %}
-    {{ parent() }}
-    <!--empty for now lol-->
-{% endblock %}
+{% block title %}Home{% endblock %}
+{% block head %}{{ parent() }}{% endblock %}
+
 {% block content %}
-    <div id="header">
-        <h1 id="shit">lain.rocks</h1>
-        <p>The (hopefully) cool place on the internet</p>
-        <p>「どこに行ったって、人はつながっているのよ。」</p>
-    </div>
-    <div id="app" class="container">
-        {{ renderNavbar() }}
-        <section class="mt-2 card">
-            <div class="card-header">
-                <h2>Welcome to <i>lainrocks</i></h2>
+
+    {{ renderNavbar() }}
+
+    <div class="page page--home">
+
+        <section class="hero">
+            <div class="hero__text">
+                <h1 class="hero__title">Welcome to <em>lainrocks</em></h1>
+                <p class="hero__desc">
+                    A free, privacy-respecting corner of the interwebz — open to all.
+                </p>
             </div>
-            <div class="card-body" style="text-align: center;">
-                <li style="list-style-type: none;">
-                    <div style="text-align: center;">
-                        <h2>To post suggestions visit <a href="https://boards.lain.rocks/q/" target="_blank" class="rainbow-text">the /q/ board</a></h2>
-                    </div>
-                </li>
-                <li style="list-style-type: none;">
-                    <p class="glow" style="font-size: 1.3em">
-                        We would like to invite you to the LainOS XMPP MUC under this address: <a href="xmpp:private-chat-c75bebbc-50f3-447d-811f-41f83de11811@conference.glcuf4hcwbm3lt6grg7jfwwus7sqpuojozfsnbzzcsf7vbm2jcfqckid.onion" target="about:_blank">here</a>.
-                        Instructions on how to join are available <a href="https://de01.pixeldrain.com/d/fAC2VVnx">here</a>.
+            <div class="hero__links">
+                <a href="./?page=Jabber+Server" class="hero__chip">Jabber Server</a>
+                <a href="https://boards.lain.rocks/" target="_blank" class="hero__chip hero__chip--featured">lainrocks Textboard</a>
+                <a href="https://forgejo.lain.rocks/" class="hero__chip">Forgejo</a>
+            </div>
+            <p class="hero__sub-link"><a href="./?page=about">About the admin →</a></p>
+        </section>
+
+        <div class="home-grid">
+
+            <div class="home-grid__main">
+
+                {# Notice #}
+                <section class="card" id="notice">
+                    <h2 class="card__heading">Notice</h2>
+                    <ul class="item-list">
+                        <li>
+                            To post suggestions visit
+                            <a href="https://boards.lain.rocks/q/" target="_blank" class="rainbow-text">the /q/ board</a>.
+                        </li>
+                        <li>
+                            We would like to invite you to the LainOS XMPP MUC under this address:
+                            <a href="xmpp:private-chat-c75bebbc-50f3-447d-811f-41f83de11811@conference.glcuf4hcwbm3lt6grg7jfwwus7sqpuojozfsnbzzcsf7vbm2jcfqckid.onion">here</a>.
+                            Instructions on how to join are available <a href="https://de01.pixeldrain.com/d/fAC2VVnx">here</a>.
+                        </li>
+                    </ul>
+                </section>
+
+                {# Announcements #}
+                <section class="card" id="announcements">
+                    <h2 class="card__heading">Announcements</h2>
+                    <ol class="announce-list">
+                        <li>
+                            <time class="announce-date" datetime="2025-05.04">04.05.2025</time>
+                            <span>We have a public <a href="https://forgejo.lain.rocks/">Forgejo</a> git instance available!</span>
+                        </li>
+                        <li>
+                            <time class="announce-date" datetime="2025-10-21">21.10.2025</time>
+                            <span>We now offer a free and public <a href="https://lain.rocks/searxng">SearXNG</a> instance!</span>
+                        </li>
+                        <li>
+                            <time class="announce-date" datetime="2025-10-23">23.10.2025</time>
+                            <span>
+                                Now connections to XMPP over Tor are possible on this onion address:
+                                <code>26cp7rchjrhtet4jbcijs5oxtfu52w435f4swmya7p6xr4xxxdqx23yd.onion</code>
+                            </span>
+                        </li>
+                        <li>
+                            <time class="announce-date" datetime="2025-12-03">03.12.2025</time>
+                            <span>
+                                We now have a textboard service available at
+                                <a href="https://boards.lain.rocks/home" target="_blank">boards.lain.rocks</a>!
+                            </span>
+                        </li>
+                    </ol>
+                </section>
+
+            </div>
+
+            <div class="home-grid__side">
+
+                <section class="card" id="onion">
+                    <h2 class="card__heading">Onion &amp; PGP</h2>
+                    <p>
+                        To consult the list of official onion links, please visit the
+                        <a href="./special/onion.txt">canary</a>.
+                        Updates regarding onion URLs and critical information will be signed with my PGP key available
+                        <a href="./special/public.asc" target="_blank">here</a>.
                     </p>
-                </li>
-                <div style="display: inline; text-align: center">
-                    <h2 style="font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1200 - 320)));"><a style="font-size: 1.5em;" href="./?page=Jabber+Server">Jabber Server</a> | <a style="font-size: 2em;" href="https://boards.lain.rocks/">lainrocks Textboard</a> | <a style="font-size: 1.5em;" href="https://lain.rocks/searxng">SearXNG</a></h2>
-                    <h3><a style="font-size: 1.2em;" href="./?page=about">About the admin</a></h3>
-                </div>
-                <p>
-                    To consult the list of official onion links, please visit the canary: <a href="./special/onion.txt">here</a>.
-                    Updates regarding onion URLs and critical information will be signed with my PGP key available <a href="./special/public.asc" target="_blank">here</a>
-                </p>
-                <p>
-                    The working commit for this page is:
-                    {{ checkCommit() }}
-                </p>
+                    <p class="card__meta">Working commit: <code>{{ checkCommit() }}</code></p>
+                </section>
 
+                <section class="card card--accent" id="donate">
+                    <h2 class="card__heading">Donate</h2>
+                    <p class="card__note"><!-- im so sorry for adding this shit guys, im fucking poor --></p>
+                    <div class="donate-item">
+                        <span class="donate-label">Monero</span>
+                        <code class="donate-addr">49tVNbmpCJCiGc9U1ihXGd6FKe91kvPqw35cM1SiqXMuWGB47HXHPiTLXmjenue14ZCMrg57Hi6Y1dovha91hGzoMYWjxQT</code>
+                    </div>
+                    <div class="donate-item">
+                        <span class="donate-label">Bitcoin</span>
+                        <code class="donate-addr">bc1qh36va2zz2mmnktz8wtqt2szsqfkc38gmxg97ms</code>
+                    </div>
+                </section>
 
-            </section>
-            <section id="announcements" class="mt-2 card">
-                <div class="card-header announcement-card-header">
-                    <h2>Announcements</h2>
-                </div>
-                <div class="card-body">
-                    <ul>
-                        <li>21.10.2025: We now offer a free and public SearXNG instance!
-                            <li>23.10.2025: Now connections to XMPP over Tor are possible on this onion address: 26cp7rchjrhtet4jbcijs5oxtfu52w435f4swmya7p6xr4xxxdqx23yd.onion
-                                <li>03.12.2025: We now have a textboard service available at <a href="https://boards.lain.rocks/home" target="_blank">boards.lain.rocks</a>!
-                            </ul>
-                        </div>
-                    </section>
-                    <section class="mt-2 card">
-                        <!-- im so sorry for adding this shit guys, im fucking poor -->
-                        <div class="card-header">
-                            <h2>Donate</h2>
-                        </div>
-                        <div class="card-body">
-                            <ul>
-                                <li>Monero: 49tVNbmpCJCiGc9U1ihXGd6FKe91kvPqw35cM1SiqXMuWGB47HXHPiTLXmjenue14ZCMrg57Hi6Y1dovha91hGzoMYWjxQT</li>
-                                <li>Bitcoin: bc1qh36va2zz2mmnktz8wtqt2szsqfkc38gmxg97ms</li>
-                            </ul>
-                        </div>
-                    </section>
-                {% endblock %}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

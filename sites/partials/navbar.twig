@@ -1,12 +1,7 @@
-<div style="text-align: center">
-    <div id="navbar" class="content">
-        <div class="mt-2 card">
-            <div class="card-body">
-                {# Loop through all links automatically #}
-                {% for link in navbarLinks %}
-                    <a href="{{ link.href }}" target="{{ link.target }}">{{ link.label }}</a>{% if not loop.last %} | {% endif %}
-                {% endfor %}
-            </div>
-        </div>
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="site-nav__inner">
+        {% for link in navbarLinks %}
+            <a href="{{ link.href }}" target="{{ link.target }}" class="site-nav__link">{{ link.label }}</a>
+        {% endfor %}
     </div>
-</div>
+</nav>

@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+{% import "account/_form.html.twig" as form %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+{{ renderNavbar() }}
+
+<div class="page page--account">
+    <div class="acct-wrap">
+
+        <div class="acct-header">
+            <h1 class="acct-title">Create account</h1>
+            <p class="acct-sub">One account. Email, Forgejo, Nextcloud - everythin.</p>
+        </div>
+
+        {{ form.flash(flash) }}
+
+        <div class="card acct-card">
+            <h2 class="card__heading">Register</h2>
+            <p class="acct-hint" style="text-align: center;">Make something creative up ;)</p>
+            <form method="POST" action="?page=account&action=register" class="acct-form" novalidate>
+
+                <div class="acct-row acct-row--2">
+                    {{ form.field('First name', 'first_name', 'text', post.first_name ?? '', 'Make something', true) }}
+                    {{ form.field('Last name',  'last_name',  'text', post.last_name  ?? '', 'creative up.', true) }}
+                </div>
+
+                {{ form.field('Username', 'uid', 'text', post.uid ?? '', 'Xx_stardestr0yer_xX', true) }}
+                <p class="acct-hint">Lowercase letters, digits, hyphens, underscores. 3–32 chars. This becomes your email: <em>username@lain.rocks</em></p>
+
+                {{ form.field('Recovery email', 'email', 'email', post.email ?? '', 'you@example.com', true) }}
+                <p class="acct-hint">Used only for password resets. Not your lain.rocks mailbox.</p>
+
+                {{ form.field('Password', 'password', 'password', '', '', true) }}
+                <p class="acct-hint">At least 8 characters.</p>
+
+                <button type="submit" class="acct-btn">Create account →</button>
+
+            </form>
+        </div>
+
+        <p class="acct-alt">Already have an account? <a href="?page=account&action=login">Log in</a></p>
+
+    </div>
+</div>
+{% endblock %}

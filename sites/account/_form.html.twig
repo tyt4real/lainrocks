@@ -1,0 +1,26 @@
+{# macros for account forms #}
+
+{% macro flash(flash) %}
+    {% if flash %}
+        <div class="acct-flash acct-flash--{{ flash.type == 'ok' ? 'ok' : 'err' }}">
+            {{ flash.msg }}
+        </div>
+    {% endif %}
+{% endmacro %}
+
+{% macro field(label, name, type, value, placeholder, required) %}
+    <div class="acct-field">
+        <input
+            class="textbox"
+            type="{{ type ?? 'text' }}"
+            id="{{ name }}"
+            name="{{ name }}"
+            value="{{ value ?? '' }}"
+{#          placeholder="{{ placeholder ?? '' }}"          #}
+            placeholder="{{ '' }}"
+            {% if required %}required{% endif %}
+            autocomplete="{{ type == 'password' ? 'current-password' : name }}">
+            <label for="{{ name }}">{{ label }}</label>
+        </input>
+    </div>
+{% endmacro %}

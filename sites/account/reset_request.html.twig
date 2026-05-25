@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+{% import "account/_form.html.twig" as form %}
+
+{% block title %}Reset Password{% endblock %}
+
+{% block content %}
+{{ renderNavbar() }}
+
+<div class="page page--account">
+    <div class="acct-wrap">
+
+        <div class="acct-header">
+            <h1 class="acct-title">Reset password</h1>
+            <p class="acct-sub">Enter your username and we'll send a reset link to your recovery email.</p>
+        </div>
+
+        {{ form.flash(flash) }}
+
+        <div class="card acct-card">
+            <h2 class="card__heading">Request reset</h2>
+            <form method="POST" action="?page=account&action=reset-password" class="acct-form" novalidate>
+                {{ form.field('Username', 'uid', 'text', '', 'lain', true) }}
+                <div class="acct-actions">
+                    <button type="submit" class="acct-btn">Send reset link →</button>
+                    <a class="acct-link" href="?page=account&action=login">← Back to login</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,63 +1,72 @@
 {% extends "base.html.twig" %}
 
 {% block title %}Repositories{% endblock %}
-{% block head %}
-    {{ parent() }}
-    <!-- empty -->
-{% endblock %}
+{% block head %}{{ parent() }}{% endblock %}
+
 {% block content %}
-<div id="app" class="container">
-    <section class="mt-2 card">
-        <div class="card-header">
-            <h2>The LainOS project</h2>
-        </div>
-        <div class="card-body">
-            <p> The LainOS project is an open-source GNU/Linux distribution focused on privacy and security based on Arch Linux. <p>
-            <p> If you're interested, you should visit the project's website <a href="https://lainos.dev/">here</a> and its Git repository <a href="https://gitlab.com/lainos">here</a>. </p>
-            <p> At lain.rocks we provide the official software mirror for LainOS, which you can find below. </p>
-        </div>      
-    </section>
-            <section class="mt-2 card">
-            <div class="card-header">
-                <h2>LainOS software mirror list</h2>
-            </div>
-            <div class="card-body">
-                <table>
-                    <tr>
-                        <th>Name</th>
-                        <th>Mirror URL</th>
-                        <th>Tor Mirror URL</th>
-                        <th>Description</th>
-                        <th>Is online?</th>
-                    </tr>
-                    <tr>
-                        <td>Wired Repo</td>
-                        <td><a href="https://lain.rocks/repos/wired/">https://lain.rocks/repos/wired/</a></td>
-                        <td><a href="http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/wired/">http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/wired/</a></td>
-                        <td>Repository for the pentesting tools provided with LainOS</td>
-                        <td>{{ isSiteOnline('https://lain.rocks/repos/wired') }}</td>
-                    </tr>
-                    <tr>
-                        <td>Lain Repo</td>
-                        <td><a href="https://lain.rocks/repos/lain/">https://lain.rocks/repos/lain/</a></td>
-                        <td><a href="http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/lain/">http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/lain/</a></td>
-                        <td>Repository for the general software running on LainOS</td>
-                        <td>{{ isSiteOnline('https://lain.rocks/repos/lain') }}</td>
-                    </tr>
+
+    {{ renderNavbar() }}
+
+    <div class="page page--repos">
+
+        <section class="card" id="lainos-about">
+            <h2 class="card__heading">The LainOS project</h2>
+            <p>The LainOS project is an open-source GNU/Linux distribution focused on privacy and security based on Arch Linux.</p>
+            <p>
+                If you're interested, you should visit the project's website
+                <a href="https://lainos.dev/">here</a> and its Git repository
+                <a href="https://gitlab.com/lainos">here</a>.
+            </p>
+            <p>At lain.rocks we provide the official software mirror for LainOS, which you can find below.</p>
+        </section>
+
+        <section class="card" id="mirror-list">
+            <h2 class="card__heading">LainOS software mirror list</h2>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Mirror URL</th>
+                            <th>Tor Mirror URL</th>
+                            <th>Description</th>
+                            <th>Is online?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-name">Wired Repo</td>
+                            <td><a href="https://lain.rocks/repos/wired/">lain.rocks/repos/wired/</a></td>
+                            <td><a href="http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/wired/" class="onion-link">.onion/repos/wired/</a></td>
+                            <td>Repository for the pentesting tools provided with LainOS</td>
+                            <td><span class="status-val">{{ isSiteOnline('https://lain.rocks/repos/wired') }}</span></td>
+                        </tr>
+                        <tr>
+                            <td class="table-name">Lain Repo</td>
+                            <td><a href="https://lain.rocks/repos/lain/">lain.rocks/repos/lain/</a></td>
+                            <td><a href="http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/lain/" class="onion-link">.onion/repos/lain/</a></td>
+                            <td>Repository for the general software running on LainOS</td>
+                            <td><span class="status-val">{{ isSiteOnline('https://lain.rocks/repos/lain') }}</span></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </section>
-        <section class="mt-2 card">
-            <div class="card-header">
-                Mirror statistics
-            </div>
-            <div class="card-body">
-                <ul>
-                    <li>Mirror size: {{ calculateMirrorDiskSpace() }}</li>
-                    <li>Last update: {{ getLastMirrorUpdate() }}</li>
-                </ul>
 
-            </div>
+        <section class="card" id="mirror-stats">
+            <h2 class="card__heading">Mirror statistics</h2>
+            <dl class="stats-list">
+                <div class="stats-list__row">
+                    <dt>Mirror size</dt>
+                    <dd>{{ calculateMirrorDiskSpace() }}</dd>
+                </div>
+                <div class="stats-list__row">
+                    <dt>Last update</dt>
+                    <dd>{{ getLastMirrorUpdate() }}</dd>
+                </div>
+            </dl>
         </section>
-        </div>
+
+    </div>
+
 {% endblock %}

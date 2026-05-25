@@ -1,0 +1,80 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+{{ renderNavbar() }}
+
+<div class="page page--account">
+    <div class="acct-wrap acct-wrap--wide">
+
+        <div class="acct-header">
+            <h1 class="acct-title">{{ profile.displayName ?? uid }}</h1>
+            <p class="acct-sub mono">{{ uid }}@lain.rocks</p>
+        </div>
+
+        <div class="card acct-card">
+            <h2 class="card__heading">Account info</h2>
+            <dl class="acct-dl">
+                <div class="acct-dl__row">
+                    <dt>Username</dt>
+                    <dd><code>{{ uid }}</code></dd>
+                </div>
+                <div class="acct-dl__row">
+                    <dt>Display name</dt>
+                    <dd>{{ profile.displayName ?? '—' }}</dd>
+                </div>
+                <div class="acct-dl__row">
+                    <dt>Recovery email</dt>
+                    <dd>{{ profile.email ?? '—' }}</dd>
+                </div>
+                <div class="acct-dl__row">
+                    <dt>Mail address</dt>
+                    <dd><code>{{ uid }}@lain.rocks</code></dd>
+                </div>
+                {% if profile.creationDate %}
+                <div class="acct-dl__row">
+                    <dt>Member since</dt>
+                    <dd class="mono">{{ profile.creationDate|date('Y-m-d') }}</dd>
+                </div>
+                {% endif %}
+            </dl>
+        </div>
+
+        <div class="card acct-card">
+            <h2 class="card__heading">Your services</h2>
+            {% set groups = profile.groups ? profile.groups|map(g => g.displayName) : [] %}
+            <ul class="acct-services">
+                <li class="acct-service {% if 'mail_users' in groups %}acct-service--on{% endif %}">
+                    <span class="acct-service__dot"></span>
+                    <span class="acct-service__name">Email</span>
+                    <span class="acct-service__addr">{{ uid }}@lain.rocks</span>
+                    {% if 'mail_users' not in groups %}<span class="acct-service__badge">not enabled</span>{% endif %}
+                </li>
+                <li class="acct-service {% if 'forgejo_users' in groups %}acct-service--on{% endif %}">
+                    <span class="acct-service__dot"></span>
+                    <span class="acct-service__name">Forgejo</span>
+                    <a class="acct-service__addr" href="https://forgejo.lain.rocks" target="_blank">forgejo.lain.rocks</a>
+                    {% if 'forgejo_users' not in groups %}<span class="acct-service__badge">not enabled</span>{% endif %}
+                </li>
+                <li class="acct-service {% if 'nextcloud_users' in groups %}acct-service--on{% endif %}">
+                    <span class="acct-service__dot"></span>
+                    <span class="acct-service__name">Nextcloud</span>
+                    <a class="acct-service__addr" href="https://nextcloud.lain.rocks" target="_blank">cloud.lain.rocks</a>
+                    {% if 'nextcloud_users' not in groups %}<span class="acct-service__badge">not enabled</span>{% endif %}
+                </li>
+            </ul>
+        </div>
+
+        <div class="card acct-card">
+            <h2 class="card__heading">Actions</h2>
+            <div class="acct-actions-list">
+                <a class="acct-action-btn" href="?page=account&action=change-password">Change password</a>
+                <a class="acct-action-btn acct-action-btn--danger" href="?page=account&action=logout"
+                   onclick="return confirm('Log out?')">Log out</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

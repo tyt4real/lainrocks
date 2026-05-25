@@ -1,112 +1,91 @@
 {% extends "base.html.twig" %}
 
 {% block title %}About{% endblock %}
-{% block head %}
-    {{ parent() }}
-    <!-- empty -->
-{% endblock %}
+{% block head %}{{ parent() }}{% endblock %}
+
 {% block content %}
-            <div class="row">
-            <div class="col">
-                <section class="mt-2 card">
-                    <div class="card-header">
-                        <h2>Who am I?</h2>
-                    </div>
-                    <div class="card-body" style="display: flex; !important;">
-                        {{ renderRandomMeIRLImage() }}
-                        <div style="margin-left: 25px; display: flex; flex-direction: column; justify-content: flex-start;">
-                        <p>Hi reader, I hope You're doing great this beautiful day, afternoon, evening or whenever You're reading this. I greatly appreciate Your interest in me</p>
-                        <blockquote>
-                            <p>
-                                <span class="quote"> >who needs compiler warnings when you have this guy</span>
-                            </p>
-                        </blockquote>
-                        <ul>
-                            <li>
-                                My handle on most places is <i>tyt4real</i>
-                            </li>
-                            <li>
-                                Fediverse: <a href="https://comp.lain.la/users/tyt4real">tyt4real@comp.lain.la</a>
-                            </li>
-                            <li>
-                                XMPP: <a href="xmpp:tyt4real@lain.rocks">tyt4real@lain.rocks</a>
-                            </li>
-                            <li>
-                                GitHub: <a href="https://github.com/tyt4real">tyt4real</a>
-                            </li>
-                            <li>
-                                Twitter(yuck): <a href="https://x.com/tyt4fake">tyt4</a> 
-                            </li>
-                        </ul>
-                        </p>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <section class="mt-2 card">
-                    <div class="card-header">
-                        <h2>
-                            About me
-                        </h2>
-                    </div>
-                    <div class="card-body">
-                        <p>
-                            Since a <i>very</i> young age I loved messing around with computers and hardware in general. When I was about 6 I learnt to code in Java for purpose of writing Minecraft server plugins and mods. Since then I learnt many other languages such as C, PHP, Javascript, Typescript and others, although I suck at graphical design, I try my best. Since I begun using the Wired, I switched handles and nicknames many times but I hope my current identity will stay with me for a <i>long</i> time. I have done tons of small side projects, in all of which I've lost interest. This site however I hope will keep me entertained for a very <i>long</i> time.
-                        </p>
-                        <p>
-                            Let's all love Lain.
-                        </p>
-                    </div>
-                </section>
-            </div>
-            <div class="col">
-                <section class="mt-2 card">
-                    <div class="card-header">
-                        <h2>
-                            Contact me?
-                        </h2>
-                    </div>
-                    <div class="card-body">
-                        <p>
-                            You'd like to contact me? I feel flattered :3
-                        </p>
-                        <ul>
-                            <li>
-                                <ul>
 
-                                    Email: <a href="mailto:tyt4real@protonmail.com">tyt4real@protonmail.com</a>
+    {{ renderNavbar() }}
 
-                                    <li>
-                                        My public PGP key is here: <a href="https://lain.rocks/special/public.asc" target="_blank">here</a>.
-                                    </li>
-                                    <li>
-                                        Key fingerprint:
-                                        <p class="code">
-                                            1CB2748D8D6DED9F
-                                        </p>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                Most of the time, I'm reachable on #lainchan @ irc.lainchan.org +6697
-                            </li>
-                            <li>
-                                XMPP: <a href="xmpp:tyt4real@lain.rocks">tyt4real@lain.rocks</a> or <a href="xmpp:tyt4real@xmpp.jp">tyt4real@xmpp.jp</a>
-                            </li>
-                            <li>
-                                <a href="https://spyware.neocities.org/articles/discord.html"><img src="../images/discord-no-way-2.gif" alt="Discord? No way!"></a>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-            </div>
-        </div>
-        <section class="mt-2 card">
-            <div class="card-body" style="text-align: center;">
-                <img src="../images/connectlain.jpg">
+    <div class="page page--about">
+
+        <section class="card about-hero" id="who">
+            <h2 class="card__heading">Who am I?</h2>
+            <div class="about-hero__body">
+                <div class="about-hero__photo">
+                    {{ renderRandomMeIRLImage() }}
+                </div>
+                <div class="about-hero__text">
+                    <p>Hi reader, I hope You're doing great this beautiful day, afternoon, evening or whenever You're reading this. I greatly appreciate Your interest in me.</p>
+                    <blockquote class="about-quote">&gt;who needs compiler warnings when you have this guy</blockquote>
+                    <ul class="handle-list">
+                        <li>My handle on most places is <em>tyt4real</em></li>
+                        <li><span class="handle-list__label">Fediverse</span> <a href="https://comp.lain.la/users/tyt4real">tyt4real@comp.lain.la</a></li>
+                        <li><span class="handle-list__label">XMPP</span> <a href="xmpp:tyt4real@lain.rocks">tyt4real@lain.rocks</a></li>
+                        <li><span class="handle-list__label">GitHub</span> <a href="https://github.com/tyt4real">tyt4real</a></li>
+                        <li><span class="handle-list__label">Twitter (yuck)</span> <a href="https://x.com/tyt4fake">tyt4</a></li>
+                    </ul>
+                </div>
             </div>
         </section>
+
+        <div class="about-grid">
+
+            <section class="card" id="about-me">
+                <h2 class="card__heading">About me</h2>
+                <p>
+                    Since a <em>very</em> young age I loved messing around with computers and hardware in general.
+                    When I was about 6 I learnt to code in Java for purpose of writing Minecraft server plugins and mods.
+                    Since then I learnt many other languages such as C, PHP, Javascript, Typescript and others,
+                    although I suck at graphical design, I try my best.
+                    Since I begun using the Wired, I switched handles and nicknames many times but I hope my current
+                    identity will stay with me for a <em>long</em> time.
+                    I have done tons of small side projects, in all of which I've lost interest.
+                    This site however I hope will keep me entertained for a very <em>long</em> time.
+                </p>
+                <p class="lain-sign">Let's all love Lain.</p>
+            </section>
+
+            <section class="card" id="contact">
+                <h2 class="card__heading">Contact me?</h2>
+                <p>You'd like to contact me? I feel flattered :3</p>
+                <ul class="contact-list">
+                    <li>
+                        <span class="contact-list__label">Email</span>
+                        <div>
+                            <a href="mailto:tyt4real@protonmail.com">tyt4real@protonmail.com</a>
+                            <ul class="contact-list__sub">
+                                <li>My public PGP key is here: <a href="https://lain.rocks/special/public.asc" target="_blank">here</a>.</li>
+                                <li>Key fingerprint: <code>1CB2748D8D6DED9F</code></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="contact-list__label">IRC</span>
+                        <span>Most of the time, I'm reachable on <code>#lainchan @ irc.lainchan.org +6697</code></span>
+                    </li>
+                    <li>
+                        <span class="contact-list__label">XMPP</span>
+                        <span>
+                            <a href="xmpp:tyt4real@lain.rocks">tyt4real@lain.rocks</a> or
+                            <a href="xmpp:tyt4real@xmpp.jp">tyt4real@xmpp.jp</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="contact-list__label">Discord?</span>
+                        <a href="https://spyware.neocities.org/articles/discord.html">
+                            <img src="../images/discord-no-way-2.gif" alt="Discord? No way!" class="badge-gif" />
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+
+        <section class="card about-banner">
+            <img src="../images/connectlain.jpg" alt="Connect to the Wired" />
+        </section>
+
+    </div>
+
 {% endblock %}

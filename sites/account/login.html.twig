@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+{% import "account/_form.html.twig" as form %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+{{ renderNavbar() }}
+
+<div class="page page--account">
+    <div class="acct-wrap">
+
+        <div class="acct-header">
+            <h1 class="acct-title">Welcome back</h1>
+            <p class="acct-sub">Log in to your lain.rocks account.</p>
+        </div>
+
+        {% if registered %}
+            <div class="acct-flash acct-flash--ok">Account created! You can now log in.</div>
+        {% endif %}
+        {% if reset is defined and reset %}
+            <div class="acct-flash acct-flash--ok">Password reset successfully. Log in below.</div>
+        {% endif %}
+
+        {{ form.flash(flash) }}
+
+        <div class="card acct-card">
+            <h2 class="card__heading">Login</h2>
+
+            <form method="POST" action="?page=account&action=login" class="acct-form" novalidate>
+                {% if redirect %}
+                    <input type="hidden" name="redirect" value="{{ redirect }}">
+                {% endif %}
+
+                {{ form.field('Username', 'uid', 'text', '', 'Xx_stardestr0yer_xX', true) }}
+                {{ form.field('Password', 'password', 'password', '', '', true) }}
+
+                <div class="acct-actions">
+                    <button type="submit" class="acct-btn">Log in →</button>
+                    <a class="acct-link" href="?page=account&action=reset-password">Forgot password?</a>
+                </div>
+            </form>
+        </div>
+
+        <p class="acct-alt">No account yet? <a href="?page=account&action=register">Register</a></p>
+
+    </div>
+</div>
+{% endblock %}
