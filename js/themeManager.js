@@ -1,50 +1,65 @@
 // Theme management system
 class ThemeManager {
   constructor() {
-    this.themeSelect = document.getElementById('theme-select');
+    this.buttons = document.querySelectorAll('.theme-btn');
+    this.cssLink = document.getElementById('theme-css');
     this.init();
   }
 
   init() {
-    // Set the dropdown to match current theme
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    this.themeSelect.value = currentTheme;
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'lainrocks';
+    this.applyTheme(currentTheme, false);
 
-    // Listen for theme changes
-    this.themeSelect.addEventListener('change', (e) => {
-      this.setTheme(e.target.value);
+    this.buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.setTheme(btn.dataset.theme);
+      });
     });
   }
 
   setTheme(themeName) {
-    // Update the data attribute
     document.documentElement.setAttribute('data-theme', themeName);
-
-    // Save to localStorage
     localStorage.setItem('theme', themeName);
-
-    // Optional: Send to server for logged-in users
-    // this.saveThemeToServer(themeName);
+    this.applyTheme(themeName, true);
   }
 
-  // Optional: Save theme preference to server for logged-in users
+  applyTheme(themeName, swapFont) {
+    // Swap stylesheet
+    if (this.cssLink) {
+      this.cssLink.href = `../css/${themeName}.css`;
+    }
+
+    // Mark active button
+    this.buttons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.theme === themeName);
+    });
+
+    // Swap Google Fonts if links exist in <head>
+    if (swapFont) {
+      const fontDefault  = document.getElementById('font-default');
+      const fontYotsuba  = document.getElementById('font-yotsuba');
+      if (fontDefault && fontYotsuba) {
+        fontDefault.disabled = (themeName !== 'lainrocks');
+        fontYotsuba.disabled = (themeName !== 'yotsuba');
+      }
+    }
+  }
 }
 
-// Initialize theme manager when DOM is ready
+// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   new ThemeManager();
 });
 
-// Optional: Listen for system theme changes (if you want to offer auto-switching)
+// Respect system preference only if user hasn't chosen manually
 if (window.matchMedia) {
-  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  mediaQuery.addEventListener('change', (e) => {
-    // Only auto-switch if user hasn't manually selected a theme
-    const hasManualTheme = localStorage.getItem('theme');
-    if (!hasManualTheme) {
-      const autoTheme = e.matches ? 'lainrocks' : 'yotsuba';
-      document.documentElement.setAttribute('data-theme', autoTheme);
-      document.getElementById('theme-select').value = autoTheme;
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) {
+      const auto = e.matches ? 'lainrocks' : 'yotsuba';
+      document.documentElement.setAttribute('data-theme', auto);
+      document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.theme === auto);
+      });
     }
   });
 }
