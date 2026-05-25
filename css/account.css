@@ -1,0 +1,346 @@
+/* ── Layout ─────────────────────────────────────────────────────── */
+.page--account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 2.5rem 5rem;
+}
+
+.acct-wrap {
+  width: 100%;
+  max-width: 480px;
+}
+
+.acct-wrap--wide {
+  max-width: 640px;
+}
+
+/* ── Header ─────────────────────────────────────────────────────── */
+.acct-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.acct-title {
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  font-weight: 800;
+  background: linear-gradient(130deg, #f0ecff 0%, var(--accent-hot) 55%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: .3rem;
+}
+
+.acct-sub {
+  font-family: var(--mono);
+  font-size: .8rem;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+/* ── Flash messages ─────────────────────────────────────────────── */
+.acct-flash {
+  padding: .75rem 1.1rem;
+  border-radius: var(--r);
+  font-family: var(--mono);
+  font-size: .84rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid;
+}
+
+.acct-flash--ok {
+  background: rgba(34,197,94,.08);
+  border-color: rgba(34,197,94,.3);
+  color: #86efac;
+}
+
+.acct-flash--err {
+  background: rgba(239,68,68,.08);
+  border-color: rgba(239,68,68,.3);
+  color: #fca5a5;
+}
+
+/* ── Card ───────────────────────────────────────────────────────── */
+.acct-card {
+  margin-bottom: 1rem;
+}
+
+/* ── Form ───────────────────────────────────────────────────────── */
+.acct-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.acct-row--2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .85rem;
+}
+
+@media (max-width: 420px) {
+  .acct-row--2 { grid-template-columns: 1fr; }
+}
+
+.acct-field {
+  position: relative;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.acct-label {
+  font-family: var(--mono);
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent-hot);
+}
+
+.acct-input {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  color: var(--text);
+  padding: .6rem .85rem;
+  font-family: var(--mono);
+  font-size: .9rem;
+  width: 100%;
+  transition: border-color .2s, box-shadow .2s;
+  outline: none;
+}
+
+.acct-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(124,95,191,.18);
+}
+
+.acct-input::placeholder {
+  color: var(--text-dim);
+  opacity: .6;
+}
+
+.acct-hint {
+  font-family: var(--mono);
+  font-size: .74rem;
+  color: var(--text-dim);
+  margin: -.5rem 0 0;
+  line-height: 1.5;
+}
+
+.acct-hint em { color: var(--accent-hot); }
+
+/* ── Buttons ────────────────────────────────────────────────────── */
+.acct-btn {
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  color: var(--text-bright);
+  padding: .65rem 1.5rem;
+  font-family: var(--mono);
+  font-size: .85rem;
+  border-radius: var(--r);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  transition: all .2s;
+  align-self: flex-start;
+}
+
+.acct-btn:hover {
+  background: var(--accent);
+  box-shadow: 0 0 22px rgba(124,95,191,.4);
+  color: #fff;
+}
+
+.acct-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: .25rem;
+}
+
+.acct-link {
+  font-family: var(--mono);
+  font-size: .78rem;
+  color: var(--text-dim);
+}
+
+.acct-link:hover { color: var(--link-h); }
+
+/* ── Alt link (register / login) ─────────────────────────────────── */
+.acct-alt {
+  text-align: center;
+  font-family: var(--mono);
+  font-size: .8rem;
+  color: var(--text-dim);
+  margin-top: .5rem;
+}
+
+/* ── Profile — definition list ───────────────────────────────────── */
+.acct-dl {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.acct-dl__row {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  padding: .55rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .9rem;
+}
+
+.acct-dl__row:last-child { border-bottom: none; }
+
+.acct-dl__row dt {
+  font-family: var(--mono);
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+  min-width: 130px;
+  flex-shrink: 0;
+}
+
+/* ── Profile — services list ─────────────────────────────────────── */
+.acct-services {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.acct-service {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .65rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .9rem;
+}
+
+.acct-service:last-child { border-bottom: none; }
+
+.acct-service__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.acct-service--on .acct-service__dot {
+  background: #4ade80;
+  box-shadow: 0 0 6px rgba(74,222,128,.6);
+}
+
+.acct-service__name {
+  font-family: var(--mono);
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--text-bright);
+  min-width: 90px;
+}
+
+.acct-service__addr {
+  font-family: var(--mono);
+  font-size: .8rem;
+  color: var(--text-dim);
+  flex: 1;
+}
+
+.acct-service__badge {
+  font-family: var(--mono);
+  font-size: .68rem;
+  padding: .15rem .5rem;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+}
+
+/* ── Profile — action buttons ────────────────────────────────────── */
+.acct-actions-list {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.acct-action-btn {
+  font-family: var(--mono);
+  font-size: .78rem;
+  padding: .45rem 1rem;
+  border: 1px solid var(--accent-dim);
+  border-radius: var(--r);
+  color: var(--accent-hot);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  transition: all .2s;
+  background: rgba(124,95,191,.06);
+}
+
+.acct-action-btn:hover {
+  background: rgba(124,95,191,.18);
+  box-shadow: var(--glow);
+  color: #fff;
+}
+
+.acct-action-btn--danger {
+  border-color: rgba(239,68,68,.3);
+  color: #fca5a5;
+  background: rgba(239,68,68,.06);
+}
+
+.acct-action-btn--danger:hover {
+  background: rgba(239,68,68,.15);
+  box-shadow: 0 0 18px rgba(239,68,68,.25);
+  color: #fff;
+}
+
+.mono { font-family: var(--mono); }
+/*text input*/
+
+input,
+textarea {
+  background: none;
+  color: var(--accent-hot);
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: auto;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--accent-dim);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+input:focus ~ label,
+input:valid ~ label,
+textarea:focus ~ label,
+textarea:valid ~ label {
+  top: -14px;
+  font-size: 12px;
+  color: var(--accent-hot);
+}
+
+input:focus ~ .bar:before,
+textarea:focus ~ .bar:before {
+  width: var(--accent-hot);
+}
+
+label {
+  color: var(--accent-dim);
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: all 0.3s ease;
+}
