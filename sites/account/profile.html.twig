@@ -48,7 +48,7 @@
                 <li class="acct-service {% if 'mail_users' in groups %}acct-service--on{% endif %}">
                     <span class="acct-service__dot"></span>
                     <span class="acct-service__name">Email</span>
-                    <span class="acct-service__addr">{{ uid }}@lain.rocks</span>
+                    <span class="acct-service__addr"><a class="acct-service__addr" href="https://webmail.lain.rocks/" target="_blank">{{ uid }}@lain.rocks</a></span>
                     {% if 'mail_users' not in groups %}<span class="acct-service__badge">not enabled</span>{% endif %}
                 </li>
                 <li class="acct-service {% if 'forgejo_users' in groups %}acct-service--on{% endif %}">
