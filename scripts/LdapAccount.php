@@ -1,9 +1,5 @@
 <?php
 
-/**
- * LdapAccount — thin wrapper around the lldap REST API.
- * Adds extensive logging/debugging.
- */
 class LdapAccount
 {
     private string $apiUrl;
@@ -33,7 +29,7 @@ class LdapAccount
         ]);
     }
 
-    /* ───────────────────────────────────────────────────────────── */
+     
 
     public function register(
         string $uid,
@@ -159,7 +155,7 @@ class LdapAccount
         return ['ok' => true];
     }
 
-    /* ───────────────────────────────────────────────────────────── */
+     
 
     public function login(string $uid, string $password): array
     {
@@ -213,7 +209,7 @@ class LdapAccount
         ];
     }
 
-    /* ───────────────────────────────────────────────────────────── */
+     
 
     public function requestPasswordReset(string $uid): array
     {
@@ -238,7 +234,7 @@ class LdapAccount
         return ['ok' => true];
     }
 
-    /* ───────────────────────────────────────────────────────────── */
+     
 
     private function setPassword(
         string $uid,
@@ -315,7 +311,7 @@ class LdapAccount
         return $result;
     }
 
-    /* ───────────────────────────────────────────────────────────── */
+     
 
     private function addToGroup(
         string $uid,
@@ -352,13 +348,15 @@ class LdapAccount
 
         $query = '
         mutation AddUserToGroup(
-            $userId: String!,
-            $groupId: Int!
-        ) {
-            addUserToGroup(
-                userId: $userId,
-                groupId: $groupId
-            )
+    $userId: String!,
+    $groupId: Int!
+) {
+    addUserToGroup(
+        userId: $userId,
+        groupId: $groupId
+    ) {
+        ok
+    }
         }';
 
         $payload = [
@@ -374,7 +372,7 @@ class LdapAccount
         $this->log('ADD_TO_GROUP_RESPONSE', $res);
     }
 
-    /* ───────────────────────────────────────────────────────────── */
+     
 
     private function getAdminToken(): ?string
     {
@@ -408,7 +406,7 @@ class LdapAccount
         return $this->jwtToken;
     }
 
-    /* ───────────────────────────────────────────────────────────── */
+     
 
     private function gql(string $query, string $token): array
     {
@@ -419,7 +417,7 @@ class LdapAccount
         );
     }
 
-    /* ───────────────────────────────────────────────────────────── */
+     
 
     private function apiPost(
         string $path,
@@ -484,14 +482,14 @@ class LdapAccount
         return $decoded ?? [];
     }
 
-    /* ───────────────────────────────────────────────────────────── */
+     
 
     private function isValidUid(string $uid): bool
     {
         return (bool) preg_match('/^[a-z0-9_-]{3,32}$/', $uid);
     }
 
-    /* ───────────────────────────────────────────────────────────── */
+     
 
     private function log(string $event, array $context = []): void
     {
@@ -509,7 +507,6 @@ class LdapAccount
         error_log($line);
     }
 
-    /* ───────────────────────────────────────────────────────────── */
     public function getProfile(string $uid): ?array
     {
         $this->log('GET_PROFILE_START', ['uid' => $uid]);

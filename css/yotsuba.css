@@ -245,6 +245,10 @@ blockquote {
 .theme-btn { font-family: var(--mono); font-size: .7rem; padding: .28rem .65rem; background: var(--bg-panel); border: 1px solid var(--border); border-radius: var(--r); color: var(--text-dim); cursor: pointer; text-transform: uppercase; letter-spacing: .06em; transition: all .2s; }
 .theme-btn:hover, .theme-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
+#logo { width: 75%; height: auto; }
+svg text, svg tspan { fill: var(--accent-hot) !important; }
+svg path { stroke: var(--accent-hot) !important; }
+
 /* ── Scrollbar / selection ─────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-panel); }

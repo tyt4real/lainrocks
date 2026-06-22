@@ -12,10 +12,8 @@ $ldap   = new LdapAccount($config);
 $action  = $_GET['action'] ?? 'login';
 $flash   = [];
 
-/* ── Route ───────────────────────────────────────────────────────── */
 switch ($action) {
 
-    /* ── Register ──────────────────────────────────────────────── */
     case 'register':
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $res = $ldap->register(
@@ -26,7 +24,7 @@ switch ($action) {
                 trim($_POST['last_name']  ?? '')
             );
             if ($res['ok']) {
-                // Auto-login after registration
+                // Autologin after registration
                 $login = $ldap->login(trim($_POST['uid']), $_POST['password']);
                 if ($login['ok']) {
                     $_SESSION['lain_uid'] = $login['uid'];
@@ -45,7 +43,7 @@ switch ($action) {
         ]);
         break;
 
-    /* ── Login ─────────────────────────────────────────────────── */
+
     case 'login':
         if (isset($_SESSION['lain_uid'])) {
             header('Location: ?page=account&action=profile'); exit;
@@ -67,13 +65,11 @@ switch ($action) {
         ]);
         break;
 
-    /* ── Logout ────────────────────────────────────────────────── */
     case 'logout':
         session_destroy();
         header('Location: ?page=account&action=login');
         exit;
 
-    /* ── Profile ───────────────────────────────────────────────── */
     case 'profile':
         if (!isset($_SESSION['lain_uid'])) {
             header('Location: ?page=account&action=login'); exit;
@@ -85,7 +81,6 @@ switch ($action) {
         ]);
         break;
 
-    /* ── Change password ───────────────────────────────────────── */
     case 'change-password':
         if (!isset($_SESSION['lain_uid'])) {
             header('Location: ?page=account&action=login'); exit;
@@ -107,17 +102,16 @@ switch ($action) {
         echo $twig->render('account/change_password.html.twig', ['flash' => $flash]);
         break;
 
-    /* ── Reset password (step 1 — request) ────────────────────── */
+//does not work, this implementation highkey does not work.
     case 'reset-password':
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $ldap->requestPasswordReset(trim($_POST['uid'] ?? ''));
-            // Always show success to prevent user enumeration
+
             $flash = ['type' => 'ok', 'msg' => 'If that account exists, a reset link has been sent to the associated email.'];
         }
         echo $twig->render('account/reset_request.html.twig', ['flash' => $flash]);
         break;
 
-    /* ── Reset password (step 2 — set new password) ───────────── */
     case 'reset-confirm':
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (($_POST['new_password'] ?? '') !== ($_POST['confirm_password'] ?? '')) {
