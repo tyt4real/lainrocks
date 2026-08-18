@@ -97,17 +97,17 @@ blockquote {
 
 /* ── Nav ───────────────────────────────────────────────────────── */
 .site-nav {
-  padding-block: .55rem;
+  padding-block: .3rem;
   border-bottom: 1px solid var(--border);
   background: var(--bg);
   position: sticky; top: 0; z-index: 200;
 }
-.site-nav__inner { display: flex; flex-wrap: wrap; gap: .1rem; align-items: center; }
+.site-nav__inner { display: flex; flex-wrap: nowrap; gap: .15rem; align-items: center; justify-content: center; }
 .site-nav__link {
-  font-family: var(--sans); font-size: .78rem; font-weight: 600;
-  color: var(--text-dim); padding: .3rem .65rem; border-radius: var(--r);
-  text-transform: uppercase; letter-spacing: .06em;
-  transition: all .2s; text-decoration: none;
+  font-family: var(--sans); font-size: .76rem; font-weight: 600;
+  color: var(--text-dim); padding: .2rem .5rem; border-radius: var(--r);
+  text-transform: uppercase; letter-spacing: .04em;
+  transition: all .2s; text-decoration: none; white-space: nowrap;
 }
 .site-nav__link:hover { color: var(--accent); background: rgba(200,75,47,.07); text-decoration: none; }
 

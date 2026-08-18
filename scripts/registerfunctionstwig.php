@@ -226,24 +226,16 @@ function registerWithTwig()
         $navbarLinks = array_merge($dynamicLinks, $manualLinks);
 
         // Render HTML
-        echo '<div style="text-align: center">';
-        echo '  <div id="navbar" class="content">';
-        echo '    <div class="mt-2 card">';
-        echo '      <div class="card-body">';
+        echo '<nav class="site-nav" role="navigation" aria-label="Main navigation">';
+        echo '  <div class="site-nav__inner">';
 
-        $lastIndex = count($navbarLinks) - 1;
-        foreach ($navbarLinks as $index => $link) {
-            echo '<a href="' . htmlspecialchars($link['href']) . '" target="' . htmlspecialchars($link['target']) . '">'
+        foreach ($navbarLinks as $link) {
+            echo '<a href="' . htmlspecialchars($link['href']) . '" target="' . htmlspecialchars($link['target']) . '" class="site-nav__link">'
                 . htmlspecialchars($link['label']) . '</a>';
-            if ($index !== $lastIndex) {
-                echo ' | ';
-            }
         }
 
-        echo '      </div>';
-        echo '    </div>';
         echo '  </div>';
-        echo '</div>';
+        echo '</nav>';
     }));
 
     $twig->addFunction(new \Twig\TwigFunction('checkCommit', function () {
