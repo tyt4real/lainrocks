@@ -63,14 +63,16 @@ class LdapAccount
             ];
         }
 
-        if (strlen($password) < 8) {
-            $this->log('REGISTER_FAIL_PASSWORD_TOO_SHORT', [
-                'uid' => $uid
+        $pwError = $this->validatePassword($password);
+        if ($pwError !== null) {
+            $this->log('REGISTER_FAIL_PASSWORD_POLICY', [
+                'uid' => $uid,
+                'error' => $pwError
             ]);
 
             return [
                 'ok' => false,
-                'error' => 'Password too short.'
+                'error' => $pwError
             ];
         }
 
@@ -211,7 +213,134 @@ class LdapAccount
 
      
 
-    public function requestPasswordReset(string $uid): array
+    public function changePassword(string $uid, string $currentPassword, string $newPassword): array
+    {
+        $uid = strtolower(trim($uid));
+
+        $pwError = $this->validatePassword($newPassword);
+        if ($pwError !== null) {
+            $this->log('CHANGE_PASSWORD_FAIL_POLICY', [
+                'uid' => $uid,
+                'error' => $pwError
+            ]);
+
+            return [
+                'ok' => false,
+                'error' => $pwError
+            ];
+        }
+
+        $dn = "uid={$uid},ou=people,{$this->baseDn}";
+
+        $ds = @ldap_connect($this->ldapUrl);
+
+        if (!$ds) {
+            $this->log('LDAP_CONNECT_FAILED');
+
+            return [
+                'ok' => false,
+                'error' => 'Cannot connect to LDAP.'
+            ];
+        }
+
+        ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
+        ldap_set_option($ds, LDAP_OPT_REFERRALS, 0);
+
+        $bound = @ldap_bind($ds, $dn, $currentPassword);
+
+        if (!$bound) {
+            ldap_unbind($ds);
+
+            $this->log('CHANGE_PASSWORD_FAIL_CURRENT', [
+                'uid' => $uid
+            ]);
+
+            return [
+                'ok' => false,
+                'error' => 'Current password is incorrect.'
+            ];
+        }
+
+        ldap_unbind($ds);
+
+        $token = $this->getAdminToken();
+
+        if (!$token) {
+            $this->log('CHANGE_PASSWORD_FAIL_NO_TOKEN');
+
+            return [
+                'ok' => false,
+                'error' => 'Cannot authenticate to LLDAP.'
+            ];
+        }
+
+        $pwResult = $this->setPassword($uid, $newPassword, $token);
+
+        if (!$pwResult) {
+            $this->log('CHANGE_PASSWORD_SET_FAILED', [
+                'uid' => $uid
+            ]);
+
+            return [
+                'ok' => false,
+                'error' => 'Password could not be updated.'
+            ];
+        }
+
+        $this->log('CHANGE_PASSWORD_SUCCESS', ['uid' => $uid]);
+
+        return ['ok' => true];
+    }
+
+    public function completePasswordReset(string $uid, string $token, string $newPassword): array
+    {
+        $uid = strtolower(trim($uid));
+
+        $pwError = $this->validatePassword($newPassword);
+        if ($pwError !== null) {
+            $this->log('RESET_CONFIRM_FAIL_POLICY', [
+                'uid' => $uid,
+                'error' => $pwError
+            ]);
+
+            return [
+                'ok' => false,
+                'error' => $pwError
+            ];
+        }
+
+        $payload = [
+            'user_id' => $uid,
+            'token'   => $token,
+            'password' => $newPassword
+        ];
+
+        $res = $this->apiPost(
+            '/auth/reset/step2',
+            $payload,
+            null
+        );
+
+        $this->log('RESET_CONFIRM_RESPONSE', $res);
+
+        if (isset($res['errors'])) {
+            $msg = $res['errors'][0]['message'] ?? 'Unknown error';
+
+            $this->log('RESET_CONFIRM_FAILED', [
+                'uid' => $uid,
+                'error' => $msg
+            ]);
+
+            return [
+                'ok' => false,
+                'error' => $msg
+            ];
+        }
+
+        $this->log('RESET_CONFIRM_SUCCESS', ['uid' => $uid]);
+
+        return ['ok' => true];
+    }
     {
         $uid = strtolower(trim($uid));
 
@@ -487,6 +616,26 @@ class LdapAccount
     private function isValidUid(string $uid): bool
     {
         return (bool) preg_match('/^[a-z0-9_-]{3,32}$/', $uid);
+    }
+
+    private function validatePassword(string $password): ?string
+    {
+        if (strlen($password) < 10) {
+            return 'Password must be at least 10 characters long.';
+        }
+        if (!preg_match('/[A-Z]/', $password)) {
+            return 'Password must contain at least one uppercase letter.';
+        }
+        if (!preg_match('/[a-z]/', $password)) {
+            return 'Password must contain at least one lowercase letter.';
+        }
+        if (!preg_match('/[0-9]/', $password)) {
+            return 'Password must contain at least one number.';
+        }
+        if (!preg_match('/[^A-Za-z0-9]/', $password)) {
+            return 'Password must contain at least one special character.';
+        }
+        return null;
     }
 
      
