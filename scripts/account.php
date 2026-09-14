@@ -54,7 +54,7 @@ switch ($action) {
 
     case 'register':
         $ip = getClientIp();
-        if (!$checkRateLimit('register', $ip)) {
+        if (!checkRateLimit('register', $ip)) {
             $flash = ['type' => 'err', 'msg' => 'Too many registration attempts. Please try again later.'];
         } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $res = $ldap->register(
