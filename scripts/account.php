@@ -150,7 +150,7 @@ switch ($action) {
 //does not work, this implementation highkey does not work.
     case 'reset-password':
         $ip = getClientIp();
-        if (!$checkRateLimit('reset', $ip)) {
+        if (!checkRateLimit('reset', $ip)) {
             $flash = ['type' => 'err', 'msg' => 'Too many reset attempts. Please try again later.'];
         } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $ldap->requestPasswordReset(trim($_POST['uid'] ?? ''));
@@ -162,7 +162,7 @@ switch ($action) {
 
     case 'reset-confirm':
         $ip = getClientIp();
-        if (!$checkRateLimit('reset', $ip)) {
+        if (!checkRateLimit('reset', $ip)) {
             $flash = ['type' => 'err', 'msg' => 'Too many reset attempts. Please try again later.'];
         } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (($_POST['new_password'] ?? '') !== ($_POST['confirm_password'] ?? '')) {
