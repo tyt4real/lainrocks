@@ -341,6 +341,8 @@ class LdapAccount
 
         return ['ok' => true];
     }
+
+    public function requestPasswordReset(string $uid): array
     {
         $uid = strtolower(trim($uid));
 
