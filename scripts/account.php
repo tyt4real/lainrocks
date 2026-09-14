@@ -90,7 +90,7 @@ switch ($action) {
         if (isset($_SESSION['lain_uid'])) {
             header('Location: ?page=account&action=profile'); exit;
         }
-        if (!$checkRateLimit('login', $ip)) {
+        if (!checkRateLimit('login', $ip)) {
             $flash = ['type' => 'err', 'msg' => 'Too many login attempts. Please try again later.'];
         } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $res = $ldap->login(trim($_POST['uid'] ?? ''), $_POST['password'] ?? '');
