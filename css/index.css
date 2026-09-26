@@ -460,6 +460,25 @@ footer a:hover { color: var(--link-hover); }
   footer { padding: 1.5rem 1rem; flex-direction: column; }
 }
 
+@media (max-width: 480px) {
+  nav a, .nav a { font-size: 0.7rem; padding: 0.5rem 0.6rem; min-height: 44px; display: inline-flex; align-items: center; }
+  
+  header, .site-header { padding: 1rem 1rem .75rem; }
+  header h1, .site-title { font-size: 1.8rem; }
+  
+  .card, .panel, article, section { padding: 1.25rem; margin-bottom: 1rem; }
+  
+  .hero__chip { font-size: .7rem; padding: .5rem .75rem; min-height: 44px; display: inline-flex; align-items: center; }
+  
+  table { font-size: .78rem; }
+  th, td { padding: .5rem .6rem; }
+  
+  input, textarea, select { padding: .75rem .85rem; font-size: 1rem; min-height: 48px; }
+  button, .btn { padding: .75rem 1.25rem; font-size: .9rem; min-height: 48px; }
+  
+  footer { padding: 1rem; font-size: .72rem; }
+}
+
 /* ---------- Page load fade-in ---------- */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }

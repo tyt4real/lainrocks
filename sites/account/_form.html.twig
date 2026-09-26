@@ -10,17 +10,16 @@
 
 {% macro field(label, name, type, value, placeholder, required) %}
     <div class="acct-field">
+        <label class="acct-label" for="{{ name }}">{{ label }}</label>
         <input
-            class="textbox"
+            class="acct-input"
             type="{{ type ?? 'text' }}"
             id="{{ name }}"
             name="{{ name }}"
             value="{{ value ?? '' }}"
-{#          placeholder="{{ placeholder ?? '' }}"          #}
-            placeholder="{{ '' }}"
+            placeholder="{{ placeholder ?? '' }}"
             {% if required %}required{% endif %}
             autocomplete="{{ type == 'password' ? 'current-password' : name }}">
-            <label for="{{ name }}">{{ label }}</label>
         </input>
     </div>
 {% endmacro %}
