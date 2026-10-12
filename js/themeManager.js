@@ -7,7 +7,7 @@ class ThemeManager {
   }
 
   init() {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'lainrocks';
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'cyberpunk';
     this.applyTheme(currentTheme, false);
 
     this.buttons.forEach(btn => {
@@ -38,9 +38,11 @@ class ThemeManager {
     if (swapFont) {
       const fontDefault  = document.getElementById('font-default');
       const fontYotsuba  = document.getElementById('font-yotsuba');
-      if (fontDefault && fontYotsuba) {
+      const fontCyberpunk = document.getElementById('font-cyberpunk');
+      if (fontDefault && fontYotsuba && fontCyberpunk) {
         fontDefault.disabled = (themeName !== 'lainrocks');
         fontYotsuba.disabled = (themeName !== 'yotsuba');
+        fontCyberpunk.disabled = (themeName !== 'cyberpunk');
       }
     }
   }
@@ -55,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 if (window.matchMedia) {
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
     if (!localStorage.getItem('theme')) {
-      const auto = e.matches ? 'lainrocks' : 'yotsuba';
+      const auto = e.matches ? 'cyberpunk' : 'yotsuba';
       document.documentElement.setAttribute('data-theme', auto);
       document.querySelectorAll('.theme-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.theme === auto);

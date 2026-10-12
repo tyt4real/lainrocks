@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="cyberpunk">
     <head>
         {% block head %}
             <meta charset="UTF-8" />
@@ -10,9 +10,11 @@
             <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-            <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" id="font-default" />
+            <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" id="font-yotsuba" disabled />
+            <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" id="font-cyberpunk" disabled />
             <link id="account-css" href="../css/account.css" rel="stylesheet"/>
-            <link id="theme-css" href="../css/lainrocks.css" rel="stylesheet" />
+            <link id="theme-css" href="../css/cyberpunk.css" rel="stylesheet" />
             <title>lain.rocks | {% block title %}{% endblock %}</title>
         {% endblock %}
     </head>
@@ -99,9 +101,9 @@
                     <div class="site-footer__theme">
                         <span class="theme-label">Theme</span>
                         <div class="theme-selector">
+                            <button class="theme-btn" data-theme="cyberpunk">Cyberpunk (default)</button>
                             <button class="theme-btn" data-theme="lainrocks">Default lainrocks</button>
                             <button class="theme-btn" data-theme="yotsuba">Yotsuba</button>
-                            <button class="theme-btn" data-theme="cyberpunk">Cyberpunk</button>
                         </div>
                     </div>
                 </div>
