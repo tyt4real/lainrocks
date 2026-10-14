@@ -1,0 +1,15 @@
+# lain.rocks
+# a free corner of the wired — no ads, no trackers, no paywalls.
+
+User-agent: *
+Allow: /
+
+# don't waste crawl budget on account plumbing or file listings
+Disallow: /?page=account
+Disallow: /account
+Disallow: /auth
+Disallow: /oauth-callback
+Disallow: /repos/
+Disallow: /stub_status
+
+Sitemap: https://lain.rocks/sitemap.xml
