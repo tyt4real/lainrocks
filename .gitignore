@@ -484,3 +484,6 @@ config.php
 
 #TRYING SOMETHING OUT, LEAVE ME ALONE, I WANNA BE LIKE THE COOL KIDS TOO!!!!!!!!!!!
 .agents/
+
+index.nginx-debian.html
+data/*
