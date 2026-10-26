@@ -125,6 +125,8 @@ class AutheliaAccount
             'grant_type'   => 'authorization_code',
             'code'         => $code,
             'redirect_uri' => $this->callbackUrl,
+            'client_id'     => $this->clientId,
+            'client_secret' => $this->clientSecret,
         ]);
 
         $ch = curl_init($url);
@@ -135,8 +137,6 @@ class AutheliaAccount
             CURLOPT_HTTPHEADER => [
                 'Content-Type: application/x-www-form-urlencoded',
             ],
-            CURLOPT_USERPWD => $this->clientId . ':' . $this->clientSecret,
-            CURLOPT_HTTPAUTH => CURLAUTH_BASIC,
             CURLOPT_TIMEOUT => 15,
             CURLOPT_CONNECTTIMEOUT => 5,
             CURLOPT_SSL_VERIFYPEER => true,
