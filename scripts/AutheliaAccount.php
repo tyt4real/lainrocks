@@ -122,12 +122,12 @@ class AutheliaAccount
     {
         $url = $this->authBase . '/api/oidc/token';
         $payload = http_build_query([
-            'grant_type'    => 'authorization_code',
-            'code'          => $code,
-            'redirect_uri'  => $this->callbackUrl,
-            'client_id'     => $this->clientId,
-            'client_secret' => $this->clientSecret,
+            'grant_type'   => 'authorization_code',
+            'code'         => $code,
+            'redirect_uri' => $this->callbackUrl,
         ]);
+
+        $basicAuth = base64_encode($this->clientId . ':' . $this->clientSecret);
 
         $ch = curl_init($url);
         curl_setopt_array($ch, [
@@ -136,6 +136,7 @@ class AutheliaAccount
             CURLOPT_POSTFIELDS => $payload,
             CURLOPT_HTTPHEADER => [
                 'Content-Type: application/x-www-form-urlencoded',
+                'Authorization: Basic ' . $basicAuth,
             ],
             CURLOPT_TIMEOUT => 15,
             CURLOPT_CONNECTTIMEOUT => 5,
