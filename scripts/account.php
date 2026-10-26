@@ -94,9 +94,15 @@ switch ($action) {
             clearRateLimit('login', getClientIp());
             $_SESSION['lain_uid'] = $res['uid'];
 
-            $redirect = $state !== '' ? base64_decode($state) : '?page=account&action=profile';
-            if ($redirect === false || str_starts_with($redirect, 'http')) {
-                $redirect = '?page=account&action=profile';
+            $redirect = '?page=account&action=profile';
+            if ($state !== '' && preg_match('/^[A-Za-z0-9_=-]+$/', $state)) {
+                $decoded = base64_decode($state, true);
+                if ($decoded !== false && preg_match('/^[?A-Za-z0-9_=&%-]+$/', $decoded)) {
+                    $redirect = $decoded;
+                }
+            } elseif ($state !== '' && preg_match('/^[0-9a-f]+$/i', $state)) {
+                // State is just a random hex nonce from getLoginUrl() without redirect
+                // keep default profile redirect
             }
 
             header('Location: ' . $redirect);
