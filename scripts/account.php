@@ -4,7 +4,6 @@ require_once './scripts/AutheliaAccount.php';
 require_once './scripts/LdapAccount.php';
 require_once './scripts/registerfunctionstwig.php';
 
-session_start();
 
 $config = require __DIR__ . '/../config.php';
 $twig   = registerWithTwig();
