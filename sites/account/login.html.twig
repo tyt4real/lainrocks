@@ -26,12 +26,21 @@
         <div class="card acct-card">
             <h2 class="card__heading">Login</h2>
 
+            {% if authelia_login_url is defined %}
+                <a class="acct-btn acct-btn--primary acct-btn--full" href="{{ authelia_login_url }}">Log in with Authelia →</a>
+            {% else %}
+                <p class="acct-alt">Authentication is unavailable. Please try again later.</p>
+            {% endif %}
+
+            {% if ldap_enabled is defined and ldap_enabled %}
+            <div class="acct-divider"><span>legacy</span></div>
+
             <form method="POST" action="?page=account&action=login" class="acct-form" novalidate>
                 {% if redirect %}
                     <input type="hidden" name="redirect" value="{{ redirect }}">
                 {% endif %}
 
-                {{ form.field('Username', 'uid', 'text', '', 'Xx_stardestr0yer_xX', true) }}
+                {{ form.field('Username', 'uid', 'text', '', '', true) }}
                 {{ form.field('Password', 'password', 'password', '', '', true) }}
 
                 <div class="acct-actions">
@@ -39,6 +48,7 @@
                 {#    <a class="acct-link" href="?page=account&action=reset-password">Forgot password?</a> #}
                 </div>
             </form>
+            {% endif %}
         </div>
 
         <p class="acct-alt">No account yet? <a href="?page=account&action=register">Register</a></p>

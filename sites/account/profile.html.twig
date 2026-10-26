@@ -22,11 +22,11 @@
                 </div>
                 <div class="acct-dl__row">
                     <dt>Display name</dt>
-                    <dd>{{ profile.displayName ?? '—' }}</dd>
+                    <dd>{{ profile.displayName ?? userinfo.name ?? '—' }}</dd>
                 </div>
                 <div class="acct-dl__row">
                     <dt>Recovery email</dt>
-                    <dd>{{ profile.email ?? '—' }}</dd>
+                    <dd>{{ profile.email ?? userinfo.email ?? '—' }}</dd>
                 </div>
                 <div class="acct-dl__row">
                     <dt>Mail address</dt>

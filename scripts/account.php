@@ -1,5 +1,6 @@
 <?php
 
+require_once './scripts/AutheliaAccount.php';
 require_once './scripts/LdapAccount.php';
 require_once './scripts/registerfunctionstwig.php';
 
@@ -7,10 +8,11 @@ session_start();
 
 $config = require __DIR__ . '/../config.php';
 $twig   = registerWithTwig();
+$authelia = new AutheliaAccount($config);
 $ldap   = new LdapAccount($config);
 
-$action  = $_GET['action'] ?? 'login';
-$flash   = [];
+$action = $_GET['action'] ?? 'login';
+$flash  = [];
 
 function getClientIp(): string {
     $ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['HTTP_X_REAL_IP'] ?? $_SERVER['REMOTE_ADDR'] ?? 'unknown';
@@ -24,7 +26,7 @@ function checkRateLimit(string $action, string $ip, int $maxAttempts = 5, int $w
     }
     $file = $rateLimitDir . '/' . $action . '_' . md5($ip) . '.json';
     $now = time();
-    
+
     $attempts = [];
     if (file_exists($file)) {
         $data = json_decode(file_get_contents($file), true);
@@ -32,11 +34,11 @@ function checkRateLimit(string $action, string $ip, int $maxAttempts = 5, int $w
             $attempts = array_filter($data, fn($ts) => $now - $ts < $windowSeconds);
         }
     }
-    
+
     if (count($attempts) >= $maxAttempts) {
         return false;
     }
-    
+
     $attempts[] = $now;
     file_put_contents($file, json_encode(array_values($attempts)));
     return true;
@@ -51,6 +53,51 @@ function clearRateLimit(string $action, string $ip): void {
 }
 
 switch ($action) {
+
+    case 'authelia-callback':
+        if (isset($_SESSION['lain_uid'])) {
+            header('Location: ?page=account&action=profile');
+            exit;
+        }
+
+        $code = $_GET['code'] ?? '';
+        $state = $_GET['state'] ?? '';
+
+        if ($code === '') {
+            $flash = ['type' => 'err', 'msg' => 'Missing authorization code.'];
+            echo $twig->render('account/login.html.twig', [
+                'flash'            => $flash,
+                'registered'       => false,
+                'redirect'         => '',
+                'authelia_login_url' => $authelia->getLoginUrl(''),
+                'ldap_enabled'     => false,
+            ]);
+            break;
+        }
+
+        $res = $authelia->handleCallback($code, $state);
+        if ($res['ok']) {
+            clearRateLimit('login', getClientIp());
+            $_SESSION['lain_uid'] = $res['uid'];
+
+            $redirect = $state !== '' ? base64_decode($state) : '?page=account&action=profile';
+            if ($redirect === false || str_starts_with($redirect, 'http')) {
+                $redirect = '?page=account&action=profile';
+            }
+
+            header('Location: ' . $redirect);
+            exit;
+        }
+
+        $flash = ['type' => 'err', 'msg' => $res['error']];
+        echo $twig->render('account/login.html.twig', [
+            'flash'            => $flash,
+            'registered'       => false,
+            'redirect'         => '',
+            'authelia_login_url' => $authelia->getLoginUrl(''),
+            'ldap_enabled'     => false,
+        ]);
+        break;
 
     case 'register':
         $ip = getClientIp();
@@ -84,29 +131,20 @@ switch ($action) {
         ]);
         break;
 
-
     case 'login':
-        $ip = getClientIp();
         if (isset($_SESSION['lain_uid'])) {
-            header('Location: ?page=account&action=profile'); exit;
+            header('Location: ?page=account&action=profile');
+            exit;
         }
-        if (!checkRateLimit('login', $ip)) {
-            $flash = ['type' => 'err', 'msg' => 'Too many login attempts. Please try again later.'];
-        } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $res = $ldap->login(trim($_POST['uid'] ?? ''), $_POST['password'] ?? '');
-            if ($res['ok']) {
-                clearRateLimit('login', $ip);
-                $_SESSION['lain_uid'] = $res['uid'];
-                $redirect = $_POST['redirect'] ?? '?page=account&action=profile';
-                header('Location: ' . $redirect);
-                exit;
-            }
-            $flash = ['type' => 'err', 'msg' => $res['error']];
-        }
+
+        $loginUrl = $authelia->getLoginUrl($_GET['redirect'] ?? '');
+
         echo $twig->render('account/login.html.twig', [
-            'flash'      => $flash,
-            'registered' => isset($_GET['registered']),
-            'redirect'   => $_GET['redirect'] ?? '',
+            'flash'          => $flash,
+            'registered'     => isset($_GET['registered']),
+            'redirect'       => $_GET['redirect'] ?? '',
+            'authelia_login_url' => $loginUrl,
+            'ldap_enabled'   => false,
         ]);
         break;
 
@@ -117,7 +155,8 @@ switch ($action) {
 
     case 'profile':
         if (!isset($_SESSION['lain_uid'])) {
-            header('Location: ?page=account&action=login'); exit;
+            header('Location: ?page=account&action=login');
+            exit;
         }
         $profile = $ldap->getProfile($_SESSION['lain_uid']);
         echo $twig->render('account/profile.html.twig', [
@@ -128,7 +167,8 @@ switch ($action) {
 
     case 'change-password':
         if (!isset($_SESSION['lain_uid'])) {
-            header('Location: ?page=account&action=login'); exit;
+            header('Location: ?page=account&action=login');
+            exit;
         }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (($_POST['new_password'] ?? '') !== ($_POST['confirm_password'] ?? '')) {
@@ -147,7 +187,6 @@ switch ($action) {
         echo $twig->render('account/change_password.html.twig', ['flash' => $flash]);
         break;
 
-//does not work, this implementation highkey does not work.
     case 'reset-password':
         $ip = getClientIp();
         if (!checkRateLimit('reset', $ip)) {
@@ -174,7 +213,8 @@ switch ($action) {
                     $_POST['new_password'] ?? ''
                 );
                 if ($res['ok']) {
-                    header('Location: ?page=account&action=login&reset=1'); exit;
+                    header('Location: ?page=account&action=login&reset=1');
+                    exit;
                 }
                 $flash = ['type' => 'err', 'msg' => $res['error']];
             }
@@ -187,5 +227,6 @@ switch ($action) {
         break;
 
     default:
-        header('Location: ?page=account&action=login'); exit;
+        header('Location: ?page=account&action=login');
+        exit;
 }
