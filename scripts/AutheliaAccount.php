@@ -127,8 +127,6 @@ class AutheliaAccount
             'redirect_uri' => $this->callbackUrl,
         ]);
 
-        $basicAuth = base64_encode($this->clientId . ':' . $this->clientSecret);
-
         $ch = curl_init($url);
         curl_setopt_array($ch, [
             CURLOPT_RETURNTRANSFER => true,
@@ -136,8 +134,9 @@ class AutheliaAccount
             CURLOPT_POSTFIELDS => $payload,
             CURLOPT_HTTPHEADER => [
                 'Content-Type: application/x-www-form-urlencoded',
-                'Authorization: Basic ' . $basicAuth,
             ],
+            CURLOPT_USERPWD => $this->clientId . ':' . $this->clientSecret,
+            CURLOPT_HTTPAUTH => CURLAUTH_BASIC,
             CURLOPT_TIMEOUT => 15,
             CURLOPT_CONNECTTIMEOUT => 5,
             CURLOPT_SSL_VERIFYPEER => true,
