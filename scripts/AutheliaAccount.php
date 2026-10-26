@@ -34,11 +34,8 @@ class AutheliaAccount
             'redirect_uri'  => $this->callbackUrl,
             'response_type' => 'code',
             'scope'         => 'openid profile email groups',
+            'state'         => $redirect !== '' ? base64_encode($redirect) : bin2hex(random_bytes(16)),
         ];
-
-        if ($redirect !== '') {
-            $params['state'] = base64_encode($redirect);
-        }
 
         return $this->authBase . '/api/oidc/authorization?' . http_build_query($params);
     }

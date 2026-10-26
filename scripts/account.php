@@ -59,6 +59,21 @@ switch ($action) {
             exit;
         }
 
+        $error = $_GET['error'] ?? '';
+        $errorDescription = $_GET['error_description'] ?? '';
+
+        if ($error !== '') {
+            $flash = ['type' => 'err', 'msg' => 'Authentication failed: ' . htmlspecialchars($errorDescription ?: $error, ENT_QUOTES)];
+            echo $twig->render('account/login.html.twig', [
+                'flash'            => $flash,
+                'registered'       => false,
+                'redirect'         => '',
+                'authelia_login_url' => $authelia->getLoginUrl(''),
+                'ldap_enabled'     => false,
+            ]);
+            break;
+        }
+
         $code = $_GET['code'] ?? '';
         $state = $_GET['state'] ?? '';
 
