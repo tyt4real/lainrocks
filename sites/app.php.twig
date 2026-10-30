@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}{{ tr('home_page') }}{% endblock %}
+{% block title %}Home{% endblock %}
 {% block head %}{{ parent() }}{% endblock %}
 
 {% block content %}
@@ -11,77 +11,80 @@
 
         <section class="hero">
             <div class="hero__text">
-                <h1 class="hero__title">{{ tr('hero_title') }}</h1>
-                <p class="hero__desc">{{ tr('hero_desc') }}</p>
+                <h1 class="hero__title">Welcome to <em>lainrocks</em></h1>
+                <p class="hero__desc">
+                    A free, privacy-respecting corner of the interwebz — open to all.
+                </p>
             </div>
             <div class="hero__links">
-                <a href="./?page=Jabber+Server" class="hero__chip">{{ tr('hero_chip_jabber') }}</a>
-                <a href="https://boards.lain.rocks/" target="_blank" class="hero__chip hero__chip--featured">{{ tr('hero_chip_textboard') }}</a>
-                <a href="https://forgejo.lain.rocks/" class="hero__chip">{{ tr('hero_chip_forgejo') }}</a>
+                <a href="./?page=Jabber+Server" class="hero__chip">Jabber Server</a>
+                <a href="https://boards.lain.rocks/" target="_blank" class="hero__chip hero__chip--featured">lainrocks Textboard</a>
+                <a href="https://forgejo.lain.rocks/" class="hero__chip">Forgejo</a>
             </div>
-            <p class="hero__sub-link"><a href="./?page=about">{{ tr('hero_sub_link') }}</a></p>
+            <p class="hero__sub-link"><a href="./?page=about">About the admin →</a></p>
         </section>
 
         <div class="home-grid">
 
             <div class="home-grid__main">
 
-                <div class="services-grid">
-                    <a href="https://forgejo.lain.rocks/" target="_blank" class="service-card">
-                        <svg class="service-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>
-                        <span class="service-label">{{ tr('forgejo_service') }}</span>
-                    </a>
-                    <a href="https://webmail.lain.rocks/" target="_blank" class="service-card">
-                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                        <span class="service-label">{{ tr('email_service') }}</span>
-                    </a>
-                    <a href="./?page=Jabber+Server" class="service-card">
-                        <svg class="service-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m3.401 4.594 1.025.366 3.08.912c-.01.18-.016.361-.016.543 0 3.353 1.693 7.444 4.51 10.387 2.817-2.943 4.51-7.034 4.51-10.387 0-.182-.006-.363-.016-.543l3.08-.912 1.025-.366L24 3.276C23.854 8.978 19.146 14.9 13.502 18.17c1.302 1.028 2.778 1.81 4.388 2.215v.114l.004.001v.224a14.55 14.55 0 0 1-4.829-1.281A20.909 20.909 0 0 1 12 18.966c-.353.17-.708.329-1.065.477a14.55 14.55 0 0 1-4.829 1.281V20.5l.004-.001v-.113c1.61-.406 3.086-1.188 4.389-2.216C4.854 14.9.146 8.978 0 3.276l3.401 1.318Z"/></svg>
-                        <span class="service-label">{{ tr('forgejo_service') }}</span>
-                    </a>
-                    <a href="./?page=Jabber+Server" class="service-card">
-                        <svg class="service-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
-                        <span class="service-label">{{ tr('nextcloud_service') }}</span>
-                    </a>
-                    <div class="service-card service-card--soon">
-                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        <span class="service-label service-label--soon">{{ tr('yukaribin') }} <span class="coming-soon">{{ tr('coming_soon') }}</span></span>
+                    <div class="services-grid">
+                        <a href="https://forgejo.lain.rocks/" target="_blank" class="service-card">
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>
+                            <span class="service-label">git</span>
+                        </a>
+                        <a href="https://webmail.lain.rocks/" target="_blank" class="service-card">
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <span class="service-label">mail</span>
+                        </a>
+                        <a href="./?page=Jabber+Server" class="service-card">
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m3.401 4.594 1.025.366 3.08.912c-.01.18-.016.361-.016.543 0 3.353 1.693 7.444 4.51 10.387 2.817-2.943 4.51-7.034 4.51-10.387 0-.182-.006-.363-.016-.543l3.08-.912 1.025-.366L24 3.276C23.854 8.978 19.146 14.9 13.502 18.17c1.302 1.028 2.778 1.81 4.388 2.215v.114l.004.001v.224a14.55 14.55 0 0 1-4.829-1.281A20.909 20.909 0 0 1 12 18.966c-.353.17-.708.329-1.065.477a14.55 14.55 0 0 1-4.829 1.281V20.5l.004-.001v-.113c1.61-.406 3.086-1.188 4.389-2.216C4.854 14.9.146 8.978 0 3.276l3.401 1.318Z"/></svg>
+                            <span class="service-label">xmpp</span>
+                        </a>
+                        <a href="https://lainos.net/" target="_blank" class="service-card">
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                            <span class="service-label">lainos</span>
+                        </a>
+                        <div class="service-card service-card--soon">
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span class="service-label service-label--soon">yukaribin <span class="coming-soon">(coming soon)</span></span>
+                        </div>
+                        <a href="./?page=account" class="service-card">
+                            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+                            <span class="service-label">one account to rule them all</span>
+                        </a>
                     </div>
-                    <a href="./?page=account" class="service-card">
-                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-                        <span class="service-label">{{ tr('one_account_to_rule_them_all') }}</span>
-                    </a>
-                </div>
+                </section>
 
             </div>
 
             <div class="home-grid__side">
 
                 <section class="card" id="onion">
-                    <h2 class="card__heading">{{ tr('onion_pgp') }}</h2>
+                    <h2 class="card__heading">Onion &amp; PGP</h2>
                     <p>
-                        {{ tr('onion_description') }}
-                        <a href="./special/onion.txt">{{ tr('canary') }}</a>.
-                        {{ tr('updates_onion_urls') }} {{ tr('with_my_PGP_key') }} <a href="./special/public.asc" target="_blank">{{ tr('here') }}</a>.
+                        To consult the list of official onion links, please visit the
+                        <a href="./special/onion.txt">canary</a>.
+                        Updates regarding onion URLs and critical information will be signed with my PGP key available
+                        <a href="./special/public.asc" target="_blank">here</a>.
                     </p>
                     <p class="card__meta">Working commit: <code>{{ checkCommit() }}</code></p>
                 </section>
 
                 <section class="card card--accent" id="donate">
-                    <h2 class="card__heading">{{ tr('donate_title') }}</h2>
+                    <h2 class="card__heading">Donate</h2>
                     <p class="card__note"><!-- im so sorry for adding this shit guys, im fucking poor --></p>
                     <div class="donate-item">
-                        <span class="donate-label">{{ tr('monero_label') }}</span>
+                        <span class="donate-label">Monero</span>
                         <code class="donate-addr">49tVNbmpCJCiGc9U1ihXGd6FKe91kvPqw35cM1SiqXMuWGB47HXHPiTLXmjenue14ZCMrg57Hi6Y1dovha91hGzoMYWjxQT</code>
                     </div>
                     <div class="donate-item">
-                        <span class="donate-label">{{ tr('bitcoin_label') }}</span>
+                        <span class="donate-label">Bitcoin</span>
                         <code class="donate-addr">bc1qh36va2zz2mmnktz8wtqt2szsqfkc38gmxg97ms</code>
                     </div>
-                </div>
-
             </div>
 
         </div>
+    </div>
 
 {% endblock %}

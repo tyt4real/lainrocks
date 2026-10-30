@@ -200,15 +200,16 @@ function registerWithTwig()
 
     $twig->addFunction(new \Twig\TwigFunction('renderNavbar', function () {
         $config = include 'config.php';
-        $pages  = $config['pages'];
+
+        $pages = $config['pages'];
 
         $manualLinks = [
-            ['href' => './xmpp/register',       'label' => tr('Jabber Registration'),            'target' => '_blank'],
-            ['href' => './xmpp/conversejs/',    'label' => tr('Converse.JS'),                    'target' => '_blank'],
-            ['href' => './sites/tos.html',      'label' => tr('ToS [EN]'),                       'target' => '_blank'],
-            ['href' => './sites/tos.ru.html',   'label' => tr('ToS [RU]'),                       'target' => '_blank'],
-            ['href' => 'https://forgejo.lain.rocks/', 'label' => tr('Forgejo'),                     'target' => '_blank'],
-            ['href' => 'https://stats.uptimerobot.com/6eWo4s81Co', 'label' => tr('Uptime'),                 'target' => '_blank'],
+            ['href' => './xmpp/register', 'label' => 'Jabber Registration', 'target' => '_blank'],
+            ['href' => './xmpp/conversejs/', 'label' => 'Converse.JS', 'target' => '_blank'],
+            ['href' => './sites/tos.html', 'label' => 'ToS [EN]', 'target' => '_blank'],
+            ['href' => './sites/tos.ru.html', 'label' => 'ToS [RU]', 'target' => '_blank'],
+            ['href' => 'https://forgejo.lain.rocks/', 'label' => 'Forgejo', 'target' => '_blank'],
+            ['href' => 'https://stats.uptimerobot.com/6eWo4s81Co', 'label' => 'Uptime', 'target' => '_blank'],
         ];
 
         // Build dynamic links from pages config
