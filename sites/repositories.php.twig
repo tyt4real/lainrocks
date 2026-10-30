@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Repositories{% endblock %}
+{% block title %}{{ tr('repositories_page') }}{% endblock %}
 {% block head %}{{ parent() }}{% endblock %}
 
 {% block content %}
@@ -10,42 +10,40 @@
     <div class="page page--repos">
 
         <section class="card" id="lainos-about">
-            <h2 class="card__heading">The LainOS project</h2>
-            <p>The LainOS project is an open-source GNU/Linux distribution focused on privacy and security based on Arch Linux.</p>
+            <h2 class="card__heading">{{ tr('lainos_project') }}</h2>
+            <p>{{ tr('lainos_description') }}</p>
             <p>
-                If you're interested, you should visit the project's website
-                <a href="https://lainos.dev/">here</a> and its Git repository
-                <a href="https://gitlab.com/lainos">here</a>.
+                {{ tr('visit_project_website') }} <a href="https://lainos.dev/">{{ tr('here') }}</a> and its Git repository <a href="https://gitlab.com/lainos">{{ tr('here') }}</a>.
             </p>
-            <p>At lain.rocks we provide the official software mirror for LainOS, which you can find below.</p>
+            <p>{{ tr('official_software_mirror') }}</p>
         </section>
 
         <section class="card" id="mirror-list">
-            <h2 class="card__heading">LainOS software mirror list</h2>
+            <h2 class="card__heading">{{ tr('lainos_software_mirror_list') }}</h2>
             <div class="table-wrap">
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Mirror URL</th>
-                            <th>Tor Mirror URL</th>
-                            <th>Description</th>
-                            <th>Is online?</th>
+                            <th>{{ tr('name') }}</th>
+                            <th>{{ tr('mirror_url') }}</th>
+                            <th>{{ tr('tor_mirror_url') }}</th>
+                            <th>{{ tr('description') }}</th>
+                            <th>{{ tr('is_online') }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="table-name">Wired Repo</td>
-                            <td><a href="https://lain.rocks/repos/wired/">lain.rocks/repos/wired/</a></td>
-                            <td><a href="http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/wired/" class="onion-link">.onion/repos/wired/</a></td>
-                            <td>Repository for the pentesting tools provided with LainOS</td>
+                            <td class="table-name">{{ tr('wired_repo') }}</td>
+                            <td><a href="https://lain.rocks/repos/wired/">{{ tr('lain_rocks_repos_wired') }}</a></td>
+                            <td><a href="http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/wired/" class="onion-link">{{ tr('.onion_repos_wired') }}</a></td>
+                            <td>{{ tr('repository_pentesting_tools') }}</td>
                             <td><span class="status-val">{{ isSiteOnline('https://lain.rocks/repos/wired') }}</span></td>
                         </tr>
                         <tr>
-                            <td class="table-name">Lain Repo</td>
-                            <td><a href="https://lain.rocks/repos/lain/">lain.rocks/repos/lain/</a></td>
-                            <td><a href="http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/lain/" class="onion-link">.onion/repos/lain/</a></td>
-                            <td>Repository for the general software running on LainOS</td>
+                            <td class="table-name">{{ tr('lain_repo') }}</td>
+                            <td><a href="https://lain.rocks/repos/lain/">{{ tr('lain_rocks_repos_lain') }}</a></td>
+                            <td><a href="http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/lain/" class="onion-link">{{ tr('.onion_repos_lain') }}</a></td>
+                            <td>{{ tr('repository_general_software') }}</td>
                             <td><span class="status-val">{{ isSiteOnline('https://lain.rocks/repos/lain') }}</span></td>
                         </tr>
                     </tbody>
@@ -54,14 +52,14 @@
         </section>
 
         <section class="card" id="mirror-stats">
-            <h2 class="card__heading">Mirror statistics</h2>
+            <h2 class="card__heading">{{ tr('mirror_statistics') }}</h2>
             <dl class="stats-list">
                 <div class="stats-list__row">
-                    <dt>Mirror size</dt>
+                    <dt>{{ tr('mirror_size') }}</dt>
                     <dd>{{ calculateMirrorDiskSpace() }}</dd>
                 </div>
                 <div class="stats-list__row">
-                    <dt>Last update</dt>
+                    <dt>{{ tr('last_update') }}</dt>
                     <dd>{{ getLastMirrorUpdate() }}</dd>
                 </div>
             </dl>

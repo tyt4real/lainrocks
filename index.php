@@ -26,4 +26,5 @@ $twig = registerWithTwig();
 echo $twig->render($pageConfig['template'], [
     'current_page' => $pageSlug,
     'pages'        => $config['pages'],
+    'locale'       => $_SESSION['locale'] ?? $config['locale']['default'],
 ]);
