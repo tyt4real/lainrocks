@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Lainring{% endblock %}
+{% block title %}{{ t('webring.title') }}{% endblock %}
 {% block head %}{{ parent() }}{% endblock %}
 
 {% block content %}
@@ -10,13 +10,12 @@
     <div class="page page--webring">
 
         <section class="card" id="lainring">
-            <h2 class="card__heading">Lainring</h2>
+            <h2 class="card__heading">{{ t('webring.heading') }}</h2>
             <div class="lainring-wrap">
                 {{ renderLainring() }}
             </div>
             <p class="lainring-credit">
-                I stole this version of the webring from <a href="https://0x19.org/">0x19.org</a>,
-                in the future I plan to maintain my own version of the webring :3
+                {{ t('webring.credit') }}
             </p>
         </section>
 

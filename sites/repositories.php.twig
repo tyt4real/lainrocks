@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Repositories{% endblock %}
+{% block title %}{{ t('repos.title') }}{% endblock %}
 {% block head %}{{ parent() }}{% endblock %}
 
 {% block content %}
@@ -10,42 +10,42 @@
     <div class="page page--repos">
 
         <section class="card" id="lainos-about">
-            <h2 class="card__heading">The LainOS project</h2>
-            <p>The LainOS project is an open-source GNU/Linux distribution focused on privacy and security based on Arch Linux.</p>
+            <h2 class="card__heading">{{ t('repos.lainos_heading') }}</h2>
+            <p>{{ t('repos.lainos_text1') }}</p>
             <p>
-                If you're interested, you should visit the project's website
-                <a href="https://lainos.dev/">here</a> and its Git repository
-                <a href="https://gitlab.com/lainos">here</a>.
+                {{ t('repos.lainos_text2') }}
+                <a href="https://lainos.dev/">{{ t('repos.lainos_text3') }}</a> and its Git repository
+                <a href="https://gitlab.com/lainos">{{ t('repos.lainos_text4') }}</a>.
             </p>
-            <p>At lain.rocks we provide the official software mirror for LainOS, which you can find below.</p>
+            <p>{{ t('repos.lainos_text5') }}</p>
         </section>
 
         <section class="card" id="mirror-list">
-            <h2 class="card__heading">LainOS software mirror list</h2>
+            <h2 class="card__heading">{{ t('repos.mirror_heading') }}</h2>
             <div class="table-wrap">
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Mirror URL</th>
-                            <th>Tor Mirror URL</th>
-                            <th>Description</th>
-                            <th>Is online?</th>
+                            <th>{{ t('repos.table.name') }}</th>
+                            <th>{{ t('repos.table.mirror_url') }}</th>
+                            <th>{{ t('repos.table.tor_url') }}</th>
+                            <th>{{ t('repos.table.description') }}</th>
+                            <th>{{ t('repos.table.online') }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="table-name">Wired Repo</td>
+                            <td class="table-name">{{ t('repos.repo.wired.name') }}</td>
                             <td><a href="https://lain.rocks/repos/wired/">lain.rocks/repos/wired/</a></td>
                             <td><a href="http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/wired/" class="onion-link">.onion/repos/wired/</a></td>
-                            <td>Repository for the pentesting tools provided with LainOS</td>
+                            <td>{{ t('repos.repo.wired.description') }}</td>
                             <td><span class="status-val">{{ isSiteOnline('https://lain.rocks/repos/wired') }}</span></td>
                         </tr>
                         <tr>
-                            <td class="table-name">Lain Repo</td>
+                            <td class="table-name">{{ t('repos.repo.lain.name') }}</td>
                             <td><a href="https://lain.rocks/repos/lain/">lain.rocks/repos/lain/</a></td>
                             <td><a href="http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/lain/" class="onion-link">.onion/repos/lain/</a></td>
-                            <td>Repository for the general software running on LainOS</td>
+                            <td>{{ t('repos.repo.lain.description') }}</td>
                             <td><span class="status-val">{{ isSiteOnline('https://lain.rocks/repos/lain') }}</span></td>
                         </tr>
                     </tbody>
@@ -54,14 +54,14 @@
         </section>
 
         <section class="card" id="mirror-stats">
-            <h2 class="card__heading">Mirror statistics</h2>
+            <h2 class="card__heading">{{ t('repos.stats_heading') }}</h2>
             <dl class="stats-list">
                 <div class="stats-list__row">
-                    <dt>Mirror size</dt>
+                    <dt>{{ t('repos.stats.size') }}</dt>
                     <dd>{{ calculateMirrorDiskSpace() }}</dd>
                 </div>
                 <div class="stats-list__row">
-                    <dt>Last update</dt>
+                    <dt>{{ t('repos.stats.last_update') }}</dt>
                     <dd>{{ getLastMirrorUpdate() }}</dd>
                 </div>
             </dl>

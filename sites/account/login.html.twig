@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 {% import "account/_form.html.twig" as form %}
 
-{% block title %}Login{% endblock %}
+{% block title %}{{ t('account.login.title') }}{% endblock %}
 
 {% block content %}
 {{ renderNavbar() }}
@@ -10,30 +10,30 @@
     <div class="acct-wrap">
 
         <div class="acct-header">
-            <h1 class="acct-title">Welcome back</h1>
-            <p class="acct-sub">Log in to your lain.rocks account.</p>
+            <h1 class="acct-title">{{ t('account.login.welcome') }}</h1>
+            <p class="acct-sub">{{ t('account.login.sub') }}</p>
         </div>
 
         {% if registered %}
-            <div class="acct-flash acct-flash--ok">Account created! You can now log in.</div>
+            <div class="acct-flash acct-flash--ok">{{ t('account.login.registered') }}</div>
         {% endif %}
         {% if reset is defined and reset %}
-            <div class="acct-flash acct-flash--ok">Password reset successfully. Log in below.</div>
+            <div class="acct-flash acct-flash--ok">{{ t('account.login.reset_ok') }}</div>
         {% endif %}
 
         {{ form.flash(flash) }}
 
         <div class="card acct-card">
-            <h2 class="card__heading">Login</h2>
+            <h2 class="card__heading">{{ t('account.login.heading') }}</h2>
 
             {% if authelia_login_url is defined %}
-                <a class="acct-btn acct-btn--primary acct-btn--full" href="{{ authelia_login_url }}">Log in with Authelia →</a>
+                <a class="acct-btn acct-btn--primary acct-btn--full" href="{{ authelia_login_url }}">{{ t('account.login.authelia_btn') }}</a>
             {% else %}
-                <p class="acct-alt">Authentication is unavailable. Please try again later.</p>
+                <p class="acct-alt">{{ t('account.login.authelia_unavailable') }}</p>
             {% endif %}
 
             {% if ldap_enabled is defined and ldap_enabled %}
-            <div class="acct-divider"><span>legacy</span></div>
+            <div class="acct-divider"><span>{{ t('account.login.legacy') }}</span></div>
 
             <form method="POST" action="?page=account&action=login" class="acct-form" novalidate>
                 {% if redirect %}
@@ -44,14 +44,14 @@
                 {{ form.field('Password', 'password', 'password', '', '', true) }}
 
                 <div class="acct-actions">
-                    <button type="submit" class="acct-btn">Log in →</button>
+                    <button type="submit" class="acct-btn">{{ t('account.login.btn_login') }}</button>
                 {#    <a class="acct-link" href="?page=account&action=reset-password">Forgot password?</a> #}
                 </div>
             </form>
             {% endif %}
         </div>
 
-        <p class="acct-alt">No account yet? <a href="?page=account&action=register">Register</a></p>
+        <p class="acct-alt">{{ t('account.login.no_account') }} <a href="?page=account&action=register">{{ t('account.login.register_link') }}</a></p>
 
     </div>
 </div>

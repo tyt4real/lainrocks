@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}About{% endblock %}
+{% block title %}{{ t('about.title') }}{% endblock %}
 {% block head %}{{ parent() }}{% endblock %}
 
 {% block content %}
@@ -10,20 +10,20 @@
     <div class="page page--about">
 
         <section class="card about-hero" id="who">
-            <h2 class="card__heading">Who am I?</h2>
+            <h2 class="card__heading">{{ t('about.who_heading') }}</h2>
             <div class="about-hero__body">
                 <div class="about-hero__photo">
                     {{ renderRandomMeIRLImage() }}
                 </div>
                 <div class="about-hero__text">
-                    <p>Hi reader, I hope You're doing great this beautiful day, afternoon, evening or whenever You're reading this. I greatly appreciate Your interest in me.</p>
-                    <blockquote class="about-quote">&gt;who needs compiler warnings when you have this guy</blockquote>
+                    <p>{{ t('about.intro') }}</p>
+                    <blockquote class="about-quote">{{ t('about.quote') }}</blockquote>
                     <ul class="handle-list">
-                        <li>My handle on most places is <em>tyt4real</em></li>
-                        <li><span class="handle-list__label">Fediverse</span> <a href="https://comp.lain.la/users/tyt4real">tyt4real@comp.lain.la</a></li>
-                        <li><span class="handle-list__label">XMPP</span> <a href="xmpp:tyt4real@lain.rocks">tyt4real@lain.rocks</a></li>
-                        <li><span class="handle-list__label">GitHub</span> <a href="https://github.com/tyt4real">tyt4real</a></li>
-                        <li><span class="handle-list__label">Twitter (yuck)</span> <a href="https://x.com/tyt4fake">tyt4</a></li>
+                        <li>{{ t('about.handle.label') }} <em>tyt4real</em></li>
+                        <li><span class="handle-list__label">{{ t('about.handle.fediverse') }}</span> <a href="https://comp.lain.la/users/tyt4real">tyt4real@comp.lain.la</a></li>
+                        <li><span class="handle-list__label">{{ t('about.handle.xmpp') }}</span> <a href="xmpp:tyt4real@lain.rocks">tyt4real@lain.rocks</a></li>
+                        <li><span class="handle-list__label">{{ t('about.handle.github') }}</span> <a href="https://github.com/tyt4real">tyt4real</a></li>
+                        <li><span class="handle-list__label">{{ t('about.handle.twitter') }}</span> <a href="https://x.com/tyt4fake">tyt4</a></li>
                     </ul>
                 </div>
             </div>
@@ -32,47 +32,40 @@
         <div class="about-grid">
 
             <section class="card" id="about-me">
-                <h2 class="card__heading">About me</h2>
+                <h2 class="card__heading">{{ t('about.about_me.heading') }}</h2>
                 <p>
-                    Since a <em>very</em> young age I loved messing around with computers and hardware in general.
-                    When I was about 6 I learnt to code in Java for purpose of writing Minecraft server plugins and mods.
-                    Since then I learnt many other languages such as C, PHP, Javascript, Typescript and others,
-                    although I suck at graphical design, I try my best.
-                    Since I begun using the Wired, I switched handles and nicknames many times but I hope my current
-                    identity will stay with me for a <em>long</em> time.
-                    I have done tons of small side projects, in all of which I've lost interest.
-                    This site however I hope will keep me entertained for a very <em>long</em> time.
+                    {{ t('about.about_me.text') }}
                 </p>
-                <p class="lain-sign">Let's all love Lain.</p>
+                <p class="lain-sign">{{ t('about.about_me.lain_sign') }}</p>
             </section>
 
             <section class="card" id="contact">
-                <h2 class="card__heading">Contact me?</h2>
-                <p>You'd like to contact me? I feel flattered :3</p>
+                <h2 class="card__heading">{{ t('about.contact.heading') }}</h2>
+                <p>{{ t('about.contact.text') }}</p>
                 <ul class="contact-list">
                     <li>
-                        <span class="contact-list__label">Email</span>
+                        <span class="contact-list__label">{{ t('about.contact.email') }}</span>
                         <div>
                             <a href="mailto:tyt4real@protonmail.com">tyt4real@protonmail.com</a>
                             <ul class="contact-list__sub">
-                                <li>My public PGP key is here: <a href="https://lain.rocks/special/public.asc" target="_blank">here</a>.</li>
-                                <li>Key fingerprint: <code>1CB2748D8D6DED9F</code></li>
+                                <li>{{ t('about.contact.pgp_key') }} <a href="https://lain.rocks/special/public.asc" target="_blank">here</a>.</li>
+                                <li>{{ t('about.contact.fingerprint') }} <code>1CB2748D8D6DED9F</code></li>
                             </ul>
                         </div>
                     </li>
                     <li>
-                        <span class="contact-list__label">IRC</span>
+                        <span class="contact-list__label">{{ t('about.contact.irc') }}</span>
                         <span>Most of the time, I'm reachable on <code>#lainchan @ irc.0xfdb.xyz +6697</code></span>
                     </li>
                     <li>
-                        <span class="contact-list__label">XMPP</span>
+                        <span class="contact-list__label">{{ t('about.contact.xmpp') }}</span>
                         <span>
                             <a href="xmpp:tyt4real@lain.rocks">tyt4real@lain.rocks</a> or
                             <a href="xmpp:tyt4real@xmpp.jp">tyt4real@xmpp.jp</a>
                         </span>
                     </li>
                     <li>
-                        <span class="contact-list__label">Discord?</span>
+                        <span class="contact-list__label">{{ t('about.contact.discord') }}</span>
                         <a href="https://spyware.neocities.org/articles/discord.html">
                             <img src="../images/discord-no-way-2.gif" alt="Discord? No way!" class="badge-gif" />
                         </a>

@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 {% import "account/_form.html.twig" as form %}
 
-{% block title %}Set New Password{% endblock %}
+{% block title %}{{ t('account.reset_confirm.title') }}{% endblock %}
 
 {% block content %}
 {{ renderNavbar() }}
@@ -10,22 +10,22 @@
     <div class="acct-wrap">
 
         <div class="acct-header">
-            <h1 class="acct-title">Set new password</h1>
-            <p class="acct-sub">Enter the code from your reset email and choose a new password.</p>
+            <h1 class="acct-title">{{ t('account.reset_confirm.heading') }}</h1>
+            <p class="acct-sub">{{ t('account.reset_confirm.sub') }}</p>
         </div>
 
         {{ form.flash(flash) }}
 
         <div class="card acct-card">
-            <h2 class="card__heading">Reset password</h2>
+            <h2 class="card__heading">{{ t('account.reset_confirm.heading') }}</h2>
             <form method="POST" action="?page=account&action=reset-confirm" class="acct-form" novalidate>
                 <input type="hidden" name="uid"   value="{{ uid }}">
                 <input type="hidden" name="token" value="{{ token }}">
                 {{ form.field('New password',     'new_password',     'password', '', '', true) }}
-                <p class="acct-hint">At least 10 characters, with uppercase, lowercase, number, and special character.</p>
+                <p class="acct-hint">{{ t('account.reset_confirm.password_hint') }}</p>
                 {{ form.field('Confirm password', 'confirm_password', 'password', '', '', true) }}
                 <div class="acct-actions">
-                    <button type="submit" class="acct-btn">Set new password →</button>
+                    <button type="submit" class="acct-btn">{{ t('account.reset_confirm.btn') }}</button>
                 </div>
             </form>
         </div>

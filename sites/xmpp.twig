@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Jabber Server{% endblock %}
+{% block title %}{{ t('xmpp.title') }}{% endblock %}
 {% block head %}{{ parent() }}{% endblock %}
 
 {% block content %}
@@ -14,39 +14,38 @@
             <div class="xmpp-grid__main">
 
                 <section class="card" id="xmpp-about">
-                    <h2 class="card__heading">lainrocks XMPP/Jabber server</h2>
+                    <h2 class="card__heading">{{ t('xmpp.about_heading') }}</h2>
                     <p>
-                        The lain.rocks XMPP/Jabber server is a free as in freedom, private place for communication open to everyone at <strong>lain.rocks</strong>.
+                        {{ t('xmpp.about_text1') }}
                         You can create an account using any XMPP client that supports account registration, for example
-                        <a href="https://conversations.im/" target="_blank">Conversations</a> for Android or
-                        <a href="https://www.coyim.org/" target="_blank">CoyIM</a> for desktop.
-                        The registration link can be found above.
+                        <a href="https://conversations.im/" target="_blank">{{ t('xmpp.about_text3') }}</a> for Android or
+                        <a href="https://www.coyim.org/" target="_blank">{{ t('xmpp.about_text4') }}</a> for desktop.
+                        {{ t('xmpp.about_text5') }}
                     </p>
                     <p>
-                        For better privacy, we recommend connecting to the server over Tor. The onion address is:
+                        {{ t('xmpp.about_text6') }}
                         <code class="onion-addr">26cp7rchjrhtet4jbcijs5oxtfu52w435f4swmya7p6xr4xxxdqx23yd.onion</code>.
-                        Make sure your XMPP client is configured to use Tor as a proxy.
+                        {{ t('xmpp.about_text7') }}
                     </p>
                     <p>
-                        Our server also offers a Biboumi IRC gateway, allowing you to connect to IRC channels via XMPP.
-                        Additionally, a Telegram gateway will be available soon, enabling communication with Telegram users through XMPP.
+                        {{ t('xmpp.about_text8') }}
+                        {{ t('xmpp.about_text9') }}
                     </p>
                     <p>
-                        If you need help setting up your XMPP client or have any questions, feel free to reach out in the support MUC room
+                        {{ t('xmpp.about_text10') }}
                         or contact us via email at <a href="mailto:tyt4real@protonmail.com">tyt4real@protonmail.com</a>.
-                        For crucial information regarding the XMPP service, please refer to the announcements on the homepage,
+                        {{ t('xmpp.about_text12') }}
                         and read the Terms of Service available
-                        <a href="./sites/tos.html" target="_blank">here</a> also in russian
-                        <a href="./sites/tos.ru.html" target="_blank">here</a>.
+                        <a href="./sites/tos.html" target="_blank">{{ t('xmpp.about_text14') }}</a> also in russian
+                        <a href="./sites/tos.ru.html" target="_blank">{{ t('xmpp.about_text16') }}</a>.
                     </p>
-                    <p>Enjoy your stay on the lain.rocks XMPP server!</p>
+                    <p>{{ t('xmpp.about_text17') }}</p>
                 </section>
 
                 <section class="card card--warn" id="xmpp-security">
-                    <h2 class="card__heading">Security Notice</h2>
+                    <h2 class="card__heading">{{ t('xmpp.security_heading') }}</h2>
                     <p>
-                        Remember to <strong>never</strong> trust your provider with your privacy.
-                        <strong>Always</strong> use end-to-end encryption like OMEMO or PGP to keep your communications safe and private.
+                        {{ t('xmpp.security_text') }}
                     </p>
                 </section>
 
@@ -55,7 +54,7 @@
             <div class="xmpp-grid__side">
 
                 <section class="card" id="xmpp-compliance">
-                    <h2 class="card__heading">Compliance</h2>
+                    <h2 class="card__heading">{{ t('xmpp.compliance_heading') }}</h2>
                     <div class="badge-stack">
                         <a href="https://compliance.conversations.im/server/lain.rocks" target="_blank">
                             <img src="https://compliance.conversations.im/badge/lain.rocks" alt="Conversations compliance badge" />
@@ -70,17 +69,17 @@
                 </section>
 
                 <section class="card" id="xmpp-rknchan">
-                    <h2 class="card__heading">Внимание!</h2>
+                    <h2 class="card__heading">{{ t('xmpp.warning_heading') }}</h2>
                     <img src="/css/img/rknchan.png" alt="rknchan" id="rknchan-pic" />
                     <div style="text-align: center; font-size: 0.9em;">
                     <p>↑</p>
-                    <p>Она хочет прочитать вашу переписку, но я ей не позволю!</p>
+                    <p>{{ t('xmpp.warning_text1') }}</p>
                     </div>
                 </section>
 
                 <section class="card card--accent" id="xmpp-donate">
                     {# im so sorry for adding this shit guys, im fucking poor #}
-                    <h2 class="card__heading">Donate</h2>
+                    <h2 class="card__heading">{{ t('xmpp.donate_heading') }}</h2>
                     <div class="donate-item">
                         <span class="donate-label">Monero</span>
                         <code class="donate-addr">49tVNbmpCJCiGc9U1ihXGd6FKe91kvPqw35cM1SiqXMuWGB47HXHPiTLXmjenue14ZCMrg57Hi6Y1dovha91hGzoMYWjxQT</code>

@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Server Statistics{% endblock %}
+{% block title %}{{ t('serverstats.title') }}{% endblock %}
 {% block head %}
     {{ parent() }}
     <!-- empty -->
@@ -9,7 +9,7 @@
     <div id="app" class="container">
         <section class="mt-2 card">
             <div class="card-header">
-                <h2>Server statistics as of <i>right</i> now</h2>
+                <h2>{{ t('serverstats.heading') }}</h2>
             </div>
             <div class="card-body">
                 {{ renderServerStats() }}

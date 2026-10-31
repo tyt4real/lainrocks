@@ -1,0 +1,286 @@
+{
+  "lang": "fr",
+  "dir": "ltr",
+  "html_lang": "fr",
+  "meta": {
+    "description": "lain.rocks, l'endroit le plus cool d'Internet",
+    "keywords": "lain, xmpp, serveur xmpp, messagerie instantanée, imageboard, textboard",
+    "author": "tyt4real"
+  },
+  "header": {
+    "title": "lain.rocks",
+    "sub": "L'endroit (espérons-le) le plus cool d'Internet",
+    "quote": "「どこに行ったって、人はつながっているのよ。」"
+  },
+  "footer": {
+    "copyleft": "Aimons tous Lain. Copyleft 2025",
+    "abuse": "Pour toute plainte relative aux abus, contactez-nous ici :",
+    "theme_label": "Thème"
+  },
+  "theme": {
+    "cyberpunk": "Cyberpunk (par défaut)",
+    "lainrocks": "Thème lainrocks par défaut",
+    "yotsuba": "Yotsuba"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "lainos": "LainOS",
+    "jabber": "Serveur Jabber",
+    "account": "Compte",
+    "jabber_registration": "Inscription Jabber",
+    "converse_js": "Converse.JS",
+    "tos_en": "CGU [EN]",
+    "tos_ru": "CGU [RU]",
+    "forgejo": "Forgejo",
+    "uptime": "Disponibilité",
+    "locale": "Langue"
+  },
+  "home": {
+    "title": "Accueil",
+    "hero_title": "Bienvenue sur <em>lainrocks</em>",
+    "hero_desc": "Un coin d'Internet gratuit, respectueux de la vie privée — ouvert à tous.",
+    "chip_jabber": "Serveur Jabber",
+    "chip_textboard": "Textboard lainrocks",
+    "chip_forgejo": "Forgejo",
+    "sub_link": "À propos de l'admin →",
+    "service": {
+      "git": "git",
+      "mail": "courrier",
+      "xmpp": "xmpp",
+      "lainos": "lainos",
+      "yukaribin": "yukaribin",
+      "yukaribin_soon": "yukaribin (bientôt)",
+      "account": "un seul compte pour les gouverner tous"
+    },
+    "onion": {
+      "heading": "Onion et PGP",
+      "text1": "Pour consulter la liste des liens onion officiels, veuillez visiter le",
+      "text2": "canari. Les mises à jour des URLs onion et des informations critiques sont signées avec ma clé PGP disponible",
+      "here": "ici",
+      "commit": "Commit de travail : {commit}"
+    },
+    "donate": {
+      "heading": "Faire un don",
+      "note": "",
+      "monero": "Monero",
+      "bitcoin": "Bitcoin"
+    }
+  },
+  "about": {
+    "title": "À propos",
+    "who_heading": "Qui suis-je ?",
+    "intro": "Bonjour lecteur, j'espère que vous passez une belle journée, après-midi, soirée ou à chaque fois que vous lirez ceci. Je vous remercie sincèrement de votre intérêt pour moi.",
+    "quote": "&gt; qui a besoin d'avertissements de compilateur quand on a ce type",
+    "handle": {
+      "label": "Mon pseudo sur la plupart des sites est",
+      "fediverse": "Fediverse",
+      "xmpp": "XMPP",
+      "github": "GitHub",
+      "twitter": "Twitter (beurk)"
+    },
+    "about_me": {
+      "heading": "À propos de moi",
+      "text": "Depuis un âge très tendre, j'adore bricoler avec les ordinateurs et le matériel en général. À environ 6 ans, j'ai appris à coder en Java pour écrire des plugins et des mods de serveurs Minecraft. Depuis, j'ai appris beaucoup d'autres langages tels que C, PHP, JavaScript, TypeScript et autres, bien que je sois nul en design graphique, je fais de mon mieux. Depuis que j'utilise le Wired, j'ai changé de pseudos et de surnoms plusieurs fois, mais j'espère que mon identité actuelle restera avec moi longtemps. J'ai fait des tonnes de petits projets secondaires, dont j'ai tous perdu l'intérêt. Ce site, cependant, j'espère qu'il me divertira très longtemps.",
+      "lain_sign": "Aimons tous Lain."
+    },
+    "contact": {
+      "heading": "Me contacter ?",
+      "text": "Tu voudrais me contacter ? Je suis flatté :3",
+      "email": "Email",
+      "irc": "IRC",
+      "xmpp": "XMPP",
+      "discord": "Discord ?",
+      "pgp_key": "Ma clé publique PGP est ici :",
+      "fingerprint": "Empreinte de la clé :"
+    }
+  },
+  "repos": {
+    "title": "Dépôts",
+    "lainos_heading": "Le projet LainOS",
+    "lainos_text1": "Le projet LainOS est une distribution GNU/Linux open-source axée sur la vie privée et la sécurité, basée sur Arch Linux.",
+    "lainos_text2": "Si cela vous intéresse, vous devriez visiter le site web du projet",
+    "lainos_text3": "ici et son dépôt Git",
+    "lainos_text4": "ici.",
+    "lainos_text5": "Sur lain.rocks, nous fournissons le miroir logiciel officiel de LainOS, que vous pouvez trouver ci-dessous.",
+    "mirror_heading": "Liste du miroir logiciel LainOS",
+    "table": {
+      "name": "Nom",
+      "mirror_url": "URL du miroir",
+      "tor_url": "URL du miroir Tor",
+      "description": "Description",
+      "online": "En ligne ?"
+    },
+    "repo": {
+      "wired": {
+        "name": "Wired Repo",
+        "description": "Dépôt pour les outils de pentest fournis avec LainOS"
+      },
+      "lain": {
+        "name": "Lain Repo",
+        "description": "Dépôt pour les logiciels généraux exécutés sur LainOS"
+      }
+    },
+    "stats_heading": "Statistiques du miroir",
+    "stats": {
+      "size": "Taille du miroir",
+      "last_update": "Dernière mise à jour"
+    }
+  },
+  "xmpp": {
+    "title": "Serveur Jabber",
+    "about_heading": "Serveur XMPP/Jabber lainrocks",
+    "about_text1": "Le serveur XMPP/Jabber lain.rocks est un endroit libre, privé et ouvert à tous pour communiquer à l'adresse <strong>lain.rocks</strong>.",
+    "about_text2": "Vous pouvez créer un compte en utilisant n'importe quel client XMPP supportant l'enregistrement de compte, par exemple",
+    "about_text3": "Conversations pour Android ou",
+    "about_text4": "CoyIM pour bureau.",
+    "about_text5": "Le lien d'inscription se trouve ci-dessus.",
+    "about_text6": "Pour une meilleure vie privée, nous recommandons de se connecter au serveur via Tor. L'adresse onion est :",
+    "about_text7": "Assurez-vous que votre client XMPP est configuré pour utiliser Tor comme proxy.",
+    "about_text8": "Notre serveur offre également une passerelle Biboumi IRC, vous permettant de vous connecter aux canaux IRC via XMPP.",
+    "about_text9": "De plus, une passerelle Telegram sera bientôt disponible, permettant de communiquer avec les utilisateurs de Telegram via XMPP.",
+    "about_text10": "Si vous avez besoin d'aide pour configurer votre client XMPP ou si vous avez des questions, n'hésitez pas à nous contacter dans la salle de support MUC",
+    "about_text11": "ou par courriel à",
+    "about_text12": "Pour des informations cruciales concernant le service XMPP, veuillez consulter les annonces sur la page d'accueil,",
+    "about_text13": "et lire les Conditions d'utilisation disponibles",
+    "about_text14": "ici",
+    "about_text15": "également en russe",
+    "about_text16": "ici.",
+    "about_text17": "Bon séjour sur le serveur XMPP lain.rocks !",
+    "security_heading": "Avis de sécurité",
+    "security_text": "Rappelez-vous de <strong>ne jamais</strong> faire confiance à votre fournisseur pour votre vie privée. <strong>Toujours</strong> utilisez le chiffrement de bout en bout comme OMEMO ou PGP pour garder vos communications sûres et privées.",
+    "compliance_heading": "Conformité",
+    "warning_heading": "Attention !",
+    "warning_text1": "Elle veut lire votre correspondance, mais je ne la laisserai pas faire !",
+    "donate_heading": "Faire un don"
+  },
+  "serverstats": {
+    "title": "Statistiques du serveur",
+    "heading": "Statistiques du serveur à l'instant même <i>maintenant</i>",
+    "system_load": "Charge système : {load}",
+    "used_memory": "Mémoire utilisée : {bytes} octets",
+    "free_disk": "Espace disque libre : {free} octets | Total : {total} octets | Libre : {pct}%"
+  },
+  "webring": {
+    "title": "Lainring",
+    "heading": "Lainring",
+    "credit": "J'ai volé cette version du webring sur 0x19.org, dans le futur je prévois de maintenir ma propre version du webring :3"
+  },
+  "lainring": {
+    "cannot_open": "impossible d'ouvrir lainring.json",
+    "cannot_decode": "impossible de décoder lainring.json",
+    "last_updated": "Dernière mise à jour : {date}",
+    "www": "www",
+    "rss_feeds": "Flux RSS",
+    "opml_format": "Format OPML",
+    "newsboat_list": "Liste d'URL pour newsboat :",
+    "tor": "Tor",
+    "i2p": "i2p",
+    "offline": "Hors ligne, abandonné, domaine squatté, etc."
+  },
+  "account": {
+    "login": {
+      "title": "Connexion",
+      "welcome": "Bon retour",
+      "sub": "Connectez-vous à votre compte lain.rocks.",
+      "registered": "Compte créé ! Vous pouvez maintenant vous connecter.",
+      "reset_ok": "Mot de passe réinitialisé avec succès. Connectez-vous ci-dessous.",
+      "heading": "Connexion",
+      "authelia_btn": "Se connecter avec Authelia →",
+      "authelia_unavailable": "L'authentification est indisponible. Veuillez réessayer plus tard.",
+      "legacy": "hérité",
+      "btn_login": "Se connecter →",
+      "no_account": "Pas encore de compte ?",
+      "register_link": "S'inscrire"
+    },
+    "register": {
+      "title": "Inscription",
+      "create": "Créer un compte",
+      "sub": "Un seul compte. Email, Forgejo, Nextcloud - tout.",
+      "heading": "Inscription",
+      "hint": "Inventez quelque chose de créatif ;)",
+      "first_name": "Prénom",
+      "last_name": "Nom de famille",
+      "username": "Identifiant",
+      "username_hint": "Lettres minuscules, chiffres, tirets, underscores. 3–32 caractères. Cela devient votre email : <em>username@lain.rocks</em>",
+      "recovery_email": "Email de récupération",
+      "recovery_email_hint": "Utilisé uniquement pour la réinitialisation de mot de passe. Pas votre boîte mail lain.rocks.",
+      "password": "Mot de passe",
+      "password_hint": "Au moins 10 caractères, avec majuscule, minuscule, chiffre et caractère spécial.",
+      "btn": "Créer un compte →",
+      "already": "Vous avez déjà un compte ?",
+      "login_link": "Se connecter"
+    },
+    "profile": {
+      "title": "Profil",
+      "heading": "Informations du compte",
+      "username": "Identifiant",
+      "display_name": "Nom d'affichage",
+      "recovery_email": "Email de récupération",
+      "mail_address": "Adresse mail",
+      "member_since": "Membre depuis",
+      "services": "Vos services",
+      "email": "Email",
+      "forgejo": "Forgejo",
+      "nextcloud": "Nextcloud",
+      "not_enabled": "non activé",
+      "actions": "Actions",
+      "change_password": "Changer le mot de passe",
+      "logout": "Déconnexion",
+      "logout_confirm": "Déconnecter ?",
+      "back_to_profile": "← Retour au profil"
+    },
+    "change_password": {
+      "title": "Changer le mot de passe",
+      "heading": "Changer votre mot de passe",
+      "sub": "Votre nouveau mot de passe s'appliquera à tous les services lain.rocks.",
+      "current_password": "Mot de passe actuel",
+      "new_password": "Nouveau mot de passe",
+      "confirm_password": "Confirmer le nouveau mot de passe",
+      "password_hint": "Au moins 10 caractères, avec majuscule, minuscule, chiffre et caractère spécial.",
+      "btn": "Mettre à jour le mot de passe →"
+    },
+    "reset_request": {
+      "title": "Réinitialiser le mot de passe",
+      "heading": "Demander une réinitialisation",
+      "sub": "Entrez votre identifiant et nous enverrons un lien de réinitialisation à votre email de récupération.",
+      "username": "Identifiant",
+      "btn": "Envoyer le lien de réinitialisation →",
+      "back_to_login": "← Retour à la connexion"
+    },
+    "reset_confirm": {
+      "title": "Définir un nouveau mot de passe",
+      "heading": "Réinitialiser le mot de passe",
+      "sub": "Entrez le code de votre email de réinitialisation et choisissez un nouveau mot de passe.",
+      "new_password": "Nouveau mot de passe",
+      "confirm_password": "Confirmer le mot de passe",
+      "password_hint": "Au moins 10 caractères, avec majuscule, minuscule, chiffre et caractère spécial.",
+      "btn": "Définir le nouveau mot de passe →"
+    },
+    "flash": {
+      "account_created": "Compte créé ! Veuillez vous connecter.",
+      "password_changed": "Mot de passe modifié avec succès.",
+      "reset_sent": "Si ce compte existe, un lien de réinitialisation a été envoyé à l'email associé.",
+      "too_many_register": "Trop de tentatives d'inscription. Veuillez réessayer plus tard.",
+      "too_many_reset": "Trop de tentatives de réinitialisation. Veuillez réessayer plus tard.",
+      "passwords_do_not_match": "Les nouveaux mots de passe ne correspondent pas.",
+      "passwords_do_not_match_reset": "Les mots de passe ne correspondent pas.",
+      "invalid_username": "Format d'identifiant invalide.",
+      "invalid_email": "Email invalide.",
+      "password_too_short": "Le mot de passe doit contenir au moins 10 caractères.",
+      "password_needs_uppercase": "Le mot de passe doit contenir au moins une majuscule.",
+      "password_needs_lowercase": "Le mot de passe doit contenir au moins une minuscule.",
+      "password_needs_number": "Le mot de passe doit contenir au moins un chiffre.",
+      "password_needs_special": "Le mot de passe doit contenir au moins un caractère spécial.",
+      "cannot_auth_lldap": "Impossible de s'authentifier auprès de LLDAP.",
+      "user_created_no_password": "Utilisateur créé mais le mot de passe n'a pas pu être défini.",
+      "cannot_connect_ldap": "Impossible de se connecter à LDAP.",
+      "invalid_username_or_password": "Identifiant ou mot de passe invalide.",
+      "current_password_incorrect": "Le mot de passe actuel est incorrect.",
+      "password_could_not_be_updated": "Le mot de passe n'a pas pu être mis à jour.",
+      "auth_failed": "Échec de l'authentification : {error}",
+      "missing_auth_code": "Code d'autorisation manquant.",
+      "unknown_error": "Erreur inconnue"
+    }
+  }
+}

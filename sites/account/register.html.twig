@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 {% import "account/_form.html.twig" as form %}
 
-{% block title %}Register{% endblock %}
+{% block title %}{{ t('account.register.title') }}{% endblock %}
 
 {% block content %}
 {{ renderNavbar() }}
@@ -10,15 +10,15 @@
     <div class="acct-wrap">
 
         <div class="acct-header">
-            <h1 class="acct-title">Create account</h1>
-            <p class="acct-sub">One account. Email, Forgejo, Nextcloud - everythin.</p>
+            <h1 class="acct-title">{{ t('account.register.create') }}</h1>
+            <p class="acct-sub">{{ t('account.register.sub') }}</p>
         </div>
 
         {{ form.flash(flash) }}
 
         <div class="card acct-card">
-            <h2 class="card__heading">Register</h2>
-            <p class="acct-hint" style="text-align: center;">Make something creative up ;)</p>
+            <h2 class="card__heading">{{ t('account.register.heading') }}</h2>
+            <p class="acct-hint" style="text-align: center;">{{ t('account.register.hint') }}</p>
             <form method="POST" action="?page=account&action=register" class="acct-form" novalidate>
 
                 <div class="acct-row acct-row--2">
@@ -27,20 +27,20 @@
                 </div>
 
                 {{ form.field('Username', 'uid', 'text', post.uid ?? '', 'Xx_stardestr0yer_xX', true) }}
-                <p class="acct-hint">Lowercase letters, digits, hyphens, underscores. 3–32 chars. This becomes your email: <em>username@lain.rocks</em></p>
+                <p class="acct-hint">{{ t('account.register.username_hint') }}</p>
 
                 {{ form.field('Recovery email', 'email', 'email', post.email ?? '', 'you@example.com', true) }}
-                <p class="acct-hint">Used only for password resets. Not your lain.rocks mailbox.</p>
+                <p class="acct-hint">{{ t('account.register.recovery_email_hint') }}</p>
 
                 {{ form.field('Password', 'password', 'password', '', '', true) }}
-                <p class="acct-hint">At least 10 characters, with uppercase, lowercase, number, and special character.</p>
+                <p class="acct-hint">{{ t('account.register.password_hint') }}</p>
 
-                <button type="submit" class="acct-btn">Create account →</button>
+                <button type="submit" class="acct-btn">{{ t('account.register.btn') }}</button>
 
             </form>
         </div>
 
-        <p class="acct-alt">Already have an account? <a href="?page=account&action=login">Log in</a></p>
+        <p class="acct-alt">{{ t('account.register.already') }} <a href="?page=account&action=login">{{ t('account.register.login_link') }}</a></p>
 
     </div>
 </div>

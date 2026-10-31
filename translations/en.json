@@ -1,0 +1,286 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+  "html_lang": "en",
+  "meta": {
+    "description": "lain.rocks, the c00l place on the internet",
+    "keywords": "lain, xmpp, xmpp server, im, imageboard, textboard, oiled, up, aggressively, making, out",
+    "author": "tyt4real"
+  },
+  "header": {
+    "title": "lain.rocks",
+    "sub": "The (hopefully) cool place on the internet",
+    "quote": "「どこに行ったって、人はつながっているのよ。」"
+  },
+  "footer": {
+    "copyleft": "Let's all love Lain. Copyleft 2025",
+    "abuse": "For all abuse complaints, contact us here:",
+    "theme_label": "Theme"
+  },
+  "theme": {
+    "cyberpunk": "Cyberpunk (default)",
+    "lainrocks": "Default lainrocks",
+    "yotsuba": "Yotsuba"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "lainos": "LainOS",
+    "jabber": "Jabber Server",
+    "account": "Account",
+    "jabber_registration": "Jabber Registration",
+    "converse_js": "Converse.JS",
+    "tos_en": "ToS [EN]",
+    "tos_ru": "ToS [RU]",
+    "forgejo": "Forgejo",
+    "uptime": "Uptime",
+    "locale": "Language"
+  },
+  "home": {
+    "title": "Home",
+    "hero_title": "Welcome to <em>lainrocks</em>",
+    "hero_desc": "A free, privacy-respecting corner of the interwebz — open to all.",
+    "chip_jabber": "Jabber Server",
+    "chip_textboard": "lainrocks Textboard",
+    "chip_forgejo": "Forgejo",
+    "sub_link": "About the admin →",
+    "service": {
+      "git": "git",
+      "mail": "mail",
+      "xmpp": "xmpp",
+      "lainos": "lainos",
+      "yukaribin": "yukaribin",
+      "yukaribin_soon": "yukaribin (coming soon)",
+      "account": "one account to rule them all"
+    },
+    "onion": {
+      "heading": "Onion & PGP",
+      "text1": "To consult the list of official onion links, please visit the",
+      "text2": "canary. Updates regarding onion URLs and critical information will be signed with my PGP key available",
+      "here": "here",
+      "commit": "Working commit: {commit}"
+    },
+    "donate": {
+      "heading": "Donate",
+      "note": "",
+      "monero": "Monero",
+      "bitcoin": "Bitcoin"
+    }
+  },
+  "about": {
+    "title": "About",
+    "who_heading": "Who am I?",
+    "intro": "Hi reader, I hope You're doing great this beautiful day, afternoon, evening or whenever You're reading this. I greatly appreciate Your interest in me.",
+    "quote": "&gt;who needs compiler warnings when you have this guy",
+    "handle": {
+      "label": "My handle on most places is",
+      "fediverse": "Fediverse",
+      "xmpp": "XMPP",
+      "github": "GitHub",
+      "twitter": "Twitter (yuck)"
+    },
+    "about_me": {
+      "heading": "About me",
+      "text": "Since a <em>very</em> young age I loved messing around with computers and hardware in general. When I was about 6 I learnt to code in Java for purpose of writing Minecraft server plugins and mods. Since then I learnt many other languages such as C, PHP, Javascript, Typescript and others, although I suck at graphical design, I try my best. Since I begun using the Wired, I switched handles and nicknames many times but I hope my current identity will stay with me for a <em>long</em> time. I have done tons of small side projects, in all of which I've lost interest. This site however I hope will keep me entertained for a very <em>long</em> time.",
+      "lain_sign": "Let's all love Lain."
+    },
+    "contact": {
+      "heading": "Contact me?",
+      "text": "You'd like to contact me? I feel flattered :3",
+      "email": "Email",
+      "irc": "IRC",
+      "xmpp": "XMPP",
+      "discord": "Discord?",
+      "pgp_key": "My public PGP key is here:",
+      "fingerprint": "Key fingerprint:"
+    }
+  },
+  "repos": {
+    "title": "Repositories",
+    "lainos_heading": "The LainOS project",
+    "lainos_text1": "The LainOS project is an open-source GNU/Linux distribution focused on privacy and security based on Arch Linux.",
+    "lainos_text2": "If you're interested, you should visit the project's website",
+    "lainos_text3": "here and its Git repository",
+    "lainos_text4": "here.",
+    "lainos_text5": "At lain.rocks we provide the official software mirror for LainOS, which you can find below.",
+    "mirror_heading": "LainOS software mirror list",
+    "table": {
+      "name": "Name",
+      "mirror_url": "Mirror URL",
+      "tor_url": "Tor Mirror URL",
+      "description": "Description",
+      "online": "Is online?"
+    },
+    "repo": {
+      "wired": {
+        "name": "Wired Repo",
+        "description": "Repository for the pentesting tools provided with LainOS"
+      },
+      "lain": {
+        "name": "Lain Repo",
+        "description": "Repository for the general software running on LainOS"
+      }
+    },
+    "stats_heading": "Mirror statistics",
+    "stats": {
+      "size": "Mirror size",
+      "last_update": "Last update"
+    }
+  },
+  "xmpp": {
+    "title": "Jabber Server",
+    "about_heading": "lainrocks XMPP/Jabber server",
+    "about_text1": "The lain.rocks XMPP/Jabber server is a free as in freedom, private place for communication open to everyone at <strong>lain.rocks</strong>.",
+    "about_text2": "You can create an account using any XMPP client that supports account registration, for example",
+    "about_text3": "Conversations for Android or",
+    "about_text4": "CoyIM for desktop.",
+    "about_text5": "The registration link can be found above.",
+    "about_text6": "For better privacy, we recommend connecting to the server over Tor. The onion address is:",
+    "about_text7": "Make sure your XMPP client is configured to use Tor as a proxy.",
+    "about_text8": "Our server also offers a Biboumi IRC gateway, allowing you to connect to IRC channels via XMPP.",
+    "about_text9": "Additionally, a Telegram gateway will be available soon, enabling communication with Telegram users through XMPP.",
+    "about_text10": "If you need help setting up your XMPP client or have any questions, feel free to reach out in the support MUC room",
+    "about_text11": "or contact us via email at",
+    "about_text12": "For crucial information regarding the XMPP service, please refer to the announcements on the homepage,",
+    "about_text13": "and read the Terms of Service available",
+    "about_text14": "here",
+    "about_text15": "also in russian",
+    "about_text16": "here.",
+    "about_text17": "Enjoy your stay on the lain.rocks XMPP server!",
+    "security_heading": "Security Notice",
+    "security_text": "Remember to <strong>never</strong> trust your provider with your privacy. <strong>Always</strong> use end-to-end encryption like OMEMO or PGP to keep your communications safe and private.",
+    "compliance_heading": "Compliance",
+    "warning_heading": "Warning!",
+    "warning_text1": "She wants to read your correspondence, but I won't let her!",
+    "donate_heading": "Donate"
+  },
+  "serverstats": {
+    "title": "Server Statistics",
+    "heading": "Server statistics as of <i>right</i> now",
+    "system_load": "System load: {load}",
+    "used_memory": "Used memory: {bytes} bytes",
+    "free_disk": "Free disk: {free} bytes | Total: {total} bytes | Free: {pct}%"
+  },
+  "webring": {
+    "title": "Lainring",
+    "heading": "Lainring",
+    "credit": "I stole this version of the webring from 0x19.org, in the future I plan to maintain my own version of the webring :3"
+  },
+  "lainring": {
+    "cannot_open": "cannot open lainring.json",
+    "cannot_decode": "cannot decode lainring.json",
+    "last_updated": "Last updated: {date}",
+    "www": "www",
+    "rss_feeds": "RSS feeds",
+    "opml_format": "OPML format",
+    "newsboat_list": "URL list for newsboat:",
+    "tor": "Tor",
+    "i2p": "i2p",
+    "offline": "Offline, abandoned, domain sniped, etc"
+  },
+  "account": {
+    "login": {
+      "title": "Login",
+      "welcome": "Welcome back",
+      "sub": "Log in to your lain.rocks account.",
+      "registered": "Account created! You can now log in.",
+      "reset_ok": "Password reset successfully. Log in below.",
+      "heading": "Login",
+      "authelia_btn": "Log in with Authelia →",
+      "authelia_unavailable": "Authentication is unavailable. Please try again later.",
+      "legacy": "legacy",
+      "btn_login": "Log in →",
+      "no_account": "No account yet?",
+      "register_link": "Register"
+    },
+    "register": {
+      "title": "Register",
+      "create": "Create account",
+      "sub": "One account. Email, Forgejo, Nextcloud - everythin.",
+      "heading": "Register",
+      "hint": "Make something creative up ;)",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "username": "Username",
+      "username_hint": "Lowercase letters, digits, hyphens, underscores. 3–32 chars. This becomes your email: <em>username@lain.rocks</em>",
+      "recovery_email": "Recovery email",
+      "recovery_email_hint": "Used only for password resets. Not your lain.rocks mailbox.",
+      "password": "Password",
+      "password_hint": "At least 10 characters, with uppercase, lowercase, number, and special character.",
+      "btn": "Create account →",
+      "already": "Already have an account?",
+      "login_link": "Log in"
+    },
+    "profile": {
+      "title": "Profile",
+      "heading": "Account info",
+      "username": "Username",
+      "display_name": "Display name",
+      "recovery_email": "Recovery email",
+      "mail_address": "Mail address",
+      "member_since": "Member since",
+      "services": "Your services",
+      "email": "Email",
+      "forgejo": "Forgejo",
+      "nextcloud": "Nextcloud",
+      "not_enabled": "not enabled",
+      "actions": "Actions",
+      "change_password": "Change password",
+      "logout": "Log out",
+      "logout_confirm": "Log out?",
+      "back_to_profile": "← Back to profile"
+    },
+    "change_password": {
+      "title": "Change Password",
+      "heading": "Change your password",
+      "sub": "Your new password will apply to all lain.rocks services.",
+      "current_password": "Current password",
+      "new_password": "New password",
+      "confirm_password": "Confirm new password",
+      "password_hint": "At least 10 characters, with uppercase, lowercase, number, and special character.",
+      "btn": "Update password →"
+    },
+    "reset_request": {
+      "title": "Reset Password",
+      "heading": "Request reset",
+      "sub": "Enter your username and we'll send a reset link to your recovery email.",
+      "username": "Username",
+      "btn": "Send reset link →",
+      "back_to_login": "← Back to login"
+    },
+    "reset_confirm": {
+      "title": "Set New Password",
+      "heading": "Reset password",
+      "sub": "Enter the code from your reset email and choose a new password.",
+      "new_password": "New password",
+      "confirm_password": "Confirm password",
+      "password_hint": "At least 10 characters, with uppercase, lowercase, number, and special character.",
+      "btn": "Set new password →"
+    },
+    "flash": {
+      "account_created": "Account created! Please log in.",
+      "password_changed": "Password changed successfully.",
+      "reset_sent": "If that account exists, a reset link has been sent to the associated email.",
+      "too_many_register": "Too many registration attempts. Please try again later.",
+      "too_many_reset": "Too many reset attempts. Please try again later.",
+      "passwords_do_not_match": "New passwords do not match.",
+      "passwords_do_not_match_reset": "Passwords do not match.",
+      "invalid_username": "Invalid username format.",
+      "invalid_email": "Invalid email.",
+      "password_too_short": "Password must be at least 10 characters long.",
+      "password_needs_uppercase": "Password must contain at least one uppercase letter.",
+      "password_needs_lowercase": "Password must contain at least one lowercase letter.",
+      "password_needs_number": "Password must contain at least one number.",
+      "password_needs_special": "Password must contain at least one special character.",
+      "cannot_auth_lldap": "Cannot authenticate to LLDAP.",
+      "user_created_no_password": "User created but password could not be set.",
+      "cannot_connect_ldap": "Cannot connect to LDAP.",
+      "invalid_username_or_password": "Invalid username or password.",
+      "current_password_incorrect": "Current password is incorrect.",
+      "password_could_not_be_updated": "Password could not be updated.",
+      "auth_failed": "Authentication failed: {error}",
+      "missing_auth_code": "Missing authorization code.",
+      "unknown_error": "Unknown error"
+    }
+  }
+}

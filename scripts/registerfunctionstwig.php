@@ -1,9 +1,20 @@
 <?php
-function registerWithTwig()
+function registerWithTwig(string $locale = 'en', array $translations = [])
 {
+    if ($translations === []) {
+        $translations = loadTranslations($locale);
+    }
+
     $twig = require __DIR__ . '/twigInstance.php';
 
-    $twig->addFunction(new \Twig\TwigFunction('renderBlog', function () {
+    $twig->addGlobal('locale', $locale);
+    $twig->addGlobal('translations', $translations);
+
+    $twig->addFunction(new \Twig\TwigFunction('t', function (string $key, array $params = []) use ($translations) {
+        return t($translations, $key, $params);
+    }, ['is_safe' => ['html']]));
+
+    $twig->addFunction(new \Twig\TwigFunction('renderBlog', function () use ($translations) {
         // config
         $directory = '../blog';
         $extension = 'md';
@@ -71,7 +82,7 @@ function registerWithTwig()
         echo '✅';
     }));
 
-    $twig->addFunction(new \Twig\TwigFunction('renderServerStats', function () {
+    $twig->addFunction(new \Twig\TwigFunction('renderServerStats', function () use ($translations) {
         // CPU load
         $load = sys_getloadavg();
         $cpuLoad = $load[0];
@@ -86,36 +97,40 @@ function registerWithTwig()
 
         // Build HTML output
         $output = '<ul>';
-        $output .= '<li>System load: ' . htmlspecialchars($cpuLoad) . '</li>';
-        $output .= '<li>Used memory: ' . number_format($memoryUsed) . ' bytes</li>';
-        $output .= '<li>Free disk space: ' . number_format($free) . ' bytes | Total disk space: ' . number_format($total) . ' bytes | Percent free: ' . number_format($percentageFree, 2) . '%</li>';
+        $output .= '<li>' . t($translations, 'serverstats.system_load', ['load' => htmlspecialchars($cpuLoad)]) . '</li>';
+        $output .= '<li>' . t($translations, 'serverstats.used_memory', ['bytes' => number_format($memoryUsed)]) . '</li>';
+        $output .= '<li>' . t($translations, 'serverstats.free_disk', [
+            'free' => number_format($free),
+            'total' => number_format($total),
+            'pct' => number_format($percentageFree, 2),
+        ]) . '</li>';
         $output .= '</ul>';
 
         echo $output;
     }));
 
-    $twig->addFunction(new \Twig\TwigFunction('renderLainring', function () {
+    $twig->addFunction(new \Twig\TwigFunction('renderLainring', function () use ($translations) {
         // turn off warnings for undefined array keys so I can see actualy real issues
         error_reporting(E_ALL);
         //error_reporting(E_ERROR | E_PARSE | E_NOTICE);
         $json = file_get_contents("special/lainring.json");
 
         if ($json === false) {
-            echo "cannot open lainring.json";
+            echo t($translations, 'lainring.cannot_open');
             exit;
         }
 
         $data = json_decode($json, true);
 
         if ($data === null) {
-            echo "cannot decode lainring.json";
+            echo t($translations, 'lainring.cannot_decode');
             exit;
         }
 
 
-        printf("<p> Last updated: %s</p>", gmdate("Y-m-d\TH:i:s+00:00", $data["updated"]));
+        printf("<p> %s</p>", t($translations, 'lainring.last_updated', ['date' => gmdate("Y-m-d\TH:i:s+00:00", $data["updated"])]));
 
-        printf("<h2>www</h2>\n");
+        printf("<h2>%s</h2>\n", t($translations, 'lainring.www'));
 
         foreach ($data['items'] as $key => $value) {
             if ($value['online'] == "true") {
@@ -137,9 +152,9 @@ function registerWithTwig()
         }
 
 
-        printf("<h2>RSS feeds</h2>\n");
-        printf("<p><a href='opml.php'>OPML format</a></p>\n");
-        printf("<p>URL list for newsboat: </p>\n");
+        printf("<h2>%s</h2>\n", t($translations, 'lainring.rss_feeds'));
+        printf("<p><a href='opml.php'>%s</a></p>\n", t($translations, 'lainring.opml_format'));
+        printf("<p>%s </p>\n", t($translations, 'lainring.newsboat_list'));
         printf("<pre><code>");
         foreach ($data['items'] as $key => $value) {
             if ($value['online'] == "true") {
@@ -151,7 +166,7 @@ function registerWithTwig()
         printf("</code></pre>\n");
 
 
-        printf("<h2>Tor</h2>\n");
+        printf("<h2>%s</h2>\n", t($translations, 'lainring.tor'));
         foreach ($data['items'] as $key => $value) {
             if ($value['online'] == "true") {
                 if (array_key_exists("tor", $value)) {
@@ -160,7 +175,7 @@ function registerWithTwig()
             }
         }
 
-        printf("<h2>i2p</h2>\n");
+        printf("<h2>%s</h2>\n", t($translations, 'lainring.i2p'));
         foreach ($data['items'] as $key => $value) {
             if ($value['online'] == "true") {
                 if (array_key_exists("i2p", $value)) {
@@ -169,7 +184,7 @@ function registerWithTwig()
             }
         }
 
-        printf("<h2>Offline, abandoned, domain sniped, etc</h1>");
+        printf("<h2>%s</h1>", t($translations, 'lainring.offline'));
         foreach ($data['items'] as $key => $value) {
             if ($value['online'] == "false") {
                 if (array_key_exists('locale', $value)) {
@@ -198,26 +213,35 @@ function registerWithTwig()
         echo '<img src="' . htmlspecialchars($imageUrl, ENT_QUOTES) . '" alt="Me IRL" style="width: 150px; height: 150px; display: inline-block flex-shrink: 0; margin-left: 10px;  border: 2px solid #00ff00;  box-shadow: 0 0 15px 5px #00ff00; transition: box-shadow 0.3s ease, transform 0.3s ease;">';
     }));
 
-    $twig->addFunction(new \Twig\TwigFunction('renderNavbar', function () {
+    $twig->addFunction(new \Twig\TwigFunction('renderNavbar', function () use ($locale, $translations) {
         $config = include 'config.php';
 
         $pages = $config['pages'];
 
+        $slugLabels = [
+            'home' => 'nav.home',
+            'about' => 'nav.about',
+            'LainOS' => 'nav.lainos',
+            'Jabber Server' => 'nav.jabber',
+            'account' => 'nav.account',
+        ];
+
         $manualLinks = [
-            ['href' => './xmpp/register', 'label' => 'Jabber Registration', 'target' => '_blank'],
-            ['href' => './xmpp/conversejs/', 'label' => 'Converse.JS', 'target' => '_blank'],
-            ['href' => './sites/tos.html', 'label' => 'ToS [EN]', 'target' => '_blank'],
-            ['href' => './sites/tos.ru.html', 'label' => 'ToS [RU]', 'target' => '_blank'],
-            ['href' => 'https://forgejo.lain.rocks/', 'label' => 'Forgejo', 'target' => '_blank'],
-            ['href' => 'https://stats.uptimerobot.com/6eWo4s81Co', 'label' => 'Uptime', 'target' => '_blank'],
+            ['href' => './xmpp/register', 'label' => 'nav.jabber_registration', 'target' => '_blank'],
+            ['href' => './xmpp/conversejs/', 'label' => 'nav.converse_js', 'target' => '_blank'],
+            ['href' => './sites/tos.html', 'label' => 'nav.tos_en', 'target' => '_blank'],
+            ['href' => './sites/tos.ru.html', 'label' => 'nav.tos_ru', 'target' => '_blank'],
+            ['href' => 'https://forgejo.lain.rocks/', 'label' => 'nav.forgejo', 'target' => '_blank'],
+            ['href' => 'https://stats.uptimerobot.com/6eWo4s81Co', 'label' => 'nav.uptime', 'target' => '_blank'],
         ];
 
         // Build dynamic links from pages config
         $dynamicLinks = [];
         foreach ($pages as $slug => $pageData) {
+            $key = $slugLabels[$slug] ?? 'nav.' . strtolower($slug);
             $dynamicLinks[] = [
                 'href' => '?page=' . urlencode($slug),
-                'label' => ucfirst($slug),
+                'label' => t($translations, $key),
                 'target' => '_self'
             ];
         }
@@ -230,8 +254,9 @@ function registerWithTwig()
         echo '  <div class="site-nav__inner">';
 
         foreach ($navbarLinks as $link) {
+            $label = str_starts_with($link['label'], 'nav.') ? t($translations, $link['label']) : $link['label'];
             echo '<a href="' . htmlspecialchars($link['href']) . '" target="' . htmlspecialchars($link['target']) . '" class="site-nav__link">'
-                . htmlspecialchars($link['label']) . '</a>';
+                . htmlspecialchars($label) . '</a>';
         }
 
         echo '  </div>';
