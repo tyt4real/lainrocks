@@ -144,6 +144,35 @@ switch ($action) {
         ]);
         break;
 
+    case 'authelia-code':
+        // OIDC code display endpoint for Telegram bot paste-back flow.
+        // Shows the authorization code so the user can paste it into /link oidc <code>.
+        if (isset($_SESSION['lain_uid'])) {
+            header('Location: ?page=account&action=profile');
+            exit;
+        }
+
+        $code = $_GET['code'] ?? '';
+        $state = $_GET['state'] ?? '';
+
+        if ($code === '') {
+            $flash = ['type' => 'err', 'msg' => t($translations, 'account.flash.missing_auth_code')];
+            echo $twig->render('account/login.html.twig', [
+                'flash'            => $flash,
+                'registered'       => false,
+                'redirect'         => '',
+                'authelia_login_url' => $authelia->getLoginUrl(''),
+                'ldap_enabled'     => false,
+            ]);
+            break;
+        }
+
+        echo $twig->render('account/authelia_code.html.twig', [
+            'code'   => htmlspecialchars($code, ENT_QUOTES),
+            'state'  => htmlspecialchars($state, ENT_QUOTES),
+        ]);
+        break;
+
     case 'register':
         $ip = getClientIp();
         if (!checkRateLimit('register', $ip)) {

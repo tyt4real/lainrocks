@@ -190,6 +190,7 @@
       "authelia_unavailable": "L'authentification est indisponible. Veuillez réessayer plus tard.",
       "legacy": "hérité",
       "btn_login": "Se connecter →",
+      "forgot_password": "Mot de passe oublié ?",
       "no_account": "Pas encore de compte ?",
       "register_link": "S'inscrire"
     },
@@ -226,6 +227,7 @@
       "not_enabled": "non activé",
       "actions": "Actions",
       "change_password": "Changer le mot de passe",
+      "reset_password": "Réinitialiser le mot de passe",
       "logout": "Déconnexion",
       "logout_confirm": "Déconnecter ?",
       "back_to_profile": "← Retour au profil"

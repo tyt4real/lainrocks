@@ -190,6 +190,7 @@
       "authelia_unavailable": "Аутентификация недоступна. Пожалуйста, попробуйте позже.",
       "legacy": "устарело",
       "btn_login": "Войти →",
+      "forgot_password": "Забыли пароль?",
       "no_account": "Ещё нет аккаунта?",
       "register_link": "Зарегистрироваться"
     },
@@ -226,6 +227,7 @@
       "not_enabled": "не подключён",
       "actions": "Действия",
       "change_password": "Сменить пароль",
+      "reset_password": "Сбросить пароль",
       "logout": "Выйти",
       "logout_confirm": "Выйти?",
       "back_to_profile": "← Назад к профилю"

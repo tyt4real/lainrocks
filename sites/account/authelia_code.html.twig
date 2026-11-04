@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+{% import "account/_form.html.twig" as form %}
+
+{% block title %}{{ t('account.authelia_code.title') }}{% endblock %}
+
+{% block content %}
+{{ renderNavbar() }}
+
+<div class="page page--account">
+    <div class="acct-wrap">
+
+        <div class="acct-header">
+            <h1 class="acct-title">{{ t('account.authelia_code.heading') }}</h1>
+            <p class="acct-sub">{{ t('account.authelia_code.sub') }}</p>
+        </div>
+
+        {{ form.flash(flash) }}
+
+        <div class="card acct-card">
+            <h2 class="card__heading">{{ t('account.authelia_code.code_heading') }}</h2>
+
+            <div class="acct-code-box">
+                <code class="acct-code">{{ code }}</code>
+            </div>
+
+            <p class="acct-alt">{{ t('account.authelia_code.instructions') }}</p>
+
+            <div class="acct-actions">
+                <a class="acct-btn acct-btn--secondary acct-btn--full" href="?page=account&action=login">{{ t('account.login.btn_back') }}</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

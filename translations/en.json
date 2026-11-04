@@ -190,6 +190,7 @@
       "authelia_unavailable": "Authentication is unavailable. Please try again later.",
       "legacy": "legacy",
       "btn_login": "Log in →",
+      "forgot_password": "Forgot password?",
       "no_account": "No account yet?",
       "register_link": "Register"
     },
@@ -226,6 +227,7 @@
       "not_enabled": "not enabled",
       "actions": "Actions",
       "change_password": "Change password",
+      "reset_password": "Reset password",
       "logout": "Log out",
       "logout_confirm": "Log out?",
       "back_to_profile": "← Back to profile"
@@ -281,6 +283,13 @@
       "auth_failed": "Authentication failed: {error}",
       "missing_auth_code": "Missing authorization code.",
       "unknown_error": "Unknown error"
+    },
+    "authelia_code": {
+      "title": "Link with Authelia",
+      "heading": "Authorization code",
+      "sub": "Copy this code and paste it into the Telegram bot.",
+      "code_heading": "Your code",
+      "instructions": "Go back to the Telegram bot and run: /link oidc <code>"
     }
   }
 }

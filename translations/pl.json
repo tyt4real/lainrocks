@@ -190,6 +190,7 @@
       "authelia_unavailable": "Uwierzytelnianie jest niedostępne. Spróbuj ponownie później.",
       "legacy": "legacy",
       "btn_login": "Zaloguj się →",
+      "forgot_password": "Zapomniałeś hasła?",
       "no_account": "Nie masz jeszcze konta?",
       "register_link": "Zarejestruj się"
     },
@@ -226,6 +227,7 @@
       "not_enabled": "nie włączone",
       "actions": "Akcje",
       "change_password": "Zmień hasło",
+      "reset_password": "Reset hasła",
       "logout": "Wyloguj",
       "logout_confirm": "Wylogować?",
       "back_to_profile": "← Powrót do profilu"
