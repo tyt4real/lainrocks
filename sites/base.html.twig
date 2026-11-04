@@ -7,7 +7,6 @@
             <meta name="description" content="{{ t('meta.description') }}" />
             <meta name="keywords" content="{{ t('meta.keywords') }}" />
             <meta name="author" content="{{ t('meta.author') }}" />
-            {# SEO: consolidate the ?page= query URLs onto one clean canonical per page #}
             {% set canonicalPath = {
                 'home': '/',
                 'about': '/about',
@@ -18,9 +17,7 @@
             <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-            <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" id="font-default" />
-            <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" id="font-yotsuba" disabled />
-            <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" id="font-cyberpunk" disabled />
+            <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
             <link id="account-css" href="../css/account.css" rel="stylesheet"/>
             <link id="theme-css" href="../css/cyberpunk.css" rel="stylesheet" />
             <title>lain.rocks | {% block title %}{% endblock %}</title>
@@ -28,104 +25,40 @@
     </head>
     <body>
 
-        <div class="scanlines" aria-hidden="true"></div>
+        <div class="body-container">
 
-        <header class="site-header">
-            <div class="site-header__inner">
-                <div class="site-header__brand">
-                    <a href="./?page=home" class="site-header__title">lain.rocks</a>
-                    <span class="site-header__sub">{{ t('header.sub') }}</span>
-                </div>
-                <p class="site-header__quote">{{ t('header.quote') }}</p>
-            </div>
-        </header>
+            <header onclick="window.location = './?page=home'">
+                <h1 class="header-title">{{ t('header.title') }}</h1>
+                <p class="header-para">{{ t('header.sub') }}</p>
+            </header>
 
-        <div id="content">{% block content %}{% endblock %}</div>
+            <nav>
+                <ul class="navbar-list">
+                    {% for link in navbarLinks %}
+                        <li class="navbar-item"><a href="{{ link.href }}" target="{{ link.target }}">{{ link.label }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
 
-        <img src="../images/yotsuba.png" class="deco-corner hide-on-mobile" id="yotsuba" alt="" aria-hidden="true" />
+            <main>
+                {% block content %}{% endblock %}
+            </main>
 
-        <footer class="site-footer">
-            {% block footer %}
-                <div class="site-footer__inner">
-                    <div class="site-footer__info">
-                        <p>{{ t('footer.copyleft') }}</p>
-                        <p>{{ t('footer.abuse') }} <a href="mailto:tyt4real@protonmail.com">tyt4real@protonmail.com</a></p>
-                        <div id="logo">
-                            <svg id="Warstwa_2" data-name="Warstwa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 246.92 95.7">
-  <defs>
-    <style>
-      .cls-1 {
-        font-size: 15.87px;
-      }
-
-      .cls-1, .cls-2 {
-        font-family: Coolvetica-Regular, Coolvetica;
-      }
-
-      .cls-3 {
-        letter-spacing: 0em;
-      }
-
-      .cls-2 {
-        font-size: 6px;
-      }
-
-      .cls-4 {
-        letter-spacing: -.03em;
-      }
-
-      .cls-5 {
-        font-family: ToxigenesisRg-Bold, Toxigenesis;
-        font-size: 21.08px;
-        font-weight: 700;
-      }
-
-      .cls-6 {
-        fill: none;
-        stroke: #000;
-        stroke-miterlimit: 10;
-        stroke-width: 5px;
-      }
-
-      .cls-7 {
-        letter-spacing: -.04em;
-      }
-
-      .cls-8 {
-        letter-spacing: 0em;
-      }
-    </style>
-  </defs>
-  <text class="cls-5" transform="translate(61.69 33.76) scale(1.29 1)"><tspan class="cls-8" x="0" y="0">R</tspan><tspan x="18.28" y="0">OCK</tspan></text>
-  <text class="cls-1" transform="translate(150.74 35.4) scale(1.14 1)"><tspan x="0" y="0">p</tspan><tspan class="cls-4" x="8.3" y="0">r</tspan><tspan x="12.92" y="0">oductions</tspan></text>
-  <path class="cls-6" d="M246.92,40.87h-87.35l13.16,25.48-22.28-19.07,9.35,37.19-19.17-25.19-9.01,11.77s-14.32-12.71-14.32-13.42-77.36,30.37-77.36,30.37l22.4-21.19-21.01-1.41,18.44-6.59L13.39,40.87h46.39L22.86,8.44l36.92,15.77,8.25.52"/>
-  <text class="cls-2" transform="translate(63.539 39.5178) scale(2.851 1)"><tspan x="0" y="0">LAIN.ROC</tspan><tspan class="cls-7" x="23.82" y="0">K</tspan><tspan class="cls-3" x="27.21" y="0">S</tspan></text>
-  <path d="M100.05,26c0,.11-1.64-.2-2.5.69-.86.9-.57,2.63-.68,2.63-.1,0,.2-1.73-.65-2.63-.85-.89-2.5-.58-2.5-.69,0-.11,1.64.2,2.5-.69.87-.91.56-2.67.66-2.67s-.21,1.76.66,2.67c.86.89,2.5.58,2.5.69Z"/>
-  <path d="M171.97,31.53c0,.05-.89-.1-1.35.35-.47.45-.31,1.31-.37,1.31-.06,0,.11-.86-.35-1.31-.46-.45-1.35-.29-1.35-.35,0-.05.89.1,1.35-.35.47-.45.3-1.33.36-1.33s-.11.88.36,1.33c.46.44,1.35.29,1.35.35Z"/>
-  <path d="M220.5,31.53c0,.05-.89-.1-1.35.35-.47.45-.31,1.31-.37,1.31-.06,0,.11-.86-.35-1.31-.46-.45-1.35-.29-1.35-.35,0-.05.89.1,1.35-.35.47-.45.3-1.33.36-1.33s-.11.88.36,1.33c.46.44,1.35.29,1.35.35Z"/>
-</svg>
-                        </div>
-                    </div>
-                    <div class="site-footer__theme">
-                        <span class="theme-label">{{ t('footer.theme_label') }}</span>
-                        <div class="theme-selector">
-                            <button class="theme-btn" data-theme="cyberpunk">{{ t('theme.cyberpunk') }}</button>
-                            <button class="theme-btn" data-theme="lainrocks">{{ t('theme.lainrocks') }}</button>
-                            <button class="theme-btn" data-theme="yotsuba">{{ t('theme.yotsuba') }}</button>
-                        </div>
-                    </div>
-                    <div class="site-footer__locale">
-                        <span class="theme-label">{{ t('nav.locale') }}</span>
-                        <div class="locale-selector">
-                            <a href="?lang=en" class="locale-btn{% if locale == 'en' %} locale-btn--active{% endif %}">EN</a>
-                            <a href="?lang=ru" class="locale-btn{% if locale == 'ru' %} locale-btn--active{% endif %}">RU</a>
-                            <a href="?lang=fr" class="locale-btn{% if locale == 'fr' %} locale-btn--active{% endif %}">FR</a>
-                            <a href="?lang=pl" class="locale-btn{% if locale == 'pl' %} locale-btn--active{% endif %}">PL</a>
-                        </div>
+            <footer>Thanks for the visit.
+                <span class="footer-eof">EOF</span>
+                <div class="site-footer__locale">
+                    <span class="theme-label">{{ t('nav.locale') }}</span>
+                    <div class="locale-selector">
+                        <a href="?lang=en" class="locale-btn{% if locale == 'en' %} locale-btn--active{% endif %}">EN</a>
+                        <a href="?lang=ru" class="locale-btn{% if locale == 'ru' %} locale-btn--active{% endif %}">RU</a>
+                        <a href="?lang=fr" class="locale-btn{% if locale == 'fr' %} locale-btn--active{% endif %}">FR</a>
+                        <a href="?lang=pl" class="locale-btn{% if locale == 'pl' %} locale-btn--active{% endif %}">PL</a>
                     </div>
                 </div>
-            {% endblock %}
-        </footer>
+            </footer>
+
+        </div>
+
         <script src="https://satori.lain.rocks/js/e7858184-3501-4ff3-ae9b-09422cb4061c" defer></script>
         <script src="../js/styleinit.js"></script>
         <script src="../js/themeManager.js"></script>

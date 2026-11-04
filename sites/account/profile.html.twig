@@ -3,79 +3,75 @@
 {% block title %}{{ t('account.profile.title') }}{% endblock %}
 
 {% block content %}
-{{ renderNavbar() }}
 
-<div class="page page--account">
-    <div class="acct-wrap acct-wrap--wide">
+    <section class="greeting">
+        <p class="greeting-msg">{{ profile.displayName ?? uid }}</p>
+    </section>
 
-        <div class="acct-header">
-            <h1 class="acct-title">{{ profile.displayName ?? uid }}</h1>
-            <p class="acct-sub mono">{{ uid }}@lain.rocks</p>
-        </div>
+    <section class="site-about">
+        <p class="about-msg mono tabular-nums">{{ uid }}@lain.rocks</p>
+    </section>
 
-        <div class="card acct-card">
-            <h2 class="card__heading">{{ t('account.profile.heading') }}</h2>
-            <dl class="acct-dl">
-                <div class="acct-dl__row">
-                    <dt>{{ t('account.profile.username') }}</dt>
-                    <dd><code>{{ uid }}</code></dd>
-                </div>
-                <div class="acct-dl__row">
-                    <dt>{{ t('account.profile.display_name') }}</dt>
-                    <dd>{{ profile.displayName ?? userinfo.name ?? '—' }}</dd>
-                </div>
-                <div class="acct-dl__row">
-                    <dt>{{ t('account.profile.recovery_email') }}</dt>
-                    <dd>{{ profile.email ?? userinfo.email ?? '—' }}</dd>
-                </div>
-                <div class="acct-dl__row">
-                    <dt>{{ t('account.profile.mail_address') }}</dt>
-                    <dd><code>{{ uid }}@lain.rocks</code></dd>
-                </div>
-                {% if profile.creationDate %}
-                <div class="acct-dl__row">
-                    <dt>{{ t('account.profile.member_since') }}</dt>
-                    <dd class="mono">{{ profile.creationDate|date('Y-m-d') }}</dd>
-                </div>
-                {% endif %}
-            </dl>
-        </div>
-
-        <div class="card acct-card">
-            <h2 class="card__heading">{{ t('account.profile.services') }}</h2>
-            {% set groups = profile.groups ? profile.groups|map(g => g.displayName) : [] %}
-            <ul class="acct-services">
-                <li class="acct-service {% if 'mail_users' in groups %}acct-service--on{% endif %}">
-                    <span class="acct-service__dot"></span>
-                    <span class="acct-service__name">{{ t('account.profile.email') }}</span>
-                    <span class="acct-service__addr"><a class="acct-service__addr" href="https://webmail.lain.rocks/" target="_blank">{{ uid }}@lain.rocks</a></span>
-                    {% if 'mail_users' not in groups %}<span class="acct-service__badge">{{ t('account.profile.not_enabled') }}</span>{% endif %}
-                </li>
-                <li class="acct-service {% if 'forgejo_users' in groups %}acct-service--on{% endif %}">
-                    <span class="acct-service__dot"></span>
-                    <span class="acct-service__name">{{ t('account.profile.forgejo') }}</span>
-                    <a class="acct-service__addr" href="https://forgejo.lain.rocks" target="_blank">forgejo.lain.rocks</a>
-                    {% if 'forgejo_users' not in groups %}<span class="acct-service__badge">{{ t('account.profile.not_enabled') }}</span>{% endif %}
-                </li>
-                <li class="acct-service {% if 'nextcloud_users' in groups %}acct-service--on{% endif %}">
-                    <span class="acct-service__dot"></span>
-                    <span class="acct-service__name">{{ t('account.profile.nextcloud') }}</span>
-                    <a class="acct-service__addr" href="https://nextcloud.lain.rocks" target="_blank">nextcloud.lain.rocks</a>
-                    {% if 'nextcloud_users' not in groups %}<span class="acct-service__badge">{{ t('account.profile.not_enabled') }}</span>{% endif %}
-                </li>
-            </ul>
-        </div>
-
-        <div class="card acct-card">
-            <h2 class="card__heading">{{ t('account.profile.actions') }}</h2>
-            <div class="acct-actions-list">
-                <a class="acct-action-btn" href="?page=account&action=change-password">{{ t('account.profile.change_password') }}</a>
-                <a class="acct-action-btn" href="?page=account&action=reset-password">{{ t('account.profile.reset_password') }}</a>
-                <a class="acct-action-btn acct-action-btn--danger" href="?page=account&action=logout"
-                   onclick="return confirm('{{ t('account.profile.logout_confirm') }}')">{{ t('account.profile.logout') }}</a>
+    <section class="site-me card">
+        <h2>{{ t('account.profile.heading') }}</h2>
+        <dl class="acct-dl">
+            <div class="acct-dl__row">
+                <dt>{{ t('account.profile.username') }}</dt>
+                <dd><code>{{ uid }}</code></dd>
             </div>
-        </div>
+            <div class="acct-dl__row">
+                <dt>{{ t('account.profile.display_name') }}</dt>
+                <dd>{{ profile.displayName ?? userinfo.name ?? '—' }}</dd>
+            </div>
+            <div class="acct-dl__row">
+                <dt>{{ t('account.profile.recovery_email') }}</dt>
+                <dd>{{ profile.email ?? userinfo.email ?? '—' }}</dd>
+            </div>
+            <div class="acct-dl__row">
+                <dt>{{ t('account.profile.mail_address') }}</dt>
+                <dd><code class="tabular-nums">{{ uid }}@lain.rocks</code></dd>
+            </div>
+            {% if profile.creationDate %}
+            <div class="acct-dl__row">
+                <dt>{{ t('account.profile.member_since') }}</dt>
+                <dd class="mono tabular-nums">{{ profile.creationDate|date('Y-m-d') }}</dd>
+            </div>
+            {% endif %}
+        </dl>
+    </section>
 
-    </div>
-</div>
+    <section class="site-me card">
+        <h2>{{ t('account.profile.services') }}</h2>
+        {% set groups = profile.groups ? profile.groups|map(g => g.displayName) : [] %}
+        <ul class="acct-services">
+            <li class="acct-service {% if 'mail_users' in groups %}acct-service--on{% endif %}">
+                <span class="acct-service__dot"></span>
+                <span class="acct-service__name">{{ t('account.profile.email') }}</span>
+                <span class="acct-service__addr"><a href="https://webmail.lain.rocks/" target="_blank">{{ uid }}@lain.rocks</a></span>
+                {% if 'mail_users' not in groups %}<span class="acct-service__badge">{{ t('account.profile.not_enabled') }}</span>{% endif %}
+            </li>
+            <li class="acct-service {% if 'forgejo_users' in groups %}acct-service--on{% endif %}">
+                <span class="acct-service__dot"></span>
+                <span class="acct-service__name">{{ t('account.profile.forgejo') }}</span>
+                <a href="https://forgejo.lain.rocks" target="_blank">forgejo.lain.rocks</a>
+                {% if 'forgejo_users' not in groups %}<span class="acct-service__badge">{{ t('account.profile.not_enabled') }}</span>{% endif %}
+            </li>
+            <li class="acct-service {% if 'nextcloud_users' in groups %}acct-service--on{% endif %}">
+                <span class="acct-service__dot"></span>
+                <span class="acct-service__name">{{ t('account.profile.nextcloud') }}</span>
+                <a href="https://nextcloud.lain.rocks" target="_blank">nextcloud.lain.rocks</a>
+                {% if 'nextcloud_users' not in groups %}<span class="acct-service__badge">{{ t('account.profile.not_enabled') }}</span>{% endif %}
+            </li>
+        </ul>
+    </section>
+
+    <section class="site-about">
+        <h2>{{ t('account.profile.actions') }}</h2>
+        <div class="acct-actions-list">
+            <a class="cta" href="?page=account&action=change-password">{{ t('account.profile.change_password') }}</a>
+            <a class="cta cta--danger" href="?page=account&action=logout"
+               onclick="return confirm('{{ t('account.profile.logout_confirm') }}')">{{ t('account.profile.logout') }}</a>
+        </div>
+    </section>
+
 {% endblock %}

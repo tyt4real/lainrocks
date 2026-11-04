@@ -5,68 +5,70 @@
 
 {% block content %}
 
-    {{ renderNavbar() }}
+    <!-- Main feature: LainOS info -->
+    <section class="greeting">
+        <p class="greeting-msg">{{ t('repos.lainos_heading') }}</p>
+    </section>
 
-    <div class="page page--repos">
+    <!-- About LainOS -->
+    <section class="site-about">
+        <h2>{{ t('repos.lainos_heading') }}</h2>
+        <p class="about-msg">{{ t('repos.lainos_text1') }}</p>
+        <p class="about-msg">
+            {{ t('repos.lainos_text2') }}
+            <a href="https://lainos.dev/">{{ t('repos.lainos_text3') }}</a> and its Git repository
+            <a href="https://gitlab.com/lainos">{{ t('repos.lainos_text4') }}</a>.
+        </p>
+        <p class="about-msg">{{ t('repos.lainos_text5') }}</p>
+    </section>
 
-        <section class="card" id="lainos-about">
-            <h2 class="card__heading">{{ t('repos.lainos_heading') }}</h2>
-            <p>{{ t('repos.lainos_text1') }}</p>
-            <p>
-                {{ t('repos.lainos_text2') }}
-                <a href="https://lainos.dev/">{{ t('repos.lainos_text3') }}</a> and its Git repository
-                <a href="https://gitlab.com/lainos">{{ t('repos.lainos_text4') }}</a>.
-            </p>
-            <p>{{ t('repos.lainos_text5') }}</p>
-        </section>
+    <!-- Mirror table -->
+    <section class="site-me">
+        <h2>{{ t('repos.mirror_heading') }}</h2>
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>{{ t('repos.table.name') }}</th>
+                        <th>{{ t('repos.table.mirror_url') }}</th>
+                        <th>{{ t('repos.table.tor_url') }}</th>
+                        <th>{{ t('repos.table.description') }}</th>
+                        <th>{{ t('repos.table.online') }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="table-name">{{ t('repos.repo.wired.name') }}</td>
+                        <td><a href="https://lain.rocks/repos/wired/">lain.rocks/repos/wired/</a></td>
+                        <td><a href="http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/wired/" class="onion-link">.onion/repos/wired/</a></td>
+                        <td>{{ t('repos.repo.wired.description') }}</td>
+                        <td><span class="status-val">{{ isSiteOnline('https://lain.rocks/repos/wired') }}</span></td>
+                    </tr>
+                    <tr>
+                        <td class="table-name">{{ t('repos.repo.lain.name') }}</td>
+                        <td><a href="https://lain.rocks/repos/lain/">lain.rocks/repos/lain/</a></td>
+                        <td><a href="http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/lain/" class="onion-link">.onion/repos/lain/</a></td>
+                        <td>{{ t('repos.repo.lain.description') }}</td>
+                        <td><span class="status-val">{{ isSiteOnline('https://lain.rocks/repos/lain') }}</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-        <section class="card" id="mirror-list">
-            <h2 class="card__heading">{{ t('repos.mirror_heading') }}</h2>
-            <div class="table-wrap">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>{{ t('repos.table.name') }}</th>
-                            <th>{{ t('repos.table.mirror_url') }}</th>
-                            <th>{{ t('repos.table.tor_url') }}</th>
-                            <th>{{ t('repos.table.description') }}</th>
-                            <th>{{ t('repos.table.online') }}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="table-name">{{ t('repos.repo.wired.name') }}</td>
-                            <td><a href="https://lain.rocks/repos/wired/">lain.rocks/repos/wired/</a></td>
-                            <td><a href="http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/wired/" class="onion-link">.onion/repos/wired/</a></td>
-                            <td>{{ t('repos.repo.wired.description') }}</td>
-                            <td><span class="status-val">{{ isSiteOnline('https://lain.rocks/repos/wired') }}</span></td>
-                        </tr>
-                        <tr>
-                            <td class="table-name">{{ t('repos.repo.lain.name') }}</td>
-                            <td><a href="https://lain.rocks/repos/lain/">lain.rocks/repos/lain/</a></td>
-                            <td><a href="http://lainrbhc4y67y4qfarb637f5t5m4kfsw7jkbocs3loazvtksxgtf6oid.onion/repos/lain/" class="onion-link">.onion/repos/lain/</a></td>
-                            <td>{{ t('repos.repo.lain.description') }}</td>
-                            <td><span class="status-val">{{ isSiteOnline('https://lain.rocks/repos/lain') }}</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+    <!-- Mirror stats -->
+    <section class="site-about">
+        <h2>{{ t('repos.stats_heading') }}</h2>
+        <dl class="stats-list">
+            <div class="stats-list__row">
+                <dt>{{ t('repos.stats.size') }}</dt>
+                <dd>{{ calculateMirrorDiskSpace() }}</dd>
             </div>
-        </section>
-
-        <section class="card" id="mirror-stats">
-            <h2 class="card__heading">{{ t('repos.stats_heading') }}</h2>
-            <dl class="stats-list">
-                <div class="stats-list__row">
-                    <dt>{{ t('repos.stats.size') }}</dt>
-                    <dd>{{ calculateMirrorDiskSpace() }}</dd>
-                </div>
-                <div class="stats-list__row">
-                    <dt>{{ t('repos.stats.last_update') }}</dt>
-                    <dd>{{ getLastMirrorUpdate() }}</dd>
-                </div>
-            </dl>
-        </section>
-
-    </div>
+            <div class="stats-list__row">
+                <dt>{{ t('repos.stats.last_update') }}</dt>
+                <dd>{{ getLastMirrorUpdate() }}</dd>
+            </div>
+        </dl>
+    </section>
 
 {% endblock %}

@@ -4,44 +4,43 @@
 {% block title %}{{ t('account.register.title') }}{% endblock %}
 
 {% block content %}
-{{ renderNavbar() }}
 
-<div class="page page--account">
-    <div class="acct-wrap">
+    <section class="greeting">
+        <p class="greeting-msg">{{ t('account.register.create') }}</p>
+    </section>
 
-        <div class="acct-header">
-            <h1 class="acct-title">{{ t('account.register.create') }}</h1>
-            <p class="acct-sub">{{ t('account.register.sub') }}</p>
-        </div>
+    <section class="site-about">
+        <p class="about-msg">{{ t('account.register.sub') }}</p>
+    </section>
 
-        {{ form.flash(flash) }}
+    {{ form.flash(flash) }}
 
-        <div class="card acct-card">
-            <h2 class="card__heading">{{ t('account.register.heading') }}</h2>
-            <p class="acct-hint" style="text-align: center;">{{ t('account.register.hint') }}</p>
-            <form method="POST" action="?page=account&action=register" class="acct-form" novalidate>
+    <section class="site-me">
+        <h2>{{ t('account.register.heading') }}</h2>
+        <p class="about-msg">{{ t('account.register.hint') }}</p>
+        <form method="POST" action="?page=account&action=register" class="acct-form" novalidate>
 
-                <div class="acct-row acct-row--2">
-                    {{ form.field('First name', 'first_name', 'text', post.first_name ?? '', 'Make something', true) }}
-                    {{ form.field('Last name',  'last_name',  'text', post.last_name  ?? '', 'creative up.', true) }}
-                </div>
+            <div class="acct-row acct-row--2">
+                {{ form.field('First name', 'first_name', 'text', post.first_name ?? '', 'Make something', true) }}
+                {{ form.field('Last name',  'last_name',  'text', post.last_name  ?? '', 'creative up.', true) }}
+            </div>
 
-                {{ form.field('Username', 'uid', 'text', post.uid ?? '', 'Xx_stardestr0yer_xX', true) }}
-                <p class="acct-hint">{{ t('account.register.username_hint') }}</p>
+            {{ form.field('Username', 'uid', 'text', post.uid ?? '', 'Xx_stardestr0yer_xX', true) }}
+            <p class="acct-hint">{{ t('account.register.username_hint') }}</p>
 
-                {{ form.field('Recovery email', 'email', 'email', post.email ?? '', 'you@example.com', true) }}
-                <p class="acct-hint">{{ t('account.register.recovery_email_hint') }}</p>
+            {{ form.field('Recovery email', 'email', 'email', post.email ?? '', 'you@example.com', true) }}
+            <p class="acct-hint">{{ t('account.register.recovery_email_hint') }}</p>
 
-                {{ form.field('Password', 'password', 'password', '', '', true) }}
-                <p class="acct-hint">{{ t('account.register.password_hint') }}</p>
+            {{ form.field('Password', 'password', 'password', '', '', true) }}
+            <p class="acct-hint">{{ t('account.register.password_hint') }}</p>
 
-                <button type="submit" class="acct-btn">{{ t('account.register.btn') }}</button>
+            <button type="submit" class="cta">{{ t('account.register.btn') }}</button>
 
-            </form>
-        </div>
+        </form>
+    </section>
 
-        <p class="acct-alt">{{ t('account.register.already') }} <a href="?page=account&action=login">{{ t('account.register.login_link') }}</a></p>
+    <section class="site-about">
+        <p>{{ t('account.register.already') }} <a href="?page=account&action=login">{{ t('account.register.login_link') }}</a></p>
+    </section>
 
-    </div>
-</div>
 {% endblock %}

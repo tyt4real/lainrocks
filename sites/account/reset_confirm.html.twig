@@ -4,32 +4,29 @@
 {% block title %}{{ t('account.reset_confirm.title') }}{% endblock %}
 
 {% block content %}
-{{ renderNavbar() }}
 
-<div class="page page--account">
-    <div class="acct-wrap">
+    <section class="greeting">
+        <p class="greeting-msg">{{ t('account.reset_confirm.heading') }}</p>
+    </section>
 
-        <div class="acct-header">
-            <h1 class="acct-title">{{ t('account.reset_confirm.heading') }}</h1>
-            <p class="acct-sub">{{ t('account.reset_confirm.sub') }}</p>
-        </div>
+    <section class="site-about">
+        <p class="about-msg">{{ t('account.reset_confirm.sub') }}</p>
+    </section>
 
-        {{ form.flash(flash) }}
+    {{ form.flash(flash) }}
 
-        <div class="card acct-card">
-            <h2 class="card__heading">{{ t('account.reset_confirm.heading') }}</h2>
-            <form method="POST" action="?page=account&action=reset-confirm" class="acct-form" novalidate>
-                <input type="hidden" name="uid"   value="{{ uid }}">
-                <input type="hidden" name="token" value="{{ token }}">
-                {{ form.field('New password',     'new_password',     'password', '', '', true) }}
-                <p class="acct-hint">{{ t('account.reset_confirm.password_hint') }}</p>
-                {{ form.field('Confirm password', 'confirm_password', 'password', '', '', true) }}
-                <div class="acct-actions">
-                    <button type="submit" class="acct-btn">{{ t('account.reset_confirm.btn') }}</button>
-                </div>
-            </form>
-        </div>
+    <section class="site-me card">
+        <h2>{{ t('account.reset_confirm.heading') }}</h2>
+        <form method="POST" action="?page=account&action=reset-confirm" class="acct-form" novalidate>
+            <input type="hidden" name="uid"   value="{{ uid }}">
+            <input type="hidden" name="token" value="{{ token }}">
+            {{ form.field('New password',     'new_password',     'password', '', '', true) }}
+            <p class="acct-hint">{{ t('account.reset_confirm.password_hint') }}</p>
+            {{ form.field('Confirm password', 'confirm_password', 'password', '', '', true) }}
+            <div class="acct-actions">
+                <button type="submit" class="cta">{{ t('account.reset_confirm.btn') }}</button>
+            </div>
+        </form>
+    </section>
 
-    </div>
-</div>
 {% endblock %}

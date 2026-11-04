@@ -5,94 +5,60 @@
 
 {% block content %}
 
-    {{ renderNavbar() }}
+    <!-- Main feature: XMPP server info -->
+    <section class="greeting">
+        <p class="greeting-msg">{{ t('xmpp.about_heading') }}</p>
+    </section>
 
-    <div class="page page--xmpp">
+    <!-- About -->
+    <section class="site-about">
+        <h2>{{ t('xmpp.about_heading') }}</h2>
+        <p class="about-msg">
+            {{ t('xmpp.about_text1') }}
+            You can create an account using any XMPP client that supports account registration, for example
+            <a href="https://conversations.im/" target="_blank">{{ t('xmpp.about_text3') }}</a> for Android or
+            <a href="https://www.coyim.org/" target="_blank">{{ t('xmpp.about_text4') }}</a> for desktop.
+            {{ t('xmpp.about_text5') }}
+        </p>
+        <p class="about-msg">
+            {{ t('xmpp.about_text6') }}
+            <code class="onion-addr tabular-nums">26cp7rchjrhtet4jbcijs5oxtfu52w435f4swmya7p6xr4xxxdqx23yd.onion</code>.
+            {{ t('xmpp.about_text7') }}
+        </p>
+        <p class="about-msg">
+            {{ t('xmpp.about_text8') }}
+            {{ t('xmpp.about_text9') }}
+        </p>
+        <p class="about-msg">
+            {{ t('xmpp.about_text10') }}
+            {{ t('xmpp.about_text11') }}
+            <a href="mailto:tyt4real@protonmail.com">tyt4real@protonmail.com</a>.
+            {{ t('xmpp.about_text12') }}
+            {{ t('xmpp.about_text13') }}
+            <a href="./sites/tos.html" target="_blank">{{ t('xmpp.about_text14') }}</a>
+            {{ t('xmpp.about_text15') }}
+            <a href="./sites/tos.ru.html" target="_blank">{{ t('xmpp.about_text16') }}</a>.
+        </p>
+        <p class="about-msg">{{ t('xmpp.about_text17') }}</p>
+    </section>
 
-        <div class="xmpp-grid">
+    <!-- Security -->
+    <section class="site-me">
+        <h2>{{ t('xmpp.security_heading') }}</h2>
+        <p>{{ t('xmpp.security_text') }}</p>
+    </section>
 
-            <div class="xmpp-grid__main">
-
-                <section class="card" id="xmpp-about">
-                    <h2 class="card__heading">{{ t('xmpp.about_heading') }}</h2>
-                    <p>
-                        {{ t('xmpp.about_text1') }}
-                        You can create an account using any XMPP client that supports account registration, for example
-                        <a href="https://conversations.im/" target="_blank">{{ t('xmpp.about_text3') }}</a> for Android or
-                        <a href="https://www.coyim.org/" target="_blank">{{ t('xmpp.about_text4') }}</a> for desktop.
-                        {{ t('xmpp.about_text5') }}
-                    </p>
-                    <p>
-                        {{ t('xmpp.about_text6') }}
-                        <code class="onion-addr">26cp7rchjrhtet4jbcijs5oxtfu52w435f4swmya7p6xr4xxxdqx23yd.onion</code>.
-                        {{ t('xmpp.about_text7') }}
-                    </p>
-                    <p>
-                        {{ t('xmpp.about_text8') }}
-                        {{ t('xmpp.about_text9') }}
-                    </p>
-                    <p>
-                        {{ t('xmpp.about_text10') }}
-                        or contact us via email at <a href="mailto:tyt4real@protonmail.com">tyt4real@protonmail.com</a>.
-                        {{ t('xmpp.about_text12') }}
-                        and read the Terms of Service available
-                        <a href="./sites/tos.html" target="_blank">{{ t('xmpp.about_text14') }}</a> also in russian
-                        <a href="./sites/tos.ru.html" target="_blank">{{ t('xmpp.about_text16') }}</a>.
-                    </p>
-                    <p>{{ t('xmpp.about_text17') }}</p>
-                </section>
-
-                <section class="card card--warn" id="xmpp-security">
-                    <h2 class="card__heading">{{ t('xmpp.security_heading') }}</h2>
-                    <p>
-                        {{ t('xmpp.security_text') }}
-                    </p>
-                </section>
-
-            </div>
-
-            <div class="xmpp-grid__side">
-
-                <section class="card" id="xmpp-compliance">
-                    <h2 class="card__heading">{{ t('xmpp.compliance_heading') }}</h2>
-                    <div class="badge-stack">
-                        <a href="https://compliance.conversations.im/server/lain.rocks" target="_blank">
-                            <img src="https://compliance.conversations.im/badge/lain.rocks" alt="Conversations compliance badge" />
-                        </a>
-                        <a href="https://providers.xmpp.net/provider/lain.rocks/" target="_blank">
-                            <img alt="lain.rocks XMPP providers badge" src="https://data.xmpp.net/providers/v2/badges/lain.rocks.svg" />
-                        </a>
-                        <a href="https://xmppnetwork.goodbytes.im" target="_blank">
-                            <img alt="lain.rocks XMPP network badge" src="https://xmppnetwork.goodbytes.im/badge/lain.rocks.svg" />
-                        </a>
-                    </div>
-                </section>
-
-                <section class="card" id="xmpp-rknchan">
-                    <h2 class="card__heading">{{ t('xmpp.warning_heading') }}</h2>
-                    <img src="/css/img/rknchan.png" alt="rknchan" id="rknchan-pic" />
-                    <div style="text-align: center; font-size: 0.9em;">
-                    <p>↑</p>
-                    <p>{{ t('xmpp.warning_text1') }}</p>
-                    </div>
-                </section>
-
-                <section class="card card--accent" id="xmpp-donate">
-                    {# im so sorry for adding this shit guys, im fucking poor #}
-                    <h2 class="card__heading">{{ t('xmpp.donate_heading') }}</h2>
-                    <div class="donate-item">
-                        <span class="donate-label">Monero</span>
-                        <code class="donate-addr">49tVNbmpCJCiGc9U1ihXGd6FKe91kvPqw35cM1SiqXMuWGB47HXHPiTLXmjenue14ZCMrg57Hi6Y1dovha91hGzoMYWjxQT</code>
-                    </div>
-                    <div class="donate-item">
-                        <span class="donate-label">Bitcoin</span>
-                        <code class="donate-addr">bc1qh36va2zz2mmnktz8wtqt2szsqfkc38gmxg97ms</code>
-                    </div>
-                </section>
-
-            </div>
-
+    <!-- Donate -->
+    <section class="site-about card card--accent">
+        <h2>{{ t('xmpp.donate_heading') }}</h2>
+        <div class="donate-item">
+            <span class="donate-label">{{ t('home.donate.monero') }}</span>
+            <code class="donate-addr tabular-nums">49tVNbmpCJCiGc9U1ihXGd6FKe91kvPqw35cM1SiqXMuWGB47HXHPiTLXmjenue14ZCMrg57Hi6Y1dovha91hGzoMYWjxQT</code>
         </div>
-    </div>
+        <div class="donate-item">
+            <span class="donate-label">{{ t('home.donate.bitcoin') }}</span>
+            <code class="donate-addr tabular-nums">bc1qh36va2zz2mmnktz8wtqt2szsqfkc38gmxg97ms</code>
+        </div>
+    </section>
 
 {% endblock %}
