@@ -168,6 +168,17 @@
   color: var(--text-dim);
 }
 
+.acct-link--full {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: .5rem;
+  padding: .6rem 1rem;
+  border: 1px solid var(--accent-dim);
+  border-radius: var(--r);
+  background: rgba(124,95,191,.06);
+}
+
 .acct-link:hover { color: var(--link-h); }
 
 /* ── Alt link (register / login) ─────────────────────────────────── */
